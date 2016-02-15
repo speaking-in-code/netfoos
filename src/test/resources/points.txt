@@ -1,0 +1,474 @@
+NAME BASE CURRENT UPDATED CHANGE HI/LOW
+Spredeman, Tony 7846 7846 7846 0 7878/7846
+Da Rosa, Fernando 6820 6692 6692 0 6820/6692
+Loffredo, Todd 6721 6721 6676 -45 6721/6657
+Park, Trevor  6813 6666 6666 0 6813/6666
+Zamora, Adrian 6880 5740 5612 -128 6880/5612
+Pipkin, Jeff 3809 No Data 3777 3777 3809/3777
+Iannuzzi, Mario 3848 3768 3768 0 3889/3768
+Tran, Nhu 3701 3535 3535 0 3701/3535
+Dube, Chris 3424 3378 3378 0 3424/3378
+Stark, Randy 3430 No Data 3340 3340 3432/3328
+Aragones, Sergie 4000 3356 3270 -86 4001/3266
+Kraus, Mark 3283 3017 3017 0 3251/3017
+Estrella, Chrysander 3000 No Data 2866 2866 3009/2866
+Stewart, Scott 2940 2783 2783 0 2943/2567
+Cervantes, Zeke 2821 2724 2724 0 2789/2714
+Stahl, Mike 2564 No Data 2603 2603 2659/2564
+Lo, Kin 3536 2574 2574 0 3512/2574
+Byre, Cody 2500 2563 2563 0 2625/2500
+Schlaefer, Phil 2940 2313 2313 0 2940/2284
+Castillo, James 1400 2249 2310 61 2626/1398
+Bridgman, Mike 2400 No Data 2231 2231 2400/2230
+Mackintosh, Charles 2418 No Data 2206 2206 2386/2206
+Marr, Dana 3160 2200 2200 0 3184/2178
+Wrenn, Garrick 2202 No Data 2061 2061 2318/2061
+Escobar, Ron 2011 No Data 2011 2011 0/0
+McClure, Lee 2600 No Data 1963 1963 2690/1894
+Moss, Kyle 1350 1883 1946 63 1996/1339
+Stranks, Will 1812 No Data 1896 1896 1976/1823
+Flaherty, Brendan 2064 No Data 1890 1890 2068/1890
+Mariano, Art 1906 1875 1875 0 1955/1836
+Lavigna, Tony 1600 1765 1846 81 1949/1585
+Corioso, Steve 2552 1932 1836 -96 2562/1836
+Esquivel, Trinidad 1970 No Data 1834 1834 1973/1834
+Kurose, Darren 1804 1808 1808 0 1975/1808
+Peros, Phil 2210 1793 1793 0 2210/1793
+Kempner, Ben 576 No Data 1704 1704 1704/535
+O'Gorman, Pat 1316 No Data 1701 1701 1725/1343
+Uddin, Mohammed 2000 1623 1675 52 2231/1537
+Chan, Calvin 1748 No Data 1665 1665 1750/1665
+Sliwa, Adrian 1810 No Data 1659 1659 1811/1659
+Ly, Linda 1678 No Data 1647 1647 1671/1647
+Haberman, Jason 1439 No Data 1632 1632 1632/1457
+Stenehjem, Jerry 1606 No Data 1626 1626 1648/1590
+Furci, Nick 1300 1576 1594 18 1636/1268
+Chen, Lih 1100 1589 1589 0 1610/1072
+Biundo, John 1600 1530 1530 0 1828/1438
+Richards, Paul 1600 1539 1508 -31 1601/1427
+Dechert, Daniel 1100 No Data 1499 1499 1520/1076
+Doughty, Matt 1400 1509 1490 -19 1892/1401
+Cota, Ray 1300 1474 1486 12 1534/1296
+Richardson, Jeramie 1100 1431 1429 -2 1480/1040
+Yep, Simeon 1180 1344 1420 76 1420/1141
+Mio, Gemma 1400 1468 1409 -59 1541/1238
+Moon, Ellen 1499 1420 1404 -16 1626/1312
+Asis, Bernie 1300 1311 1374 63 1433/1203
+Blank, Dave 1300 1365 1365 0 1500/1287
+Sarette, John  1380 1327 1327 0 1446/1327
+Phuong, Dylan 749 No Data 1327 1327 1336/735
+Contreras, Xavier 613 1332 1320 -12 1456/589
+Osby, Melvin 1300 1302 1302 0 1455/1098
+Lamano, Karen 1300 No Data 1300 1300 0/0
+Ramirez, Marcos 613 1299 1299 0 1307/507
+Fitch, Louis No Data No Data 1298 1298 1298/880
+Fick, Jim 1300 No Data 1297 1297 1344/1278
+Wiborg, Joseph 1034 No Data 1286 1286 1289/1066
+Kika, Floyd 1290 No Data 1283 1283 1359/1212
+Glover, John 1300 No Data 1276 1276 1301/1276
+Schmidt, Stefan 1300 No Data 1273 1273 1306/1273
+Taylor, Jim 1300 No Data 1265 1265 1302/1265
+Burrows, Cam 710 No Data 1264 1264 1279/696
+., Odd Man No Data No Data 1263 1263 1265/864
+Albino, Barry 1300 No Data 1260 1260 1336/1260
+Kegg, Melissa 1300 1260 1260 0 1335/1207
+Hong, Alex 1300 No Data 1245 1245 1438/1245
+Mackay, Kevin No Data No Data 1241 1241 1241/856
+Garcia, Freddie 1300 No Data 1238 1238 1274/1238
+Gobran, Fadi 1288 No Data 1211 1211 1260/1189
+Park, Vivian No Data No Data 1201 1201 1219/882
+Eaton, Brian 661 1208 1195 -13 1408/659
+Thai, Luon No Data No Data 1185 1185 1351/899
+Rado, Rod 1100 1169 1169 0 1219/957
+Trok, Andrey No Data 1152 1167 15 1167/833
+Brown, Kelly 1100 No Data 1152 1152 1175/1125
+Thai, Binh 1100 1134 1134 0 1222/975
+Veeravalli, Naveen No Data 1079 1119 40 1119/903
+Runnion, Jim 782 No Data 1119 1119 1119/784
+Mackraz, Jim 1100 No Data 1117 1117 1155/1082
+Molnar, Jeff No Data No Data 1112 1112 1131/897
+Parker, Vince 600 No Data 1109 1109 1130/598
+Renken, Paul No Data No Data 1107 1107 1107/902
+Tai, Emily 1100 No Data 1100 1100 0/0
+Young, Harvey 1300 No Data 1093 1093 1408/1060
+Brizzi, Jeremy No Data No Data 1088 1088 1103/888
+O, Phil No Data No Data 1076 1076 1097/913
+Rhey, Steve No Data No Data 1074 1074 1074/893
+Borge, Derek 1100 No Data 1065 1065 1170/1055
+Campana, Allan 1300 1077 1064 -13 1306/997
+Hunt, Wes No Data No Data 1057 1057 1075/845
+Matheou, Angelo 1100 No Data 1056 1056 1104/964
+Wong, Ginger 1100 No Data 1055 1055 1109/1032
+Hariharan, Bharath No Data 951 1051 100 1052/742
+Trout, Rob No Data No Data 1051 1051 1057/914
+Ong, Jenny 1100 1039 1039 0 1216/989
+Djakovic, Christof No Data No Data 1034 1034 1045/904
+Cheng, Albert No Data 1068 1026 -42 1230/915
+Davis, Gina 806 No Data 1014 1014 1027/808
+Kim, Eric 1100 1014 1014 0 1185/985
+Hey, John No Data 986 1011 25 1016/825
+Hissaria, Nitesh No Data No Data 1000 1000 1013/883
+Baker, Jack 1136 No Data 999 999 1104/985
+C, Gary No Data No Data 999 999 1005/896
+Sese, Danilo No Data No Data 999 999 1085/921
+Oladipo, Grant No Data No Data 991 991 1033/780
+Pitts, Jason No Data 1020 991 -29 1115/792
+T, Mike No Data No Data 984 984 988/926
+Kuo, Joe 882 958 984 26 984/839
+Guillbeaux, Troy No Data No Data 981 981 981/916
+X, Partner No Data No Data 976 976 993/909
+Labelle, Zoe No Data No Data 976 976 1021/932
+Aly, Maryam 1100 No Data 976 976 1076/950
+?, Steve No Data No Data 973 973 987/931
+Burnham, Pete 1100 No Data 972 972 1104/972
+Vance, Brandon No Data No Data 966 966 982/884
+Cook, Don No Data 966 966 0 966/857
+Uppal, Jazz No Data No Data 964 964 965/898
+Amoroso, JV No Data No Data 962 962 962/895
+Barletta, Rocko No Data No Data 962 962 971/895
+Jackson, Tony No Data No Data 962 962 965/810
+Perez, Victor No Data No Data 961 961 961/930
+C, Daniel No Data No Data 959 959 959/901
+Zar, Hamdi No Data No Data 957 957 957/921
+H, Dan No Data No Data 957 957 963/899
+Chittle, Nick No Data No Data 957 957 960/876
+Vadem, Paddu No Data No Data 957 957 989/908
+Zar, Humdee No Data No Data 956 956 961/889
+Van Buskirk, Bruce No Data No Data 953 953 953/903
+Shahnazarian, Edmond No Data No Data 952 952 969/858
+James, Kodie No Data No Data 951 951 963/868
+Crawford, John No Data No Data 950 950 950/907
+Damron, Steve No Data No Data 949 949 949/875
+Akatov, Dmitri No Data No Data 948 948 949/880
+H, Steve No Data No Data 948 948 956/925
+Manan, Fazel No Data No Data 947 947 947/885
+Rodriguez, Andrew No Data No Data 946 946 953/899
+Zar, Humpdee No Data No Data 946 946 955/888
+?, Felix No Data No Data 943 943 958/914
+Barth, Doug No Data No Data 943 943 944/850
+Russell, Lee No Data No Data 940 940 943/899
+Sarete, Henry No Data No Data 939 939 943/914
+Shakya, Subodh 1100 No Data 939 939 1100/929
+Oda, Ken No Data No Data 939 939 995/900
+King, Edd No Data No Data 936 936 957/875
+Dizon, David No Data No Data 935 935 943/916
+A, Jon No Data No Data 935 935 954/913
+B, Jack No Data No Data 935 935 944/900
+McGuinness, Mike No Data No Data 934 934 1040/900
+Turtle, Julia No Data No Data 933 933 942/920
+K, Sahil No Data No Data 931 931 931/910
+Chen, Zee No Data No Data 930 930 930/913
+R, Constantine No Data No Data 929 929 930/900
+Canadian, Barry No Data No Data 929 929 939/907
+C, Kristina  No Data No Data 929 929 939/907
+Wu, Guan No Data No Data 929 929 991/889
+McCoy, Dan No Data No Data 926 926 937/907
+O, Adrian No Data No Data 926 926 958/886
+Ketner, Clayton No Data No Data 926 926 928/914
+Young, Doug No Data No Data 926 926 935/913
+Belau, Peter No Data No Data 926 926 1144/899
+Sores, Laurie No Data No Data 925 925 949/900
+Radjabi, Bahman No Data 922 923 1 979/822
+Sebastien, Christophe No Data No Data 920 920 921/887
+Vaisberg, Roman No Data No Data 920 920 922/859
+D, Dan No Data No Data 919 919 919/886
+Garrett, Ronnie No Data No Data 919 919 926/919
+D, Martin No Data No Data 918 918 918/918
+Chen, Kevin No Data No Data 917 917 917/906
+PN, Praveen No Data No Data 917 917 943/916
+M, Kristian No Data No Data 917 917 918/876
+Figueroa, Rudy No Data No Data 917 917 927/900
+L, John No Data No Data 916 916 935/869
+Adamson, Christoffer No Data No Data 916 916 919/900
+Warter, Dan No Data No Data 915 915 920/899
+S, Jenny No Data No Data 915 915 921/896
+Wolff, Kjas No Data No Data 914 914 940/894
+W, Shu No Data No Data 913 913 916/883
+Datta, Deepyaman No Data No Data 912 912 951/900
+Wong-Thai, Amy 1100 912 912 0 1071/760
+Weltin, Bruce No Data No Data 912 912 919/912
+Snyder, Tim No Data No Data 911 911 914/911
+Seligman, Donald No Data No Data 910 910 919/910
+Stewart, Andrew No Data No Data 909 909 924/886
+Lau, Don No Data No Data 909 909 940/881
+Kim, Mike No Data No Data 909 909 942/909
+Nagy, Anthony No Data No Data 909 909 909/900
+Lumpkin, Joe No Data No Data 907 907 928/890
+T, Chaz No Data No Data 907 907 910/894
+Gonsalves, Nevin No Data No Data 906 906 908/906
+?, Pranas No Data No Data 906 906 921/906
+Igo, John No Data No Data 906 906 916/906
+Winter, Will No Data No Data 906 906 911/895
+Yusfin, Andrei No Data No Data 905 905 910/894
+Teslovich, Nick No Data No Data 904 904 919/904
+L, Jessica No Data No Data 904 904 912/899
+Olson, Charlie No Data No Data 904 904 1126/874
+Niu, Jing No Data No Data 904 904 906/887
+Qiu, Jose No Data No Data 903 903 909/893
+S, Russ No Data No Data 903 903 903/900
+?, Carlos No Data No Data 903 903 917/875
+Curtin, Collin No Data No Data 903 903 915/898
+R, Dan No Data No Data 902 902 918/900
+Kang, Han No Data No Data 902 902 902/901
+Martinez, Jason No Data No Data 902 902 910/892
+R, Stan No Data No Data 902 902 924/902
+Judd, David No Data No Data 901 901 910/866
+Fang, Huy No Data No Data 901 901 902/887
+Davis, Steven No Data No Data 901 901 914/901
+Marti, Jakob No Data No Data 901 901 915/901
+Butterfield, Dale No Data No Data 901 901 901/882
+Thomas, Chad No Data No Data 900 900 931/900
+Ganschow, Steve No Data No Data 900 900 0/0
+Ebel, Joel No Data No Data 900 900 0/0
+new, Joe No Data No Data 900 900 0/0
+Bar, Foo No Data No Data 900 900 0/0
+Tappan, Jim No Data No Data 900 900 0/0
+Beans, Erik No Data No Data 900 900 0/0
+Donoso, Bernado No Data No Data 900 900 0/0
+Curley, Mitch No Data No Data 900 900 0/0
+Player, Test No Data No Data 900 900 0/0
+Wu, Richard No Data No Data 900 900 0/0
+Lantzy, Ross No Data No Data 900 900 0/0
+Garza, Ariel No Data No Data 900 900 0/0
+Guy, New No Data No Data 900 900 0/0
+X, Kell No Data No Data 900 900 0/0
+Makropoulos, Lucky No Data No Data 900 900 0/0
+Gaughan, Tom No Data No Data 900 900 0/0
+Reed, Bryan No Data No Data 900 900 0/0
+Dugley, Simon No Data No Data 900 900 0/0
+Whynaucht, Spencer No Data No Data 900 900 0/0
+Risk, Kirollos No Data No Data 900 900 900/900
+S, Mary No Data No Data 900 900 910/893
+Peera, Jake No Data No Data 899 899 899/899
+Khoshabain, Rodney No Data No Data 899 899 899/899
+Gubenko, Mykyta No Data No Data 899 899 948/888
+Sekhnov, Alex No Data No Data 899 899 948/888
+Ketterer, Chris No Data No Data 899 899 917/899
+Jeanpretre, Lucien No Data No Data 898 898 907/879
+Amps, Martin No Data No Data 898 898 900/898
+Dobrik, Austin No Data No Data 898 898 898/898
+Taylor, Ross No Data No Data 898 898 898/898
+Simons, Joe No Data No Data 898 898 912/878
+W, Simon No Data No Data 898 898 899/898
+Harmatz, Tyler No Data No Data 897 897 900/897
+Levinstein, Brian No Data No Data 897 897 915/897
+Ward, Paul No Data No Data 897 897 901/886
+Morse, Hilary No Data No Data 897 897 935/896
+Harford, Ted No Data No Data 896 896 918/873
+Alder, Wes No Data No Data 896 896 898/896
+Bhatia, Manish No Data No Data 896 896 916/896
+T, Neal No Data No Data 895 895 897/895
+Castillo, Mark No Data No Data 895 895 899/895
+Snediker, Russ No Data No Data 894 894 915/890
+Advincula, Joan 1100 No Data 894 894 1180/734
+Barreiro, James No Data No Data 894 894 899/894
+Safford, Travis No Data No Data 894 894 910/884
+Rote, John No Data No Data 893 893 900/893
+Obrobny, Tomasz No Data No Data 893 893 897/893
+Meta, Piyush No Data No Data 893 893 894/893
+Werley, Chuck No Data No Data 893 893 896/893
+Klets, Greg No Data No Data 893 893 915/872
+Mazuel, William No Data No Data 893 893 902/886
+R, Srini No Data No Data 893 893 920/893
+Wallace, Mark No Data No Data 893 893 898/893
+Lund, Ben No Data No Data 892 892 899/892
+O, Alex No Data No Data 892 892 898/892
+A, Anas No Data No Data 892 892 900/892
+A, Shaharil No Data No Data 892 892 900/892
+?, Sina No Data No Data 892 892 910/892
+Silverman, Tristan No Data No Data 892 892 892/892
+?, Sam No Data No Data 892 892 915/879
+Marcin, David No Data No Data 892 892 900/892
+NoName, Austin No Data No Data 892 892 895/892
+S, Eric No Data No Data 892 892 895/892
+Lu, Yesu No Data No Data 891 891 899/891
+P, Tom  No Data No Data 890 890 917/890
+Tolmachev, Egor No Data No Data 890 890 904/886
+J, Camille No Data No Data 889 889 909/888
+Long, Robert No Data No Data 889 889 915/887
+O, Gene No Data No Data 889 889 891/889
+Martin, Derek No Data No Data 889 889 897/889
+Marr, Cody No Data No Data 889 889 896/889
+Karve, Mayur No Data No Data 888 888 912/882
+Hodges, Jason No Data No Data 888 888 899/888
+Gnuyen, Han No Data No Data 888 888 898/888
+Myers, Allen No Data No Data 888 888 897/874
+Lehmeier, Christoph No Data No Data 888 888 894/888
+North, Todd No Data No Data 888 888 899/888
+Talanki, Mani No Data No Data 887 887 887/887
+Jina, Vojta No Data No Data 887 887 916/887
+P, Chris No Data No Data 887 887 894/887
+Ang, Robert No Data No Data 887 887 900/887
+Cho, Chris No Data No Data 887 887 900/887
+?, Spencer No Data No Data 886 886 893/837
+Ramnani, Rohit No Data No Data 886 886 915/886
+Dexter, Dan No Data No Data 886 886 916/886
+J, Logan No Data No Data 886 886 916/886
+Newton, Neal No Data No Data 886 886 895/886
+Bosch, Bill No Data No Data 886 886 895/886
+Figueroa, Adrienne No Data No Data 886 886 891/886
+Rudraraju, Vijay No Data No Data 886 886 901/885
+X, Peter No Data No Data 885 885 898/885
+Le, Andy No Data No Data 885 885 917/885
+Sovocool, Ben No Data No Data 885 885 898/885
+Murray, Peyton No Data No Data 885 885 898/885
+Campbell, Duncan No Data No Data 885 885 892/885
+S, Mike No Data No Data 885 885 889/869
+S, Charlie No Data No Data 885 885 901/883
+L, Francois No Data No Data 885 885 930/885
+Mediratta, Bharat No Data No Data 885 885 894/883
+Dills, Chad No Data No Data 884 884 949/884
+Fennimore, Jayson No Data No Data 884 884 884/884
+Jha, Saket No Data No Data 884 884 884/884
+Harkins, Cody No Data No Data 884 884 903/882
+Olczak, Adrian No Data No Data 884 884 900/884
+Higgins, Michael No Data No Data 884 884 884/884
+Newman, Eric No Data No Data 884 884 884/884
+Cilloni, Ray No Data No Data 884 884 896/884
+Keer, Corinne No Data No Data 883 883 915/883
+Panchal, Deven No Data No Data 883 883 918/883
+B, Bob No Data No Data 883 883 886/883
+B, Vasya No Data No Data 883 883 886/883
+Beale, Dave No Data No Data 883 883 886/883
+Ballentine, Kristina No Data No Data 883 883 900/835
+A, Richard No Data No Data 883 883 897/883
+Warren, John No Data No Data 883 883 885/883
+Beltran, Victor No Data No Data 883 883 883/883
+Belhumeur, Jason No Data No Data 883 883 898/880
+Choy, Xiulung No Data No Data 883 883 899/883
+Tsang, Alex 882 No Data 882 882 0/0
+Ha, Hau 882 No Data 882 882 0/0
+Heiman, Loren No Data No Data 882 882 890/882
+Kodumal, John No Data No Data 882 882 895/882
+Wolbert, Jake No Data No Data 882 882 893/882
+Jacob, Kiran No Data No Data 882 882 922/882
+Olson, Bam No Data No Data 882 882 899/882
+Michel, Luis No Data No Data 881 881 894/881
+H, Nick No Data No Data 881 881 899/881
+Creeth, Andy No Data No Data 881 881 911/881
+Albert, Roy No Data No Data 881 881 881/881
+Akil, Adnan No Data No Data 881 881 907/881
+Standard, Jeff No Data No Data 881 881 912/881
+Woo, Andrew No Data No Data 881 881 893/881
+Shaw, Adam No Data No Data 880 880 886/880
+K, Jessie No Data No Data 879 879 899/879
+Skinner, Gayle 882 No Data 879 879 907/733
+Pitts, Josh No Data No Data 879 879 889/879
+Frias, Alejandro No Data No Data 879 879 902/879
+Dave, Vinay No Data No Data 879 879 885/879
+Reed, Brian No Data No Data 879 879 885/879
+Gardener, Dave No Data No Data 878 878 893/878
+Smith, Mike No Data No Data 878 878 928/877
+K, Deepak No Data No Data 877 877 928/877
+A, Mike No Data No Data 877 877 914/877
+Pleshakov, Wasa No Data No Data 877 877 887/877
+P, Charlie No Data No Data 877 877 893/877
+Sovocool, Dan No Data No Data 877 877 902/877
+?, Joan No Data No Data 877 877 885/877
+Lee, Bruce 882 No Data 876 876 890/871
+Plachta, Jacob No Data No Data 876 876 895/833
+Ferreyra, Moses No Data No Data 876 876 895/876
+Pham, Phong No Data No Data 875 875 930/875
+Xiao, Peter No Data No Data 875 875 909/875
+Yesbeck, Jake No Data No Data 875 875 960/821
+Lang, Don No Data No Data 875 875 950/849
+Schaeller, Helmut No Data No Data 875 875 885/875
+Anderson, Joe No Data No Data 874 874 900/874
+Thompson, Noah No Data No Data 874 874 900/874
+A, Wyatt No Data No Data 873 873 885/873
+Odrobny, Tomasz No Data No Data 873 873 883/846
+Cook, Josh No Data No Data 873 873 886/869
+Keefauver, Kory No Data No Data 872 872 901/872
+Sivkov, Eugene No Data No Data 872 872 878/872
+Nisar, Gaurav No Data No Data 872 872 884/872
+Aziz, Justin No Data No Data 872 872 886/872
+Miaki, Tom No Data No Data 872 872 889/872
+K, Percy No Data No Data 872 872 889/872
+W, Richard No Data No Data 872 872 906/872
+F, Joe No Data No Data 871 871 911/871
+Altimimi, Hyder No Data No Data 871 871 898/871
+Reshetov, Dmitry No Data No Data 871 871 885/827
+Banaria, Nick No Data No Data 870 870 875/870
+Uribe, Mario No Data No Data 870 870 883/870
+trimble, james No Data No Data 870 870 874/870
+Kanuri, Nitya No Data No Data 870 870 884/870
+Elyashev, Eugene No Data No Data 868 868 884/868
+Bansal, Mridul No Data No Data 868 868 884/868
+Williams, Dylan No Data No Data 868 868 916/843
+T, Greg No Data No Data 866 866 884/866
+W, Jake No Data No Data 866 866 903/866
+Ponce, Jose No Data No Data 866 866 927/866
+Yeh, Larry No Data No Data 865 865 884/865
+B, Jenny No Data No Data 865 865 883/865
+Blah, Blah No Data No Data 865 865 892/865
+T, Sylvina No Data No Data 865 865 884/865
+Black, Doug No Data No Data 865 865 884/865
+Ensenat, Armando No Data No Data 865 865 883/865
+Moorjani, Puran No Data No Data 865 865 872/865
+Verdoza, Marcus No Data No Data 865 865 883/865
+P, Angil No Data No Data 865 865 874/865
+Z, Paul No Data No Data 864 864 899/864
+Boland, Darren No Data No Data 864 864 877/864
+P, Kristjan No Data No Data 863 863 878/863
+C, Tim No Data No Data 863 863 902/863
+G, Matt No Data No Data 862 862 918/862
+McCoy, Mitch No Data No Data 861 861 903/850
+Lu, Dave No Data No Data 861 861 895/861
+Lee, Donald No Data No Data 861 861 882/861
+Papp, Brian No Data No Data 860 860 905/860
+Hernandez, Jose No Data No Data 860 860 898/860
+Johnson, Robert No Data No Data 859 859 897/859
+Baxter, Alex No Data No Data 859 859 900/859
+Garcia, Jason No Data No Data 858 858 886/858
+C, Trisha No Data No Data 858 858 902/858
+Younger, Scott No Data No Data 858 858 924/801
+Rizan, James No Data No Data 858 858 885/858
+C, Stan No Data No Data 858 858 920/858
+Costello, Chuck No Data No Data 858 858 900/858
+Lombear, Edgar No Data No Data 856 856 896/856
+Turtle, Zach No Data No Data 848 848 876/848
+Casey, Dan No Data No Data 847 847 900/847
+Adams, Clay No Data No Data 847 847 871/847
+Kingston, Sam No Data No Data 846 846 885/838
+Holt, Sam No Data No Data 846 846 876/846
+Frederickson, Simon No Data No Data 845 845 901/845
+C, Sasha No Data No Data 845 845 887/845
+?, Jackie No Data No Data 844 844 900/843
+Silva, Elias No Data No Data 843 843 887/843
+Moorjani, Rojan No Data No Data 842 842 899/842
+Baker, Sam No Data No Data 842 842 923/839
+Saccon, Dave No Data No Data 841 841 902/841
+Nakanishi, Jason No Data No Data 840 840 883/840
+Sana, Albert No Data No Data 839 839 940/825
+Fox, Tony No Data No Data 839 839 900/839
+Aquino, Charlie No Data No Data 839 839 894/837
+Garcia, Oscar No Data No Data 838 838 880/838
+Kang, Ivan No Data No Data 838 838 972/838
+Zadrazil, Petr No Data No Data 837 837 868/837
+Seahorse, Kurt No Data No Data 835 835 894/835
+Wright, Drew No Data No Data 833 833 885/833
+Shah, Sahil No Data No Data 833 833 912/818
+Dugan, Sean 882 No Data 831 831 892/831
+Gardner, Matt No Data No Data 826 826 941/804
+Michel, Luis No Data No Data 824 824 885/824
+Woo, Toma 822 No Data 822 822 0/0
+G, Mona No Data No Data 822 822 892/822
+?, Sterling No Data No Data 818 818 892/807
+Galbraith, Heidi No Data No Data 815 815 912/815
+Upadhyay, Sapan No Data No Data 815 815 887/815
+K, Stan No Data No Data 812 812 925/793
+Tinsley, Amie No Data No Data 807 807 889/807
+Muthreja, Aman No Data No Data 804 804 893/804
+Hogan, Pat No Data No Data 802 802 874/791
+Nikanorov, Eugene No Data No Data 793 793 895/793
+Patterson, Ryan No Data No Data 782 782 898/782
+Ingold, Arron 657 No Data 767 767 800/671
+Burns, Art No Data No Data 764 764 903/764
+Yep, Bing No Data No Data 763 763 870/628
+Plachta, Peter No Data No Data 759 759 900/759
+Haas, Kim No Data No Data 740 740 897/740
+Tan, Samantha No Data No Data 732 732 911/720
+Martin, Josh 600 No Data 643 643 652/625
+   285 285 299/27
+   23 23 24/-0
+   -56 -56 0/-56
