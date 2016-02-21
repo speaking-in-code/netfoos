@@ -10,7 +10,7 @@ public class PointsDiffer {
     ImmutableList.Builder<Player> changed = ImmutableList.builder();
     for (Player p : players) {
       // Objects.equal handles null properly.
-      if (!Objects.equal(p.currentPoints(), p.newPoints())) {
+      if (!Objects.equal(p.oldPoints(), p.newPoints())) {
         changed.add(p);
       }
     }

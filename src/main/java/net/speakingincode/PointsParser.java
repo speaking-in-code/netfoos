@@ -49,14 +49,14 @@ public class PointsParser {
           fields.get(cur + 1).equals("Data");
     }
     
-    public String parsePoints() {
+    public int parsePoints() {
       if (atNoData()) {
         cur += 2;
-        return null;
+        return 0;
       }
       String points = fields.get(cur);
       ++cur;
-      return points;
+      return Integer.parseInt(points);
     }
   }
   
@@ -70,13 +70,8 @@ public class PointsParser {
     b.name(name);
     // Skip base.
     state.parsePoints();
-    // Null is OK here.
-    b.currentPoints(state.parsePoints());
-    String newPoints = state.parsePoints();
-    if (newPoints == null) {
-      return null;
-    }
-    b.newPoints(newPoints);
+    b.oldPoints(state.parsePoints());
+    b.newPoints(state.parsePoints());
     return b.build();
   }
 }

@@ -29,9 +29,11 @@ public class PointsUpdater {
     WebElement edit = driver.findElement(By.partialLinkText(player.name()));
     edit.click();
     WebElement localPoints = driver.findElement(By.id("pointsother"));
-    String points = player.newPoints();
-    if (points == null) {
+    String points;
+    if (player.newPoints() == 0) {
       points = "";
+    } else {
+      points = Integer.toString(player.newPoints());
     }
     localPoints.clear();
     localPoints.sendKeys(points);

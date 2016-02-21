@@ -18,8 +18,8 @@ public class PointsParserTest {
   public void parsesWellFormatted() throws Exception {
     Player player = parser.parse("Spredeman, Tony 7846 7846 7846 0 7878/7846");
     assertEquals("Spredeman, Tony", player.name());
-    assertEquals("7846", player.currentPoints());
-    assertEquals("7846", player.newPoints());
+    assertEquals(7846, player.oldPoints());
+    assertEquals(7846, player.newPoints());
   }
   
   @Test
@@ -32,16 +32,16 @@ public class PointsParserTest {
   public void parsesPartialData() throws Exception {
     Player player = parser.parse("Pipkin, Jeff      3809 No Data 3777    3777   3809/3777");
     assertEquals("Pipkin, Jeff", player.name());
-    assertEquals(null, player.currentPoints());
-    assertEquals("3777", player.newPoints());
+    assertEquals(0, player.oldPoints());
+    assertEquals(3777, player.newPoints());
   }
   
   @Test
   public void parsesNameWithSpaces() throws Exception {
     Player p = parser.parse("Van Buskirk, Bruce No Data No Data 953 953 953/903");
     assertEquals("Van Buskirk, Bruce", p.name());
-    assertEquals(null, p.currentPoints());
-    assertEquals("953", p.newPoints());
+    assertEquals(0, p.oldPoints());
+    assertEquals(953, p.newPoints());
   }
   
   @Test

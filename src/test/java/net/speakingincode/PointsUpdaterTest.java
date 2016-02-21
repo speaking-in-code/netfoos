@@ -28,8 +28,8 @@ public class PointsUpdaterTest {
   public void updateOddMan() throws Exception {
     Player p = Player.builder()
         .name("?, Steve")
-        .currentPoints(null)
-        .newPoints("450")
+        .oldPoints(0)
+        .newPoints(450)
         .build();
     updater.beginUpdate();
     updater.updatePoints(p);
@@ -39,13 +39,13 @@ public class PointsUpdaterTest {
   public void updateTwoPlayers() throws Exception {
     Player p1 = Player.builder()
         .name("?, Steve")
-        .currentPoints(null)
-        .newPoints("499")
+        .oldPoints(0)
+        .newPoints(499)
         .build();
     Player p2 = Player.builder()
         .name(", Sterling")
-        .currentPoints(null)
-        .newPoints("501")
+        .oldPoints(0)
+        .newPoints(501)
         .build();
     updater.beginUpdate();
     updater.updatePoints(p1);
