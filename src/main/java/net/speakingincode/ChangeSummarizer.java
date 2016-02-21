@@ -5,18 +5,18 @@ import java.util.List;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Ordering;
 
 /**
  * Summarizes changes in player points and ranks.
  */
 public class ChangeSummarizer {
+  private static final int MAX_RANK_TO_SHOW = 100;
   private final ImmutableList<Player> playersByOldPoints;
   private final ImmutableList<Player> playersByNewPoints;
 
   public ChangeSummarizer(List<Player> players) {
-    this.playersByOldPoints = byOldPoints.immutableSortedCopy(players);
-    this.playersByNewPoints = byNewPoints.immutableSortedCopy(players);
+    this.playersByOldPoints = Sorting.copySortedByOldPoints(players);
+    this.playersByNewPoints = Sorting.copySortedByNewPoints(players);
   }
   
   public String getSummary() {
@@ -24,12 +24,17 @@ public class ChangeSummarizer {
     ImmutableMap<Player, Integer> newRanks = getPlayerToRank(playersByNewPoints, false);
     StringBuilder changeSummary = new StringBuilder();
     for (Player player : playersByNewPoints) {
+      int newRank = newRanks.get(player);
+      if (newRank > MAX_RANK_TO_SHOW) {
+        break;
+      }
       if (player.oldPoints() == player.newPoints()) {
         continue;
       }
       int delta = player.newPoints() - player.oldPoints();
       int oldRank = oldRanks.get(player);
-      int newRank = newRanks.get(player);
+      changeSummary.append(toStringRank(newRank));
+      changeSummary.append(": ");
       changeSummary.append(player.name());
       changeSummary.append(": ");
       changeSummary.append(player.newPoints());
@@ -38,16 +43,11 @@ public class ChangeSummarizer {
         changeSummary.append('+');
       }
       changeSummary.append(delta);
-      changeSummary.append(")");
-      if (oldRank == newRank) {
-        changeSummary.append(". Rank: " + toStringRank(newRank));
-      } else {
-        changeSummary.append(". New rank: " );
-        changeSummary.append(toStringRank(newRank));
-        changeSummary.append(", was ");
+      if (oldRank != newRank) {
+        changeSummary.append(", old rank: ");
         changeSummary.append(toStringRank(oldRank));
       }
-      changeSummary.append(".\n");
+      changeSummary.append(")\n");
     }
     return changeSummary.toString();
   }
@@ -106,18 +106,4 @@ public class ChangeSummarizer {
     }
     return ranked.build();
   }
-  
-  private static final Ordering<Player> byOldPoints = new Ordering<Player>() {
-    @Override
-    public int compare(Player left, Player right) {
-      return -Integer.compare(left.oldPoints(), right.oldPoints());
-    }
-  };
-  
-  private static final Ordering<Player> byNewPoints = new Ordering<Player>() {
-    @Override
-    public int compare(Player left, Player right) {
-      return -Integer.compare(left.newPoints(), right.newPoints());
-    }
-  };
 }
