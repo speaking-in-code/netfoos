@@ -30,7 +30,7 @@ public class App {
       NetfoosLogin login = new NetfoosLogin(credentials, driver);
       login.login();
       ImmutableList<Player> players = new PointsScraper(driver).getPoints();
-      String summary = new ChangeSummarizer(players).getSummary();
+      String summary = new ChangeSummarizer(players).getChangedPlayerSummary();
       logger.info("Change summary:\n" + summary);
       String path = getSpreadsheetOutputPath();
       logger.info("Writing all points " + path);

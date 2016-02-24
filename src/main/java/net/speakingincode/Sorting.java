@@ -1,6 +1,6 @@
 package net.speakingincode;
 
-import java.util.List;
+import java.util.Collection;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Ordering;
@@ -8,11 +8,11 @@ import com.google.common.collect.Ordering;
 public class Sorting {
   private Sorting() {}
   
-  public static ImmutableList<Player> copySortedByOldPoints(List<Player> players) {
+  public static ImmutableList<Player> copySortedByOldPoints(Collection<Player> players) {
     return byOldPoints.immutableSortedCopy(players);
   }
   
-  public static ImmutableList<Player> copySortedByNewPoints(List<Player> players) {
+  public static ImmutableList<Player> copySortedByNewPoints(Collection<Player> players) {
     return byNewPoints.immutableSortedCopy(players);
   }
   

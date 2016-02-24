@@ -13,15 +13,34 @@ public class ChangeSummarizer {
   private static final int MAX_RANK_TO_SHOW = 100;
   private final ImmutableList<Player> playersByOldPoints;
   private final ImmutableList<Player> playersByNewPoints;
+  private final ImmutableMap<Player, Integer> oldRanks;
+  private final ImmutableMap<Player, Integer> newRanks;
 
   public ChangeSummarizer(List<Player> players) {
-    this.playersByOldPoints = Sorting.copySortedByOldPoints(players);
-    this.playersByNewPoints = Sorting.copySortedByNewPoints(players);
+    playersByOldPoints = Sorting.copySortedByOldPoints(players);
+    playersByNewPoints = Sorting.copySortedByNewPoints(players);
+    oldRanks = getPlayerToRank(playersByOldPoints, true);
+    newRanks = getPlayerToRank(playersByNewPoints, false);
   }
   
-  public String getSummary() {
-    ImmutableMap<Player, Integer> oldRanks = getPlayerToRank(playersByOldPoints, true);
-    ImmutableMap<Player, Integer> newRanks = getPlayerToRank(playersByNewPoints, false);
+  /**
+   * Gets a summary for all players with points changes.
+   */
+  public String getChangedPlayerSummary() {
+    StringBuilder changeSummary = new StringBuilder();
+    for (Player player : playersByNewPoints) {
+      if (player.oldPoints() == player.newPoints()) {
+        continue;
+      }
+      changeSummary.append(getPlayerChange(player));
+    }
+    return changeSummary.toString();
+  }
+  
+  /**
+   * Gets a summary for the top 100 players with points changes.
+   */
+  public String getTopPlayerSummary() {
     StringBuilder changeSummary = new StringBuilder();
     for (Player player : playersByNewPoints) {
       int newRank = newRanks.get(player);
@@ -31,24 +50,31 @@ public class ChangeSummarizer {
       if (player.oldPoints() == player.newPoints()) {
         continue;
       }
-      int delta = player.newPoints() - player.oldPoints();
-      int oldRank = oldRanks.get(player);
-      changeSummary.append(toStringRank(newRank));
-      changeSummary.append(": ");
-      changeSummary.append(player.name());
-      changeSummary.append(": ");
-      changeSummary.append(player.newPoints());
-      changeSummary.append(" (");
-      if (delta > 0) {
-        changeSummary.append('+');
-      }
-      changeSummary.append(delta);
-      if (oldRank != newRank) {
-        changeSummary.append(", old rank: ");
-        changeSummary.append(toStringRank(oldRank));
-      }
-      changeSummary.append(")\n");
+      changeSummary.append(getPlayerChange(player));
     }
+    return changeSummary.toString();
+  }
+  
+  private String getPlayerChange(Player player) {
+    int newRank = newRanks.get(player);
+    StringBuilder changeSummary = new StringBuilder();
+    int delta = player.newPoints() - player.oldPoints();
+    int oldRank = oldRanks.get(player);
+    changeSummary.append(toStringRank(newRank));
+    changeSummary.append(": ");
+    changeSummary.append(player.name());
+    changeSummary.append(": ");
+    changeSummary.append(player.newPoints());
+    changeSummary.append(" (");
+    if (delta > 0) {
+      changeSummary.append('+');
+    }
+    changeSummary.append(delta);
+    if (oldRank != newRank) {
+      changeSummary.append(", old rank: ");
+      changeSummary.append(toStringRank(oldRank));
+    }
+    changeSummary.append(")\n");
     return changeSummary.toString();
   }
   
