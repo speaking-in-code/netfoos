@@ -10,7 +10,7 @@ public class ChangeSummarizerTest {
   @Test
   public void testEmptyInput() {
     ChangeSummarizer summarizer = new ChangeSummarizer(ImmutableList.<Player>of());
-    assertEquals("", summarizer.getSummary());
+    assertEquals("", summarizer.getTopPlayerSummary());
   }
   
   @Test
@@ -19,7 +19,7 @@ public class ChangeSummarizerTest {
         Player.builder().name("Alice").oldPoints(600).newPoints(600).build(),
         Player.builder().name("Bob").oldPoints(600).newPoints(600).build()
         ));
-    assertEquals("", summarizer.getSummary());
+    assertEquals("", summarizer.getTopPlayerSummary());
   }
   
   @Test
@@ -27,7 +27,7 @@ public class ChangeSummarizerTest {
     ChangeSummarizer summarizer = new ChangeSummarizer(ImmutableList.of(
         Player.builder().name("Alice").oldPoints(600).newPoints(650).build()
         ));
-    assertEquals("1st: Alice: 650 (+50)\n", summarizer.getSummary());
+    assertEquals("1st: Alice: 650 (+50)\n", summarizer.getTopPlayerSummary());
   }
   
   @Test
@@ -35,7 +35,7 @@ public class ChangeSummarizerTest {
     ChangeSummarizer summarizer = new ChangeSummarizer(ImmutableList.of(
         Player.builder().name("Alice").oldPoints(600).newPoints(550).build()
         ));
-    assertEquals("1st: Alice: 550 (-50)\n", summarizer.getSummary());
+    assertEquals("1st: Alice: 550 (-50)\n", summarizer.getTopPlayerSummary());
   }
   
   @Test
@@ -47,7 +47,7 @@ public class ChangeSummarizerTest {
     assertEquals(
         "1st: Alice: 550 (-50)\n" +
         "2nd: Bob: 525 (+25)\n",
-        summarizer.getSummary());
+        summarizer.getTopPlayerSummary());
   }
   
   @Test
@@ -59,7 +59,7 @@ public class ChangeSummarizerTest {
     assertEquals(
         "1st: Alice: 550 (-50)\n" +
         "1st: Bob: 550 (+50, old rank: 2nd)\n",
-        summarizer.getSummary());
+        summarizer.getTopPlayerSummary());
   }
   
   @Test
@@ -74,7 +74,7 @@ public class ChangeSummarizerTest {
         "1st: Alice: 550 (-50)\n" +
         "1st: Bob: 550 (+50, old rank: 2nd)\n" +
         "3rd: Claire: 540 (+140)\n",
-        summarizer.getSummary());
+        summarizer.getTopPlayerSummary());
   }
   
   @Test
@@ -89,7 +89,7 @@ public class ChangeSummarizerTest {
         "1st: Alice: 550 (-50)\n" +
         "1st: Bob: 550 (+50, old rank: 2nd)\n" +
         "1st: Claire: 550 (+150, old rank: 3rd)\n",
-        summarizer.getSummary());
+        summarizer.getTopPlayerSummary());
   }
   
   @Test
@@ -101,7 +101,7 @@ public class ChangeSummarizerTest {
     assertEquals(
         "1st: Bob: 525 (+25, old rank: 2nd)\n" +
         "2nd: Alice: 500 (-100, old rank: 1st)\n",
-        summarizer.getSummary());
+        summarizer.getTopPlayerSummary());
   }
   
   @Test
