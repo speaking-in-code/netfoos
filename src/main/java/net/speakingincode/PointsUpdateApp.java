@@ -16,9 +16,9 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 /**
  * Updates points.
  */
-public class App {
+public class PointsUpdateApp {
   private static final boolean DRY_RUN = false;
-  private static final Logger logger = Logger.getLogger(App.class.getName());
+  private static final Logger logger = Logger.getLogger(PointsUpdateApp.class.getName());
   private static Credentials credentials;
   
   public static void main(String[] args) throws IOException {

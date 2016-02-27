@@ -1,21 +1,11 @@
 package net.speakingincode;
 
-import java.util.List;
-import java.util.Queue;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
+import java.io.IOException;
 import java.util.logging.Logger;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Queues;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.ListeningExecutorService;
-import com.google.common.util.concurrent.MoreExecutors;
 
 /**
  * Sends updates to netfoos.
@@ -38,50 +28,47 @@ public class NetfoosUpdater {
   public void runUpdates(ImmutableList<Player> players) {
     ImmutableList<Player> changed = new PointsDiffer().findChangedPlayers(players);
     logger.info("Starting update of " + changed.size() + " players.");
-    Queue<Player> workQueue = Queues.newConcurrentLinkedQueue();
-    workQueue.addAll(changed);
-    ListeningExecutorService executor = MoreExecutors.listeningDecorator(
-        Executors.newFixedThreadPool(PARALLEL_UPDATES));
-    List<ListenableFuture<Void>> updaters = Lists.newArrayList();
-    for (int i = 0; i < PARALLEL_UPDATES; ++i) {
-      ListenableFuture<Void> update = executor.submit(new Updater(workQueue));
-      updaters.add(update);
-    }
-
-    try {
-      for (ListenableFuture<Void> update : updaters) {
-        update.get();
-      }
-    } catch (InterruptedException e) {
-      logger.severe("Interrupted running updates: " + e);
-    } catch (ExecutionException e) {
-      logger.severe("Error running updates: " + e);
-    }
+    WorkerPool<Player, Boolean> work = WorkerPool.create(PARALLEL_UPDATES, new UpdaterFactory());
+    work.parallelDo(players);
     logger.info("Updates complete.");
   }
   
-  private class Updater implements Callable<Void> {
-    private final Queue<Player> workQueue;
-
-    public Updater(Queue<Player> workQueue) {
-      this.workQueue = workQueue;
+  private class UpdaterFactory implements Worker.Factory<Player, Boolean> {
+    @Override
+    public Worker<Player, Boolean> newWorker() {
+      return new Updater();
+    }
+  }
+  
+  private class Updater implements Worker<Player, Boolean> {
+    private final HtmlUnitDriver driver;
+    private final PointsUpdater updater;
+    
+    public Updater() {
+      driver = new HtmlUnitDriver();
+      NetfoosLogin login = new NetfoosLogin(credentials, driver);
+      try {
+        login.login();
+        updater = new PointsUpdater(driver);
+        updater.beginUpdate();
+      } catch (IOException e) {
+        throw new RuntimeException("Failed netfoos login", e);
+      }
     }
 
     @Override
-    public Void call() throws Exception {
-      WebDriver driver = new HtmlUnitDriver();
+    public void shutdown() {
+      driver.close();
+    }
+
+    @Override
+    public Boolean convert(Player x) {
       try {
-        NetfoosLogin login = new NetfoosLogin(credentials, driver);
-        login.login();
-        PointsUpdater updater = new PointsUpdater(driver);
-        updater.beginUpdate();
-        for (Player p = workQueue.poll(); p != null; p = workQueue.poll()) {
-          updater.updatePoints(p);
-        }
-      } finally {
-        driver.close();
+        updater.updatePoints(x);
+      } catch (IOException e) {
+        return false;
       }
-      return null;
+      return true;
     }
   }
 }
