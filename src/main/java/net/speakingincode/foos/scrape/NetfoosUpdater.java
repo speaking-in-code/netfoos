@@ -15,9 +15,11 @@ public class NetfoosUpdater {
   private static final int PARALLEL_UPDATES = 4;
 
   private final Credentials credentials;
-
-  public NetfoosUpdater(Credentials credentials) {
+  private final PointsUpdater.Mode mode;
+  
+  public NetfoosUpdater(Credentials credentials, PointsUpdater.Mode mode) {
     this.credentials = credentials;
+    this.mode = mode;
   }
   
   /**
@@ -26,10 +28,10 @@ public class NetfoosUpdater {
    * @param players list of all players. Only changes will be sent to netfoos.
    */
   public void runUpdates(ImmutableList<Player> players) {
-    ImmutableList<Player> changed = new PointsDiffer().findChangedPlayers(players);
+    ImmutableList<Player> changed = new PointsDiffer().findChangedPlayers(players, mode);
     logger.info("Starting update of " + changed.size() + " players.");
     WorkerPool<Player, Boolean> work = WorkerPool.create(PARALLEL_UPDATES, new UpdaterFactory());
-    work.parallelDo(players);
+    work.parallelDo(changed);
     logger.info("Updates complete.");
   }
   
@@ -49,7 +51,7 @@ public class NetfoosUpdater {
       NetfoosLogin login = new NetfoosLogin(credentials, driver);
       try {
         login.login();
-        updater = new PointsUpdater(driver);
+        updater = new PointsUpdater(driver, mode);
         updater.beginUpdate();
       } catch (IOException e) {
         throw new RuntimeException("Failed netfoos login", e);
@@ -64,6 +66,7 @@ public class NetfoosUpdater {
     @Override
     public Boolean convert(Player x) {
       try {
+        logger.info("Updating: " + x);
         updater.updatePoints(x);
       } catch (IOException e) {
         return false;

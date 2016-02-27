@@ -8,15 +8,16 @@ import java.util.logging.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import com.google.common.collect.ImmutableList;
 
-public class PointsScraper {
-  private static final Logger logger = Logger.getLogger(PointsScraper.class.getName());
+public class EloPointsCalculator {
+  private static final Logger logger = Logger.getLogger(EloPointsCalculator.class.getName());
   private final WebDriver driver;
   private final PointsParser parser = new PointsParser();
   
-  public PointsScraper(WebDriver driver) {
+  public EloPointsCalculator(WebDriver driver) {
     this.driver = driver;
   }
   
@@ -31,7 +32,8 @@ public class PointsScraper {
     if (!page.contains("Show All Players Current ELO Points")) {
       throw new IOException("Not on ELO module page: " + page);
     }
-    logger.info("Starting ELO Points Calculation.");
+    setTuningParameters();
+    logger.info("Starting Elo Points Calculation.");
     driver.findElement(By.name("Submit")).click();
     WebElement points = driver.findElement(By.tagName("textarea"));
     ImmutableList.Builder<Player> players = ImmutableList.builder();
@@ -44,5 +46,21 @@ public class PointsScraper {
       }
     }
     return players.build();
+  }
+  
+  private void setTuningParameters() {
+    // Default points for a new player.
+    WebElement defaultPoints = driver.findElement(By.id("nfts_mod_4"));
+    defaultPoints.clear();
+    defaultPoints.sendKeys("700");
+    // Minimum points a player can have.
+    WebElement cutoffPoints = driver.findElement(By.id("nfts_mod_8"));
+    cutoffPoints.clear();
+    cutoffPoints.sendKeys("600");
+    Select bonusPoints = new Select(driver.findElement(By.name("nfts_mod_9")));
+    // Bonus points for winning. Setting this wrong can make local points diverge from IFP
+    // points very quickly.
+    // This is "K / (Finish * 16) (Awards least points)"
+    bonusPoints.selectByValue("16");
   }
 }

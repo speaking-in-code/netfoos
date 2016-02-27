@@ -10,6 +10,7 @@ import net.speakingincode.foos.scrape.Credentials;
 import net.speakingincode.foos.scrape.NetfoosLogin;
 import net.speakingincode.foos.scrape.Player;
 import net.speakingincode.foos.scrape.PointsUpdater;
+import net.speakingincode.foos.scrape.PointsUpdater.Mode;
 
 public class PointsUpdaterTest {
   private static WebDriver driver;
@@ -21,7 +22,7 @@ public class PointsUpdaterTest {
     Credentials credentials = Credentials.load();
     NetfoosLogin login = new NetfoosLogin(credentials, driver);
     login.login();
-    updater = new PointsUpdater(driver);
+    updater = new PointsUpdater(driver, Mode.LOCAL);
   }
   
   @AfterClass

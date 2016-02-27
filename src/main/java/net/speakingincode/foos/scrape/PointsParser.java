@@ -68,8 +68,10 @@ public class PointsParser {
       return null;
     }
     b.name(name);
-    // Skip base.
-    state.parsePoints();
+    // Don't change base points yet.
+    int basePoints = state.parsePoints();
+    b.oldBasePoints(basePoints);
+    b.newBasePoints(basePoints);
     b.oldPoints(state.parsePoints());
     b.newPoints(state.parsePoints());
     return b.build();

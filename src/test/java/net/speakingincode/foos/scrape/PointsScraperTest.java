@@ -10,7 +10,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 import net.speakingincode.foos.scrape.Credentials;
 import net.speakingincode.foos.scrape.NetfoosLogin;
 import net.speakingincode.foos.scrape.Player;
-import net.speakingincode.foos.scrape.PointsScraper;
+import net.speakingincode.foos.scrape.EloPointsCalculator;
 
 public class PointsScraperTest {
   @Test
@@ -19,7 +19,7 @@ public class PointsScraperTest {
     WebDriver driver = new ChromeDriver();
     Credentials credentials = Credentials.load();
     new NetfoosLogin(credentials, driver).login();
-    ImmutableList<Player> players = new PointsScraper(driver).getPoints();
+    ImmutableList<Player> players = new EloPointsCalculator(driver).getPoints();
     System.out.println(players);
   }
 }
