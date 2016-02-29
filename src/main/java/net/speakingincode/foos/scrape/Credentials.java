@@ -8,19 +8,26 @@ public class Credentials {
 	private final String username;
 	private final String password;
 	
-	public static Credentials load() throws IOException {
-		String home = System.getenv("HOME");
-		Properties properties = new Properties();
-		properties.load(new FileReader(home + "/" + ".netfoosrc"));
-		String username = properties.getProperty("username");
-		String password = properties.getProperty("password");
-		if (username == null || password == null) {
-			throw new IOException("Couldn't find username or password in .netfoosrc");
-		}
-		return new Credentials(username, password);
+	public static Credentials load() {
+	  try (FileReader reader = new FileReader(getNetfoosRcPath())) {
+	    Properties properties = new Properties();
+	    properties.load(reader);
+	    String username = properties.getProperty("username");
+	    String password = properties.getProperty("password");
+	    if (username == null || password == null) {
+	      throw new RuntimeException("Couldn't find username or password in .netfoosrc");
+	    }
+	    return new Credentials(username, password);
+	  } catch (IOException e) {
+	    throw new RuntimeException("Error laoding credentials", e);
+	  }
 	}
 	
-	public static Credentials create(String username, String password) {
+	private static String getNetfoosRcPath() {
+    return System.getenv("HOME") + "/.netfoosrc";
+  }
+
+  public static Credentials create(String username, String password) {
 		return new Credentials(username, password);
 	}
 	

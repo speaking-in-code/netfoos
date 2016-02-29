@@ -18,7 +18,7 @@ public class NetfoosLogin {
   }
 
   public void login() throws IOException {
-    driver.get("http://www.netfoos.com/manager");
+    driver.get(NetfoosConstants.HOME);
     if (!driver.getTitle().equals("NetFoos.com Admin - Login")) {
       throw new IOException("Did not find login page: " + driver.getPageSource());
     }
