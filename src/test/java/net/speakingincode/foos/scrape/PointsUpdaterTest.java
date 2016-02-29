@@ -16,6 +16,10 @@ public class PointsUpdaterTest {
   private static WebDriver driver;
   private static PointsUpdater updater;
 
+  private Player.Builder emptyBuilder() {
+    return Player.builder().newBasePoints(0).oldBasePoints(0);
+  }
+  
   @BeforeClass
   public static void before() throws Exception {
     driver = new HtmlUnitDriver();
@@ -32,7 +36,7 @@ public class PointsUpdaterTest {
   
   @Test
   public void updateOddMan() throws Exception {
-    Player p = Player.builder()
+    Player p = emptyBuilder()
         .name("?, Steve")
         .oldPoints(0)
         .newPoints(450)
@@ -43,12 +47,12 @@ public class PointsUpdaterTest {
   
   @Test
   public void updateTwoPlayers() throws Exception {
-    Player p1 = Player.builder()
+    Player p1 = emptyBuilder()
         .name("?, Steve")
         .oldPoints(0)
         .newPoints(499)
         .build();
-    Player p2 = Player.builder()
+    Player p2 = emptyBuilder()
         .name(", Sterling")
         .oldPoints(0)
         .newPoints(501)

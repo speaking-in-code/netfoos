@@ -26,7 +26,7 @@ public class WorkerPoolTest {
   public void callsShutdown() {
     Doubler.Factory factory = new Doubler.Factory();
     assertEquals(0, factory.shutdownCount.get());
-    WorkerPool<Integer, String> pool = WorkerPool.create(4, new Doubler.Factory());
+    WorkerPool<Integer, String> pool = WorkerPool.create(4, factory);
     pool.parallelDo(ImmutableList.of(1));
     assertEquals(4, factory.shutdownCount.get());
   }

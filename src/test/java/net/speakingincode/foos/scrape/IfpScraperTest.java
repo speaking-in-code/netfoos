@@ -21,7 +21,7 @@ public class IfpScraperTest {
   
   @AfterClass
   public static void after() throws Exception {
-    //scraper.shutdown();
+    scraper.shutdown();
   }
   
   @Test

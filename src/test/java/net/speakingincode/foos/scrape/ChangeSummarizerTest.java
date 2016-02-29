@@ -10,6 +10,11 @@ import net.speakingincode.foos.scrape.ChangeSummarizer;
 import net.speakingincode.foos.scrape.Player;
 
 public class ChangeSummarizerTest {
+  
+  private Player.Builder emptyBuilder() {
+    return Player.builder().newBasePoints(0).oldBasePoints(0);
+  }
+  
   @Test
   public void testEmptyInput() {
     ChangeSummarizer summarizer = new ChangeSummarizer(ImmutableList.<Player>of());
@@ -19,8 +24,8 @@ public class ChangeSummarizerTest {
   @Test
   public void testNoChange() {
     ChangeSummarizer summarizer = new ChangeSummarizer(ImmutableList.of(
-        Player.builder().name("Alice").oldPoints(600).newPoints(600).build(),
-        Player.builder().name("Bob").oldPoints(600).newPoints(600).build()
+        emptyBuilder().name("Alice").oldPoints(600).newPoints(600).build(),
+        emptyBuilder().name("Bob").oldPoints(600).newPoints(600).build()
         ));
     assertEquals("", summarizer.getTopPlayerSummary());
   }
@@ -28,7 +33,7 @@ public class ChangeSummarizerTest {
   @Test
   public void testPointsIncrease() {
     ChangeSummarizer summarizer = new ChangeSummarizer(ImmutableList.of(
-        Player.builder().name("Alice").oldPoints(600).newPoints(650).build()
+        emptyBuilder().name("Alice").oldPoints(600).newPoints(650).build()
         ));
     assertEquals("1st: Alice: 650 (+50)\n", summarizer.getTopPlayerSummary());
   }
@@ -36,7 +41,7 @@ public class ChangeSummarizerTest {
   @Test
   public void testPointsDecrease() {
     ChangeSummarizer summarizer = new ChangeSummarizer(ImmutableList.of(
-        Player.builder().name("Alice").oldPoints(600).newPoints(550).build()
+        emptyBuilder().name("Alice").oldPoints(600).newPoints(550).build()
         ));
     assertEquals("1st: Alice: 550 (-50)\n", summarizer.getTopPlayerSummary());
   }
@@ -44,8 +49,8 @@ public class ChangeSummarizerTest {
   @Test
   public void testSecondPlace() {
     ChangeSummarizer summarizer = new ChangeSummarizer(ImmutableList.of(
-        Player.builder().name("Alice").oldPoints(600).newPoints(550).build(),
-        Player.builder().name("Bob").oldPoints(500).newPoints(525).build()
+        emptyBuilder().name("Alice").oldPoints(600).newPoints(550).build(),
+        emptyBuilder().name("Bob").oldPoints(500).newPoints(525).build()
         ));
     assertEquals(
         "1st: Alice: 550 (-50)\n" +
@@ -56,8 +61,8 @@ public class ChangeSummarizerTest {
   @Test
   public void testFirstPlaceTie() {
     ChangeSummarizer summarizer = new ChangeSummarizer(ImmutableList.of(
-        Player.builder().name("Alice").oldPoints(600).newPoints(550).build(),
-        Player.builder().name("Bob").oldPoints(500).newPoints(550).build()
+        emptyBuilder().name("Alice").oldPoints(600).newPoints(550).build(),
+        emptyBuilder().name("Bob").oldPoints(500).newPoints(550).build()
         ));
     assertEquals(
         "1st: Alice: 550 (-50)\n" +
@@ -68,9 +73,9 @@ public class ChangeSummarizerTest {
   @Test
   public void testFirstPlaceTieWithThird() {
     ChangeSummarizer summarizer = new ChangeSummarizer(ImmutableList.of(
-        Player.builder().name("Alice").oldPoints(600).newPoints(550).build(),
-        Player.builder().name("Bob").oldPoints(500).newPoints(550).build(),
-        Player.builder().name("Claire").oldPoints(400).newPoints(540).build()
+        emptyBuilder().name("Alice").oldPoints(600).newPoints(550).build(),
+        emptyBuilder().name("Bob").oldPoints(500).newPoints(550).build(),
+        emptyBuilder().name("Claire").oldPoints(400).newPoints(540).build()
 
         ));
     assertEquals(
@@ -83,10 +88,9 @@ public class ChangeSummarizerTest {
   @Test
   public void testThreeWayTie() {
     ChangeSummarizer summarizer = new ChangeSummarizer(ImmutableList.of(
-        Player.builder().name("Alice").oldPoints(600).newPoints(550).build(),
-        Player.builder().name("Bob").oldPoints(500).newPoints(550).build(),
-        Player.builder().name("Claire").oldPoints(400).newPoints(550).build()
-
+        emptyBuilder().name("Alice").oldPoints(600).newPoints(550).build(),
+        emptyBuilder().name("Bob").oldPoints(500).newPoints(550).build(),
+        emptyBuilder().name("Claire").oldPoints(400).newPoints(550).build()
         ));
     assertEquals(
         "1st: Alice: 550 (-50)\n" +
@@ -98,8 +102,8 @@ public class ChangeSummarizerTest {
   @Test
   public void testRankChange() {
     ChangeSummarizer summarizer = new ChangeSummarizer(ImmutableList.of(
-        Player.builder().name("Alice").oldPoints(600).newPoints(500).build(),
-        Player.builder().name("Bob").oldPoints(500).newPoints(525).build()
+        emptyBuilder().name("Alice").oldPoints(600).newPoints(500).build(),
+        emptyBuilder().name("Bob").oldPoints(500).newPoints(525).build()
         ));
     assertEquals(
         "1st: Bob: 525 (+25, old rank: 2nd)\n" +

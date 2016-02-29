@@ -22,7 +22,7 @@ public class SpreadsheetOutputTest {
         "Last\tFirst\tPoints\n" +
         "Alpha\tAlice\t500\n",
         new SpreadsheetOutput(ImmutableList.of(
-            Player.builder().name("Alpha, Alice").oldPoints(0).newPoints(500).build()
+            emptyBuilder().name("Alpha, Alice").oldPoints(0).newPoints(500).build()
         )).getOutput());
   }
   
@@ -33,8 +33,12 @@ public class SpreadsheetOutputTest {
         "Alpha\tAlice\t500\n" +
         "Beta\tBob\t499\n",
         new SpreadsheetOutput(ImmutableList.of(
-            Player.builder().name("Alpha, Alice").oldPoints(0).newPoints(500).build(),
-            Player.builder().name("Beta, Bob").oldPoints(0).newPoints(499).build()
+            emptyBuilder().name("Alpha, Alice").oldPoints(0).newPoints(500).build(),
+            emptyBuilder().name("Beta, Bob").oldPoints(0).newPoints(499).build()
         )).getOutput());
+  }
+  
+  private Player.Builder emptyBuilder() {
+    return Player.builder().newBasePoints(0).oldBasePoints(0);
   }
 }
