@@ -1,29 +1,28 @@
-# README #
-
-This README would normally document whatever steps are necessary to get your application up and running.
+# Netfoos Tournament Director Automation #
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+These tools automate some tournament director tasks, such as
+
+1. Getting a table fo results for the most recent tournament.
+1. Updating local points based on recent results.
+1. Updating local base points based on IFP changes.
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Maven (https://maven.apache.org) is used for software development. Install
+it if you don't have it already.
 
-### Contribution guidelines ###
+Next, create a file ~/.netfoosrc. This holds the username and password for
+your netfoos account. Example:
 
-* Writing tests
-* Code review
-* Other guidelines
+        username: zx4387
+        password: deadbar
 
-### Who do I talk to? ###
+Compile, test, and install the software:
 
-* Repo owner or admin
-* Other community or team contact
+        mvn install
+
+To use the software to get tournament results:
+
+        ./netfoos-localpoints
