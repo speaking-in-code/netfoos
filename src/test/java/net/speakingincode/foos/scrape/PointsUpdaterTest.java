@@ -39,7 +39,7 @@ public class PointsUpdaterTest {
     Player p = emptyBuilder()
         .name("?, Steve")
         .oldPoints(0)
-        .newPoints(450)
+        .newPoints(791)
         .build();
     updater.beginUpdate();
     updater.updatePoints(p);
@@ -50,12 +50,12 @@ public class PointsUpdaterTest {
     Player p1 = emptyBuilder()
         .name("?, Steve")
         .oldPoints(0)
-        .newPoints(499)
+        .newPoints(791)
         .build();
     Player p2 = emptyBuilder()
         .name(", Sterling")
         .oldPoints(0)
-        .newPoints(501)
+        .newPoints(643)
         .build();
     updater.beginUpdate();
     updater.updatePoints(p1);

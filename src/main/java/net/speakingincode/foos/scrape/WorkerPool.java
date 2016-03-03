@@ -21,7 +21,6 @@ import net.speakingincode.foos.scrape.Worker.Factory;
  */
 public class WorkerPool<X, Y> {
   private final int threads;
-  private final ExecutorService executor;
   private final Factory<X, Y> workerFactory;
   
   public static <X, Y>  WorkerPool<X, Y> create(int threads, Worker.Factory<X, Y> factory) {
@@ -30,7 +29,6 @@ public class WorkerPool<X, Y> {
   
   private WorkerPool(int threads, Worker.Factory<X, Y> workerFactory) {
     this.threads = threads;
-    executor = Executors.newScheduledThreadPool(threads);
     this.workerFactory = workerFactory;
   }
   
@@ -39,15 +37,19 @@ public class WorkerPool<X, Y> {
     Map<X, Y> outputs = Maps.newConcurrentMap();
     workQueue.addAll(inputs);
     List<Future<Void>> pendingTasks = Lists.newArrayList();
-    for (int i = 0; i < threads; ++i) {
-      pendingTasks.add(executor.submit(new RunningWorker(workQueue, outputs)));
-    }
-    for (Future<Void> pendingTask : pendingTasks) {
-      try {
-        pendingTask.get();
-      } catch (InterruptedException | ExecutionException e) {
-        throw new RuntimeException(e);
+    ExecutorService executor = Executors.newScheduledThreadPool(threads);
+    try {
+      for (int i = 0; i < threads; ++i) {
+        pendingTasks.add(executor.submit(new RunningWorker(workQueue, outputs)));
       }
+      for (Future<Void> pendingTask : pendingTasks) {
+        pendingTask.get();
+
+      }
+    } catch (InterruptedException | ExecutionException e) {
+      throw new RuntimeException(e);
+    } finally {
+      executor.shutdown();
     }
     return ImmutableMap.copyOf(outputs);
   }
