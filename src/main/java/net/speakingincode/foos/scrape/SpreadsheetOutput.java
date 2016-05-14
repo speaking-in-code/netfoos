@@ -20,8 +20,7 @@ import com.google.gson.JsonObject;
 public class SpreadsheetOutput {
   private static final Logger log = Logger.getLogger(SpreadsheetOutput.class.getName());
   private static final String SHEETS_UPDATE_SCRIPT_URL =
-      "https://script.google.com/macros/s/"
-      + "AKfycbwKTKVjG59lRGZZ1HJeSSUZD26lRlEKwAMl6Sgo0RrtgwMN3MN-/exec";
+  "https://script.google.com/macros/s/AKfycbzENm8io5zdMM8WoB1uG0eR8tW9gGtmcLGTaZvsS1gbPvuaWoI/exec";
   
   private static final Gson gson = new Gson();
   private static final Splitter nameSplitter = Splitter.on(',').trimResults();
@@ -32,6 +31,7 @@ public class SpreadsheetOutput {
   }
   
   public void publishToGoogleSheets() throws IOException {
+    // Each row in the spreadsheet has rank, name, and points.
     List<List<String>> spreadsheetData = Lists.newArrayList();
     int rank = 1;
     for (Player player : byPoints) {
@@ -44,11 +44,13 @@ public class SpreadsheetOutput {
         .bodyString(gson.toJson(req), ContentType.APPLICATION_JSON)
         .execute()
         .returnResponse();
+    // For a successful result, app script returns a 302 to the actual content. Fetch that.
     Header location = result.getFirstHeader("Location");
     if (location != null) {
       Content actualContent = Request.Get(location.getValue()).execute().returnContent();
       log.info("Result: " + actualContent.asString());
     } else {
+      // Failures are returned inline.
       log.info("Result: " + EntityUtils.toString(result.getEntity()));
     }
   }
