@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Splitter;
@@ -31,6 +32,11 @@ public class TournamentScraper {
     checkPageContains("Admin Modules", "NetFoos Admin Modules");
     driver.findElement(By.linkText("ITSF_Results_Export_1_0")).click();
     checkPageContains("Results Export Tournament List", "ITSF Results Export 1.0");
+    // TODO: figure out how to make selecting certain dates configurable.
+    /*
+    Select tournamentList = new Select(driver.findElement(By.name("nfts_mod_1")));
+    tournamentList.selectByVisibleText("Tuesday DYP (2016-03-29)");
+    */
     driver.findElement(By.tagName("form")).submit();
     checkPageContains("Results Export Event List", "Click Event to Export");
     List<String> resultLinks = Lists.newArrayList();

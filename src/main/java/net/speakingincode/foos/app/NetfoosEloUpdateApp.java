@@ -14,10 +14,10 @@ import com.google.common.io.Files;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import net.speakingincode.foos.scrape.ChangeSummarizer;
 import net.speakingincode.foos.scrape.Credentials;
+import net.speakingincode.foos.scrape.EloPointsCalculator;
 import net.speakingincode.foos.scrape.NetfoosLogin;
 import net.speakingincode.foos.scrape.NetfoosUpdater;
 import net.speakingincode.foos.scrape.Player;
-import net.speakingincode.foos.scrape.EloPointsCalculator;
 import net.speakingincode.foos.scrape.PointsUpdater.Mode;
 import net.speakingincode.foos.scrape.SpreadsheetOutput;
 
@@ -38,20 +38,16 @@ public class NetfoosEloUpdateApp {
       login.login();
       ImmutableList<Player> players = new EloPointsCalculator(driver).getPoints();
       String summary = new ChangeSummarizer(players).getChangedPlayerSummary();
-      logger.info("Writing change summary to : "+ getChangeSummaryPath());
+      logger.info("Writing change summary to : " + getChangeSummaryPath());
       Files.write(summary, new File(getChangeSummaryPath()), Charsets.UTF_8);
-      String path = getSpreadsheetOutputPath();
-      logger.info("Writing all points " + path);
-      String sheet = new SpreadsheetOutput(players).getOutput();
-      Files.write(sheet, new File(path), Charsets.UTF_8);
+      logger.info("Publishing to Google Sheets.");
+      SpreadsheetOutput spreadsheet = new SpreadsheetOutput(players);
+      spreadsheet.publishToGoogleSheets();
       new NetfoosUpdater(credentials, Mode.LOCAL).runUpdates(players);
+      logger.info("Change summary in : " + getChangeSummaryPath());
     } finally {
       driver.close();
     }
-  }
-
-  private static String getSpreadsheetOutputPath() {
-    return System.getenv("HOME") + "/Desktop/points.tsv";
   }
   
   private static String getChangeSummaryPath() {

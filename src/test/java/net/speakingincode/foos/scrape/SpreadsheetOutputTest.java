@@ -6,9 +6,6 @@ import org.junit.Test;
 
 import com.google.common.collect.ImmutableList;
 
-import net.speakingincode.foos.scrape.Player;
-import net.speakingincode.foos.scrape.SpreadsheetOutput;
-
 public class SpreadsheetOutputTest {
   @Test
   public void emptyInput() {
@@ -37,6 +34,18 @@ public class SpreadsheetOutputTest {
             emptyBuilder().name("Beta, Bob").oldPoints(0).newPoints(499).build()
         )).getOutput());
   }
+  
+  // This test modifies production data at the moment. I should move it to to a test
+  // spreadsheet.
+  /*
+  @Test
+  public void publicSheetUpdate() throws IOException {
+    new SpreadsheetOutput(ImmutableList.of(
+        emptyBuilder().name("Alpha, Alice").oldPoints(0).newPoints(500).build(),
+        emptyBuilder().name("Beta, Bob").oldPoints(0).newPoints(499).build()
+    )).publishToGoogleSheets();
+  }
+  */
   
   private Player.Builder emptyBuilder() {
     return Player.builder().newBasePoints(0).oldBasePoints(0);
