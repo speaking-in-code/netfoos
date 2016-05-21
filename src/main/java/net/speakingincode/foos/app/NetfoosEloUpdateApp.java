@@ -44,7 +44,11 @@ public class NetfoosEloUpdateApp {
       SpreadsheetOutput spreadsheet = new SpreadsheetOutput(players);
       spreadsheet.publishToGoogleSheets();
       new NetfoosUpdater(credentials, Mode.LOCAL).runUpdates(players);
-      logger.info("Change summary in : " + getChangeSummaryPath());
+      StringBuilder out = new StringBuilder();
+      out.append("Local points update:\n");
+      out.append(Files.toString(new File(getChangeSummaryPath()), Charsets.UTF_8));
+      out.append("Full points book in " + spreadsheet.getDestinationUrl() + ".");
+      logger.info(out.toString());
     } finally {
       driver.close();
     }

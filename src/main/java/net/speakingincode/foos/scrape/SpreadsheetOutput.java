@@ -19,8 +19,12 @@ import com.google.gson.JsonObject;
 
 public class SpreadsheetOutput {
   private static final Logger log = Logger.getLogger(SpreadsheetOutput.class.getName());
+  
   private static final String SHEETS_UPDATE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbzENm8io5zdMM8WoB1uG0eR8tW9gGtmcLGTaZvsS1gbPvuaWoI/exec";
+  
+  private static final String SPREADSHEET_URL =
+      "https://docs.google.com/spreadsheets/d/1LUAH8ZzsfN7VQwS27pLzS-0ksiAoxfgWXTlRS30j9pQ/pubhtml";
   
   private static final Gson gson = new Gson();
   private static final Splitter nameSplitter = Splitter.on(',').trimResults();
@@ -28,6 +32,10 @@ public class SpreadsheetOutput {
   
   public SpreadsheetOutput(List<Player> player) {
     byPoints = Sorting.copySortedByNewPoints(player);
+  }
+  
+  public String getDestinationUrl() {
+    return SPREADSHEET_URL;
   }
   
   public void publishToGoogleSheets() throws IOException {
