@@ -19,7 +19,7 @@ import net.speakingincode.foos.scrape.NetfoosLogin;
 import net.speakingincode.foos.scrape.NetfoosUpdater;
 import net.speakingincode.foos.scrape.Player;
 import net.speakingincode.foos.scrape.PointsUpdater.Mode;
-import net.speakingincode.foos.scrape.SpreadsheetOutput;
+import net.speakingincode.foos.scrape.PointsBook;
 
 /**
  * Updates points.
@@ -29,26 +29,38 @@ public class NetfoosEloUpdateApp {
   private static Credentials credentials;
   
   public static void main(String[] args) throws IOException {
+    credentials = Credentials.load();
+    ImmutableList<Player> netfoosPlayers = recalculatePlayerPoints();
+
+    logger.info("Updating netfoos.");
+    new NetfoosUpdater(credentials, Mode.LOCAL).runUpdates(netfoosPlayers);
+    
+    logger.info("Publishing to Google Sheets.");
+    PointsBook oldPoints = PointsBook.load();
+    PointsBook newPoints = oldPoints.updateAllPlayers(netfoosPlayers);
+
+    // Get the player update summary.
+    ChangeSummarizer changes = new ChangeSummarizer(oldPoints.getPlayers(), newPoints.getPlayers());
+    String summary = changes.getChangedPlayerSummary();
+    logger.info("Writing change summary to : " + getChangeSummaryPath());
+    Files.write(summary, new File(getChangeSummaryPath()), Charsets.UTF_8);
+    
+    // Write update to console.
+    StringBuilder out = new StringBuilder();
+    out.append("Local points update:\n");
+    out.append(summary);
+    out.append("Full points book in " + newPoints.getDestinationUrl() + ".");
+    logger.info(out.toString());
+  }
+  
+  private static ImmutableList<Player> recalculatePlayerPoints() throws IOException {
+    ChromeDriverManager.getInstance().setup();
     WebDriver driver = null;
     try {
-      ChromeDriverManager.getInstance().setup();
-      credentials = Credentials.load();
       driver = new ChromeDriver();
       NetfoosLogin login = new NetfoosLogin(credentials, driver);
       login.login();
-      ImmutableList<Player> players = new EloPointsCalculator(driver).getPoints();
-      String summary = new ChangeSummarizer(players).getChangedPlayerSummary();
-      logger.info("Writing change summary to : " + getChangeSummaryPath());
-      Files.write(summary, new File(getChangeSummaryPath()), Charsets.UTF_8);
-      logger.info("Publishing to Google Sheets.");
-      SpreadsheetOutput spreadsheet = new SpreadsheetOutput(players);
-      spreadsheet.publishToGoogleSheets();
-      new NetfoosUpdater(credentials, Mode.LOCAL).runUpdates(players);
-      StringBuilder out = new StringBuilder();
-      out.append("Local points update:\n");
-      out.append(Files.toString(new File(getChangeSummaryPath()), Charsets.UTF_8));
-      out.append("Full points book in " + spreadsheet.getDestinationUrl() + ".");
-      logger.info(out.toString());
+      return new EloPointsCalculator(driver).getPoints();
     } finally {
       driver.close();
     }

@@ -21,6 +21,11 @@ public class EloPointsCalculator {
     this.driver = driver;
   }
   
+  /**
+   * Recalculates points for all players.
+   * 
+   * @return points for all players in the netfoos database.
+   */
   public ImmutableList<Player> getPoints() throws IOException {
     driver.findElement(By.linkText("Admin Modules")).click();
     String page = driver.getPageSource();

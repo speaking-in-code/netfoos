@@ -1,25 +1,75 @@
 package net.speakingincode.foos.scrape;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Lists;
 
 /**
  * Summarizes changes in player points and ranks.
  */
 public class ChangeSummarizer {
   private static final int MAX_RANK_TO_SHOW = 100;
+  private final ImmutableList<Player> changed;
   private final ImmutableList<Player> playersByOldPoints;
   private final ImmutableList<Player> playersByNewPoints;
   private final ImmutableMap<Player, Integer> oldRanks;
   private final ImmutableMap<Player, Integer> newRanks;
 
-  public ChangeSummarizer(List<Player> players) {
-    playersByOldPoints = Sorting.copySortedByOldPoints(players);
-    playersByNewPoints = Sorting.copySortedByNewPoints(players);
+  public ChangeSummarizer(Collection<PointsBookPlayer> oldPoints,
+      Collection<PointsBookPlayer> newPoints) {
+    ImmutableMap<String, PointsBookPlayer> oldPlayers = makePlayerMap(oldPoints);
+    ImmutableMap<String, PointsBookPlayer> newPlayers = makePlayerMap(newPoints);
+
+    List<Player> locals = Lists.newArrayList();
+    for (Map.Entry<String, PointsBookPlayer> player : newPlayers.entrySet()) {
+      if (player.getValue().getLocal() == 0) {
+        continue;
+      }
+      Player.Builder merged = Player.builder()
+          .name(player.getKey())
+          .oldBasePoints(0)
+          .newBasePoints(0)
+          .newPoints(player.getValue().getPoints());
+      PointsBookPlayer oldPlayer = oldPlayers.get(player.getKey());
+      if (oldPlayer == null) {
+        merged.oldPoints(0);
+      } else {
+        merged.oldPoints(oldPlayer.getPoints());
+      }
+      locals.add(merged.build());
+    }
+
+    playersByOldPoints = Sorting.copySortedByOldPoints(locals);
+    playersByNewPoints = Sorting.copySortedByNewPoints(locals);
     oldRanks = getPlayerToRank(playersByOldPoints, true);
     newRanks = getPlayerToRank(playersByNewPoints, false);
+    ImmutableList.Builder<Player> changed = ImmutableList.builder();
+    for (Player player : playersByNewPoints) {
+      if (player.oldPoints() != player.newPoints()) {
+        changed.add(player);
+      }
+    }
+    this.changed = changed.build();
+  }
+  
+  private ImmutableMap<String, PointsBookPlayer> makePlayerMap(
+      Collection<PointsBookPlayer> players) {
+    ImmutableMap.Builder<String, PointsBookPlayer> nameToPlayer = ImmutableMap.builder();
+    for (PointsBookPlayer player : players) {
+      nameToPlayer.put(player.getName(), player);
+    }
+    return nameToPlayer.build();
+  }
+
+  /**
+   * @return a list of all players with points changed.
+   */
+  public ImmutableList<Player> getChanged() {
+    return changed;
   }
   
   /**
