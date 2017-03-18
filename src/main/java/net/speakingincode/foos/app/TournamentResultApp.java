@@ -18,7 +18,12 @@ import net.speakingincode.foos.scrape.TournamentScraper;
 public class TournamentResultApp {
   public static void main(String[] args) throws IOException {
     TournamentScraper scraper = new TournamentScraper(new HtmlUnitDriver(), Credentials.load());
+    //ChromeDriverManager.getInstance().setup();
+    //TournamentScraper scraper = new TournamentScraper(new ChromeDriver(), Credentials.load());
+
     TournamentResults results = scraper.getRecentResults();
+    //TournamentResults results = scraper.getOneResult("Tuesday DYP (2016-08-30)");
+
     List<String> out = Lists.newArrayList();
     out.add("Results from " + results.events().get(0).tournamentName() + ":");
     out.add("");

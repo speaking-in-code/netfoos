@@ -2,6 +2,7 @@ package net.speakingincode.foos.scrape;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,12 +11,14 @@ import org.openqa.selenium.support.ui.Select;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Splitter;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 import net.speakingincode.foos.scrape.TournamentResults.EventResults;
 import net.speakingincode.foos.scrape.TournamentResults.Finish;
 
 public class TournamentScraper {
+  private static final Logger log = Logger.getLogger(TournamentScraper.class.getName());
   private static final Splitter lineSplitter = Splitter.on('\n').trimResults().omitEmptyStrings();
   private static final Splitter tabSplitter = Splitter.on('\t');
   private final WebDriver driver;
@@ -32,11 +35,21 @@ public class TournamentScraper {
     checkPageContains("Admin Modules", "NetFoos Admin Modules");
     driver.findElement(By.linkText("ITSF_Results_Export_1_0")).click();
     checkPageContains("Results Export Tournament List", "ITSF Results Export 1.0");
-    // TODO: figure out how to make selecting certain dates configurable.
-    /*
+
     Select tournamentList = new Select(driver.findElement(By.name("nfts_mod_1")));
-    tournamentList.selectByVisibleText("Tuesday DYP (2016-03-29)");
-    */
+    String mostRecent = tournamentList.getOptions().get(0).getText();
+    return getOneResult(mostRecent);
+  }
+  
+  public TournamentResults getOneResult(String name) throws IOException {
+    new NetfoosLogin(credentials, driver).login();
+    log.info("Looking for tournament: " + name);
+    driver.findElement(By.linkText("Admin Modules")).click();
+    checkPageContains("Admin Modules", "NetFoos Admin Modules");
+    driver.findElement(By.linkText("ITSF_Results_Export_1_0")).click();
+    checkPageContains("Results Export Tournament List", "ITSF Results Export 1.0");
+    Select tournamentList = new Select(driver.findElement(By.name("nfts_mod_1")));
+    tournamentList.selectByVisibleText(name);
     driver.findElement(By.tagName("form")).submit();
     checkPageContains("Results Export Event List", "Click Event to Export");
     List<String> resultLinks = Lists.newArrayList();
@@ -53,6 +66,30 @@ public class TournamentScraper {
       tournament.addEvent(eventResults);
     }
     return tournament.build();
+  }
+  
+  public ImmutableList<TournamentResults> getAllResults() throws IOException {
+    new NetfoosLogin(credentials, driver).login();
+    driver.findElement(By.linkText("Admin Modules")).click();
+    checkPageContains("Admin Modules", "NetFoos Admin Modules");
+    driver.findElement(By.linkText("ITSF_Results_Export_1_0")).click();
+    checkPageContains("Results Export Tournament List", "ITSF Results Export 1.0");
+
+    Select tournamentList = new Select(driver.findElement(By.name("nfts_mod_1")));
+    List<String> names = Lists.newArrayList();
+    for (WebElement element : tournamentList.getOptions()) {
+      if (element.getText().startsWith("Tuesday DYP")) {
+        names.add(element.getText());
+      }
+    }
+    ImmutableList.Builder<TournamentResults> results = ImmutableList.builder();
+    int count = 0;
+    for (String name : names) {
+      ++count;
+      log.info(String.format("Scraping %d/%d", count, names.size()));
+      results.add(getOneResult(name));
+    }
+    return results.build();
   }
   
   @VisibleForTesting

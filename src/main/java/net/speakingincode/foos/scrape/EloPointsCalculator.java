@@ -58,6 +58,10 @@ public class EloPointsCalculator {
     WebElement defaultPoints = driver.findElement(By.id("nfts_mod_4"));
     defaultPoints.clear();
     defaultPoints.sendKeys("700");
+    // K value. Leave blank so that we can use K values from individual events
+    // instead.
+    WebElement kValue = driver.findElement(By.id("nfts_mod_6"));
+    kValue.clear();
     // Minimum points a player can have.
     WebElement cutoffPoints = driver.findElement(By.id("nfts_mod_8"));
     cutoffPoints.clear();
