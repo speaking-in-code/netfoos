@@ -26,19 +26,19 @@ public class ChangeSummarizer {
 
     List<Player> locals = Lists.newArrayList();
     for (Map.Entry<String, PointsBookPlayer> player : newPlayers.entrySet()) {
-      if (player.getValue().getLocal() == 0) {
+      if (player.getValue().local() == 0) {
         continue;
       }
       Player.Builder merged = Player.builder()
           .name(player.getKey())
           .oldBasePoints(0)
           .newBasePoints(0)
-          .newPoints(player.getValue().getPoints());
+          .newPoints(player.getValue().points());
       PointsBookPlayer oldPlayer = oldPlayers.get(player.getKey());
       if (oldPlayer == null) {
         merged.oldPoints(0);
       } else {
-        merged.oldPoints(oldPlayer.getPoints());
+        merged.oldPoints(oldPlayer.points());
       }
       locals.add(merged.build());
     }
@@ -60,7 +60,7 @@ public class ChangeSummarizer {
       Collection<PointsBookPlayer> players) {
     ImmutableMap.Builder<String, PointsBookPlayer> nameToPlayer = ImmutableMap.builder();
     for (PointsBookPlayer player : players) {
-      nameToPlayer.put(player.getName(), player);
+      nameToPlayer.put(player.name(), player);
     }
     return nameToPlayer.build();
   }

@@ -8,11 +8,11 @@ import com.google.common.collect.ImmutableList;
 
 public class ChangeSummarizerTest {
   private PointsBookPlayer player(String name, int points) {
-    PointsBookPlayer p = new PointsBookPlayer();
-    p.setName(name);
-    p.setPoints(points);
-    p.setLocal(1);
-    return p;
+    return PointsBookPlayer.builder()
+        .setName(name)
+        .setPoints(points)
+        .setLocal(1)
+        .build();
   }
   
   @Test

@@ -1,5 +1,6 @@
 package net.speakingincode.foos.scrape;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
@@ -32,7 +33,7 @@ public class WorkerPool<X, Y> {
     this.workerFactory = workerFactory;
   }
   
-  public ImmutableMap<X, Y> parallelDo(List<X> inputs) {
+  public ImmutableMap<X, Y> parallelDo(Collection<X> inputs) {
     Queue<X> workQueue = Queues.newConcurrentLinkedQueue();
     Map<X, Y> outputs = Maps.newConcurrentMap();
     workQueue.addAll(inputs);
@@ -44,7 +45,6 @@ public class WorkerPool<X, Y> {
       }
       for (Future<Void> pendingTask : pendingTasks) {
         pendingTask.get();
-
       }
     } catch (InterruptedException | ExecutionException e) {
       throw new RuntimeException(e);

@@ -1,6 +1,6 @@
 var kPointsBookUrl = "https://docs.google.com/spreadsheets/d/1LUAH8ZzsfN7VQwS27pLzS-0ksiAoxfgWXTlRS30j9pQ/edit";
 var kSheetName = "PointsBook";
-var kPlayerRange = "A2:D1000";
+var kPlayerRange = "A2:E1000";
 
 function doGet(req) {
   var pointsBook = SpreadsheetApp.openByUrl(kPointsBookUrl);
@@ -15,7 +15,8 @@ function doGet(req) {
     resp.players.push({
       "name": range[row][1],
       "points": emptyToZero(range[row][2]),
-      "local": emptyToZero(range[row][3])
+      "local": emptyToZero(range[row][3]),
+      "ifpId": range[row][4]
     });
   }
   return ContentService.createTextOutput(JSON.stringify(resp));
@@ -32,13 +33,13 @@ function doPost(req) {
     var data = [];
     for (var i = 0; i < inputPoints.players.length; ++i) {
       var player = inputPoints.players[i];
-      data.push([ i + 1, player.name, player.points, player.local ]);
+      data.push([ i + 1, player.name, player.points, player.local, player.ifpId ]);
     }
     var pointsBook = SpreadsheetApp.openByUrl(kPointsBookUrl);
     var sheet = pointsBook.getSheetByName(kSheetName);
     sheet.getRange(kPlayerRange).clearContent();
     Logger.log("New data is " + data);
-    var range = sheet.getRange(/* startRow */ 2, /* startCol */ 1, /* numRows */ data.length, /* numColumns */ 4);
+    var range = sheet.getRange(/* startRow */ 2, /* startCol */ 1, /* numRows */ data.length, /* numColumns */ 5);
     range.setValues(data);
     return ContentService.createTextOutput("Completed response");
   } catch (e) {
@@ -57,12 +58,20 @@ function testDoPost() {
       {
         "name": "Loffredo, Todd",
         "points": 7500,
-        "local": 0
+        "local": 0,
+        "ifpId": "TODD LOFFREDO (CA)",
       },
       {
         "name": "Spredeman, Tony",
         "points": 7000,
-        "local": 1
+        "local": 1,
+        "ifpId": "Tony SPREDEMAN (FL)"
+      },
+      {
+        "name": "Player, Test",
+        "points": 700,
+        "local": 1,
+        "ifpId": null
       }
      ]
   };

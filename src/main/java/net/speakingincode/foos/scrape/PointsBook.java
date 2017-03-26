@@ -18,6 +18,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 /**
  * Handles reads and writes of the points book spreadsheet.
@@ -29,13 +30,16 @@ public class PointsBook {
   private static final String SPREADSHEET_URL =
       "https://docs.google.com/spreadsheets/d/1LUAH8ZzsfN7VQwS27pLzS-0ksiAoxfgWXTlRS30j9pQ/pubhtml";
   
-  private static final Gson gson = new Gson();
+  private static final Gson gson = new GsonBuilder()
+      .registerTypeAdapterFactory(MyAdapterFactory.create())
+      .create();
+
   private final ImmutableMap<String, PointsBookPlayer> nameToPlayer;
   
   private PointsBook(PointsBookData pointsBook) {
     ImmutableMap.Builder<String, PointsBookPlayer> nameToPlayer = ImmutableMap.builder();
     for (PointsBookPlayer player : pointsBook.getPlayers()) {
-      nameToPlayer.put(player.getName(), player);
+      nameToPlayer.put(player.name(), player);
     }
     this.nameToPlayer = nameToPlayer.build();
   }
@@ -85,8 +89,9 @@ public class PointsBook {
    */
   public PointsBook updateAllPlayers(ImmutableList<Player> all) throws IOException {
     PointsBookData newData = getUpdate(all);
+    String input = gson.toJson(newData);
     String text = readScriptResponse(Request.Post(SHEETS_UPDATE_SCRIPT_URL)
-        .bodyString(gson.toJson(newData), ContentType.APPLICATION_JSON));
+        .bodyString(input, ContentType.APPLICATION_JSON));
     if (!text.equals("Completed response")) {
       throw new IOException(text);
     }
@@ -104,16 +109,21 @@ public class PointsBook {
   PointsBookData getUpdate(ImmutableList<Player> all) {    
     List<PointsBookPlayer> newData = Lists.newArrayList();
     for (Player player : all) {
-      PointsBookPlayer bookPlayer = new PointsBookPlayer();
-      bookPlayer.setName(player.name());
-      bookPlayer.setPoints(player.newPoints());
       PointsBookPlayer oldData = nameToPlayer.get(player.name());
-      if (oldData == null || oldData.getPoints() != player.newPoints()) {
+      PointsBookPlayer.Builder bookPlayer = null;
+      if (oldData != null) {
+        bookPlayer = oldData.toBuilder();
+      } else {
+         bookPlayer = PointsBookPlayer.builder();
+         bookPlayer.setName(player.name());
+      }
+      bookPlayer.setPoints(player.newPoints());
+      if (oldData == null || oldData.points() != player.newPoints()) {
         bookPlayer.setLocal(1);
       } else {
-        bookPlayer.setLocal(oldData.getLocal());
+        bookPlayer.setLocal(oldData.local());
       }
-      newData.add(bookPlayer);
+      newData.add(bookPlayer.build());
     }
     Collections.sort(newData, compareByPoints);
     PointsBookData data = new PointsBookData();
@@ -124,7 +134,7 @@ public class PointsBook {
   private static Comparator<PointsBookPlayer> compareByPoints = new Comparator<PointsBookPlayer>() {
     @Override
     public int compare(PointsBookPlayer o1, PointsBookPlayer o2) {
-      return o2.getPoints() - o1.getPoints();
+      return o2.points() - o1.points();
     }
   };
   

@@ -26,23 +26,29 @@ public class IfpScraperTest {
   
   @Test
   public void testScrapeTony() throws Exception {
-    int points = scraper.scrapePoints("Spredeman, Tony");
+    int points = scraper.scrapePoints("Tony SPREDEMAN");
     assertThat(points, greaterThan(6000));
   }
   
   @Test
   public void testScrapeMelissa() throws Exception {
-    int points = scraper.scrapePoints("Kegg, Melissa");
+    int points = scraper.scrapePoints("Melissa Kegg");
+    assertThat(points, greaterThan(1000));
+  }
+  
+  @Test
+  public void testScrapeAmbiguousNameWithState() throws Exception {
+    int points = scraper.scrapePoints("Paul Richards (CA)");
     assertThat(points, greaterThan(1000));
   }
   
   @Test
   public void testAmbiguousName() throws Exception {
-    assertEquals(0, scraper.scrapePoints("B, A"));
+    assertEquals(0, scraper.scrapePoints("A B"));
   }
   
   @Test
   public void testNoMatchingName() throws Exception {
-    assertEquals(0, scraper.scrapePoints("ZXXXL, ABBBA"));
+    assertEquals(0, scraper.scrapePoints("ABBBA ZXXXL"));
   }
 }

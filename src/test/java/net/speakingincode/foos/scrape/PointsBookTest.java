@@ -14,10 +14,11 @@ public class PointsBookTest {
   public void readFromString() throws IOException {
     PointsBook book = PointsBook.loadFromString("{\"players\":["
         + "{\"name\":\"Spredeman, Tony\",\"points\":6740,\"local\":0}]}");
-    PointsBookPlayer expected = new PointsBookPlayer();
-    expected.setName("Spredeman, Tony");
-    expected.setPoints(6740);
-    expected.setLocal(0);
+    PointsBookPlayer expected = PointsBookPlayer.builder()
+        .setName("Spredeman, Tony")
+        .setPoints(6740)
+        .setLocal(0)
+        .build();
     assertThat(book.getPointsBook().values(), contains(expected));
     assertThat(book.getPointsBook().get("Spredeman, Tony"), equalTo(expected));
   }
@@ -34,10 +35,11 @@ public class PointsBookTest {
         .newPoints(7000)
         .build();
     PointsBookData data = book.getUpdate(ImmutableList.of(tony));
-    PointsBookPlayer expected = new PointsBookPlayer();
-    expected.setName("Spredeman, Tony");
-    expected.setPoints(7000);
-    expected.setLocal(1);
+    PointsBookPlayer expected = PointsBookPlayer.builder()
+        .setName("Spredeman, Tony")
+        .setPoints(7000)
+        .setLocal(1)
+        .build();
     assertThat(data.getPlayers(), contains(expected));
   }
   
@@ -62,14 +64,16 @@ public class PointsBookTest {
         .newPoints(6740)
         .build();
     PointsBookData data = book.getUpdate(ImmutableList.of(todd, tony));
-    PointsBookPlayer expectedTony = new PointsBookPlayer();
-    expectedTony.setName("Spredeman, Tony");
-    expectedTony.setPoints(6740);
-    expectedTony.setLocal(0);
-    PointsBookPlayer expectedTodd = new PointsBookPlayer();
-    expectedTodd.setName("Loffredo, Todd");
-    expectedTodd.setPoints(7000);
-    expectedTodd.setLocal(1);
+    PointsBookPlayer expectedTony = PointsBookPlayer.builder()
+        .setName("Spredeman, Tony")
+        .setPoints(6740)
+        .setLocal(0)
+        .build();
+    PointsBookPlayer expectedTodd = PointsBookPlayer.builder()
+        .setName("Loffredo, Todd")
+        .setPoints(7000)
+        .setLocal(1)
+        .build();
     assertThat(data.getPlayers(), contains(expectedTodd, expectedTony));
 
   }

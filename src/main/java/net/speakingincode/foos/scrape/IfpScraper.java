@@ -3,6 +3,7 @@ package net.speakingincode.foos.scrape;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
+import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,6 +19,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 
 public class IfpScraper implements Worker<String, Integer> {
   private static final String POINTS_URL =
@@ -26,14 +28,17 @@ public class IfpScraper implements Worker<String, Integer> {
   private static final int LOAD_FINISH_MILLIS = 2000;
   private static final int POLL_MILLIS = 100;
   private static final Logger logger = Logger.getLogger(IfpScraper.class.getName());
-  private static final Splitter nameSplitter = Splitter.on(',').trimResults();
   private static final Splitter lineSplitter = Splitter.on('\n').trimResults();
   private static final Pattern pointsPattern =
       Pattern.compile("\\d+/(\\d+) Singles/Doubles Points");
   private static final By DROP_DOWN = By.id("R_DropDown");
-  private static final By FIRST_ITEM = By.id("R_c0");
-  private static final By SECOND_ITEM = By.id("R_c1");
   private static Factory factory = new Factory();
+  
+  // Matches stuff like this:
+  //   Paul Richards
+  //   Paul Richards (CA)
+  // If the longer version is there, only the first part is returned.
+  private static final Pattern WITHOUT_STATE = Pattern.compile("([^(]*)( \\(.*\\))?");
   
   private static class Factory implements Worker.Factory<String, Integer> {
     @Override
@@ -46,16 +51,26 @@ public class IfpScraper implements Worker<String, Integer> {
     return factory;
   }
   
-  private final WebDriver driver;
+  private WebDriver driver;
   private final FluentWait<WebDriver> wait;
 
   @Override
   public void shutdown() {
-    driver.close();
+    if (driver != null) {
+      driver.close();
+      driver = null;
+    }
   }
   
   public IfpScraper() {
     driver = new ChromeDriver();
+    // Try to avoid leaking a chrome process.
+    Runtime.getRuntime().addShutdownHook(new Thread() {
+      @Override
+      public void run() {
+        shutdown();
+      }
+    });
     wait = new FluentWait<WebDriver>(driver)
         .withTimeout(INIT_LOAD_DELAY_SECONDS, TimeUnit.SECONDS)
         .pollingEvery(POLL_MILLIS, TimeUnit.MILLISECONDS)
@@ -67,9 +82,22 @@ public class IfpScraper implements Worker<String, Integer> {
     return scrapePoints(playerName);
   }
   
-  public int scrapePoints(String playerName) {
-    playerName = toIfpName(playerName);
-    logger.info("Loading IFP Points for " + playerName);
+  @VisibleForTesting
+  static MatchResult matchFullText(String fullText) {
+    Matcher m = WITHOUT_STATE.matcher(fullText);
+    if (!m.matches()) {
+      return null;
+    }
+    return m.toMatchResult();
+  }
+  
+  public int scrapePoints(String fullText) {
+    String playerName = fullText;
+    MatchResult match = matchFullText(fullText);
+    if (match == null) {
+      throw new IllegalStateException("No match for " + fullText);
+    }
+    playerName = match.group(1);
     driver.get(POINTS_URL);
     if (!driver.getTitle().contains("Player Profile & Registration")) {
       return -1;
@@ -81,11 +109,10 @@ public class IfpScraper implements Worker<String, Integer> {
     }
     input.sendKeys(playerName);
     try {
-      WebElement player = waitForDropDownToStabilize();
+      WebElement player = waitForDropDownToStabilize(fullText);
       player.click();
       WebElement rating = waitForLoad(By.id("lblRating"));
       int points = parsePoints(rating.getText());
-      logger.info(playerName + ": " + points);
       return points;
     } catch (AmbiguousPlayerNameException e) {
       logger.info("Ambiguous: " + playerName + ": 0");
@@ -112,7 +139,7 @@ public class IfpScraper implements Worker<String, Integer> {
    * @throws AmbiguousPlayerNameException 
    * @throws NoPlayerMatchException 
    */
-  private WebElement waitForDropDownToStabilize()
+  private WebElement waitForDropDownToStabilize(String fullMatch)
       throws AmbiguousPlayerNameException, NoPlayerMatchException {
     wait.until(new Predicate<WebDriver>() {
       @Override
@@ -127,17 +154,32 @@ public class IfpScraper implements Worker<String, Integer> {
     // No idea what the page is doing, but a delay here is required. Otherwise the player
     // element vanishes and then gets regenerated.
     waitForMillis(LOAD_FINISH_MILLIS);
-    List<WebElement> firstPlayer = driver.findElements(FIRST_ITEM);
-    if (firstPlayer.isEmpty()) {
+    
+    // Players that match are listed as R_c0, R_c1, ...
+    List<WebElement> candidates = Lists.newArrayList();
+    for (int index = 0; ; ++index) {
+      List<WebElement> found = driver.findElements(By.id("R_c" + index));
+      if (found.isEmpty()) {
+        break;
+      }
+      candidates.add(found.get(0));
+    }
+    if (candidates.isEmpty()) {
       throw new NoPlayerMatchException();
     }
-    String firstPlayerName = firstPlayer.get(0).getText();
-    List<WebElement> secondPlayer = driver.findElements(SECOND_ITEM);
-    if (!secondPlayer.isEmpty()) {
-      throw new AmbiguousPlayerNameException(ImmutableList.of(
-          firstPlayerName, secondPlayer.get(0).getText()));
+    if (candidates.size() == 1) {
+      return candidates.get(0);
     }
-    return driver.findElement(FIRST_ITEM);
+    // Multiple matches. Check for full text.
+    ImmutableList.Builder<String> possible = ImmutableList.builder();
+    for (WebElement candidate : candidates) {
+      if (candidate.getText().equalsIgnoreCase(fullMatch)) {
+        return candidate;
+      }
+      possible.add(candidate.getText());
+    }
+    // Nothing matched full text. Make a decent error message, at least.
+    throw new AmbiguousPlayerNameException(possible.build());
   }
   
   private void waitForMillis(long millis) {
@@ -145,16 +187,6 @@ public class IfpScraper implements Worker<String, Integer> {
       Thread.sleep(millis);
     } catch (InterruptedException e) {
     }
-  }
-  
-  private String toIfpName(String playerName) {
-    List<String> names = nameSplitter.splitToList(playerName);
-    // This is amazingly picky, and is basically wrong no matter what.
-    // For Ben Kempner, there must be two spaces between the names in order to find points.
-    // For Wes Hunt, there must be only one space between the names.
-    // I have no idea why the web site works that way.
-    // Short of trying both for everyone, I don't know how this could be made to work.
-    return names.get(1) + " " + names.get(0);
   }
   
   /**
