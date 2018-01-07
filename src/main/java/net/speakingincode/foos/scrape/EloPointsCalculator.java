@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +16,8 @@ import com.google.common.collect.ImmutableList;
 
 public class EloPointsCalculator {
   private static final Logger logger = Logger.getLogger(EloPointsCalculator.class.getName());
+  private static final ImmutableList<String> LINKS = ImmutableList.of(
+      "/images/blue_box.gif", "/images_admin/10spacer.gif");
   private final WebDriver driver;
   private final PointsParser parser = new PointsParser();
   
@@ -27,19 +31,9 @@ public class EloPointsCalculator {
    * @return points for all players in the netfoos database.
    */
   public ImmutableList<Player> getPoints() throws IOException {
-    driver.findElement(By.linkText("Admin Modules")).click();
-    String page = driver.getPageSource();
-    if (!page.contains("NetFoos Admin Modules")) {
-      throw new IOException("Not on admin modules page: " + page);
-    }
-    driver.findElement(By.partialLinkText("ELO_Points_Calculations")).click();
-    page = driver.getPageSource();
-    if (!page.contains("Show All Players Current ELO Points")) {
-      throw new IOException("Not on ELO module page: " + page);
-    }
+    navigateToEloPage();
     setTuningParameters();
-    logger.info("Starting Elo Points Calculation.");
-    driver.findElement(By.name("Submit")).click();
+    startCalculation();
     WebElement points = driver.findElement(By.tagName("textarea"));
     ImmutableList.Builder<Player> players = ImmutableList.builder();
     try (BufferedReader reader = new BufferedReader(new StringReader(points.getText()))) {
@@ -51,6 +45,49 @@ public class EloPointsCalculator {
       }
     }
     return players.build();
+  }
+  
+  /**
+   * Gets points report for a single player.
+   * 
+   * @return the HTML for the points report as a single page.
+   * 
+   * @throws IOException if the report can't be generated.
+   */
+  public String getPointsReport(String netfoosName) throws IOException {
+    navigateToEloPage();
+    setTuningParameters();
+    selectPlayer(netfoosName);
+    startCalculation();
+    String source = driver.getPageSource();
+    if (!source.contains("Summary: " + netfoosName)) {
+      throw new IOException("Could not generate summary. Output was:\n" + source);
+    }
+    // Replace the relative links to the graph images with absolute links.
+    for (String link : LINKS) {
+      Pattern p = Pattern.compile(link, Pattern.LITERAL);
+      String replace = Matcher.quoteReplacement("http://www.netfoos.com" + link);
+      source = p.matcher(source).replaceAll(replace);
+    }
+    return source;
+  }
+  
+  private void navigateToEloPage() throws IOException {
+    driver.findElement(By.linkText("Admin Modules")).click();
+    String page = driver.getPageSource();
+    if (!page.contains("NetFoos Admin Modules")) {
+      throw new IOException("Not on admin modules page: " + page);
+    }
+    driver.findElement(By.partialLinkText("ELO_Points_Calculations")).click();
+    page = driver.getPageSource();
+    if (!page.contains("Show All Players Current ELO Points")) {
+      throw new IOException("Not on ELO module page: " + page);
+    }
+  }
+  
+  private void selectPlayer(String netfoosName) {
+    Select reportType = new Select(driver.findElement(By.name("nfts_mod_5")));
+    reportType.selectByVisibleText(netfoosName);
   }
   
   private void setTuningParameters() {
@@ -71,5 +108,10 @@ public class EloPointsCalculator {
     // points very quickly.
     // This is "K / (Finish * 16) (Awards least points)"
     bonusPoints.selectByValue("16");
+  }
+  
+  private void startCalculation() {
+    logger.info("Starting Elo Points Calculation.");
+    driver.findElement(By.name("Submit")).click();
   }
 }

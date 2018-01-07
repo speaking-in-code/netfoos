@@ -27,7 +27,7 @@ public class IfpScraperTest {
   @Test
   public void testScrapeTony() throws Exception {
     int points = scraper.scrapePoints("Tony SPREDEMAN");
-    assertThat(points, greaterThan(6000));
+    assertThat(points, greaterThan(5000));
   }
   
   @Test
