@@ -38,7 +38,7 @@ public class PointsBookTest {
     PointsBookPlayer expected = PointsBookPlayer.builder()
         .setName("Spredeman, Tony")
         .setPoints(7000)
-        .setLocal(1)
+        .setLocal(0)
         .build();
     assertThat(data.getPlayers(), contains(expected));
   }
@@ -72,7 +72,7 @@ public class PointsBookTest {
     PointsBookPlayer expectedTodd = PointsBookPlayer.builder()
         .setName("Loffredo, Todd")
         .setPoints(7000)
-        .setLocal(1)
+        .setLocal(0)
         .build();
     assertThat(data.getPlayers(), contains(expectedTodd, expectedTony));
 

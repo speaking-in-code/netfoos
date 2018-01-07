@@ -118,7 +118,10 @@ public class PointsBook {
          bookPlayer.setName(player.name());
       }
       bookPlayer.setPoints(player.newPoints());
-      if (oldData == null || oldData.points() != player.newPoints()) {
+      // Used to also check oldData.points() != player.newPoints(), to update
+      // whenever someone who was remote starts playing locally. That's overly
+      // aggressive during massive point syncs with IFP, it makes everybody a local.
+      if (oldData == null) {
         bookPlayer.setLocal(1);
       } else {
         bookPlayer.setLocal(oldData.local());

@@ -93,6 +93,7 @@ public class IfpScraper implements Worker<String, Integer> {
   
   public int scrapePoints(String fullText) {
     String playerName = fullText;
+    logger.info("Scraping: " + playerName);
     MatchResult match = matchFullText(fullText);
     if (match == null) {
       throw new IllegalStateException("No match for " + fullText);
@@ -113,6 +114,7 @@ public class IfpScraper implements Worker<String, Integer> {
       player.click();
       WebElement rating = waitForLoad(By.id("lblRating"));
       int points = parsePoints(rating.getText());
+      logger.info("Found: " + playerName + ": " + points);
       return points;
     } catch (AmbiguousPlayerNameException e) {
       logger.info("Ambiguous: " + playerName + ": 0");
