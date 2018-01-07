@@ -32,7 +32,11 @@ public class EloPlayerReport {
       login.login();
       for (String netfoosName : args) {
         logger.info("Generating report for " + netfoosName);
-        writeReport(netfoosName);
+        try {
+          writeReport(netfoosName);
+        } catch (IOException e) {
+          logger.warning("Failed to generate reort for " + netfoosName);
+        }
       }
     } finally {
       driver.close();

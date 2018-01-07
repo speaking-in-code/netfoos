@@ -8,6 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -85,9 +86,13 @@ public class EloPointsCalculator {
     }
   }
   
-  private void selectPlayer(String netfoosName) {
+  private void selectPlayer(String netfoosName) throws IOException {
     Select reportType = new Select(driver.findElement(By.name("nfts_mod_5")));
-    reportType.selectByVisibleText(netfoosName);
+    try {
+      reportType.selectByVisibleText(netfoosName);
+    } catch (NoSuchElementException e) {
+      throw new IOException(e);
+    }
   }
   
   private void setTuningParameters() {

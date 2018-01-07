@@ -1,6 +1,7 @@
 package net.speakingincode.foos.scrape;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.junit.After;
 import org.junit.Before;
@@ -38,5 +39,10 @@ public class EloPointsCalculatorTest {
     String output = calculator.getPointsReport(player);
     String path = System.getenv("HOME") + "/Desktop/" + player + ".html";
     Files.write(output, new File(path), Charsets.UTF_8);
+  }
+  
+  @Test(expected = IOException.class)
+  public void scrapeNonExistent() throws Exception {
+    calculator.getPointsReport("Player, Not Found");
   }
 }
