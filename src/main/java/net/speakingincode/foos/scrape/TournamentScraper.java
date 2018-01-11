@@ -3,6 +3,8 @@ package net.speakingincode.foos.scrape;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +23,8 @@ public class TournamentScraper {
   private static final Logger log = Logger.getLogger(TournamentScraper.class.getName());
   private static final Splitter lineSplitter = Splitter.on('\n').trimResults().omitEmptyStrings();
   private static final Splitter tabSplitter = Splitter.on('\t');
+  private static final Pattern nameDatePattern = Pattern.compile(
+      "(.*) \\((\\d{4})-(\\d{2})-(\\d{2})\\)");
   private final WebDriver driver;
   private final Credentials credentials;
 
@@ -43,6 +47,11 @@ public class TournamentScraper {
   
   public TournamentResults getOneResult(String name) throws IOException {
     new NetfoosLogin(credentials, driver).login();
+    Matcher m = nameDatePattern.matcher(name);
+    if (!m.matches()) {
+      throw new IOException(
+          "Name should have format 'Tournament (yyyy-mm-dd)': " + name);
+    }
     log.info("Looking for tournament: " + name);
     driver.findElement(By.linkText("Admin Modules")).click();
     checkPageContains("Admin Modules", "NetFoos Admin Modules");
@@ -52,6 +61,7 @@ public class TournamentScraper {
     tournamentList.selectByVisibleText(name);
     driver.findElement(By.tagName("form")).submit();
     checkPageContains("Results Export Event List", "Click Event to Export");
+    ParsedUrl url = ParsedUrl.parse(driver.getCurrentUrl());
     List<String> resultLinks = Lists.newArrayList();
     for (WebElement link : driver.findElements(By.tagName("a"))) {
       String dest = link.getAttribute("href");
@@ -60,6 +70,7 @@ public class TournamentScraper {
       }
     }
     TournamentResults.Builder tournament = TournamentResults.builder();
+    tournament.tournamentId(url.getQueryArgs().get("nfts_mod_1").iterator().next());
     for (String resultLink : resultLinks) {
       driver.get(resultLink);
       EventResults eventResults = parseResults(resultLink, driver.getPageSource());
@@ -78,9 +89,7 @@ public class TournamentScraper {
     Select tournamentList = new Select(driver.findElement(By.name("nfts_mod_1")));
     List<String> names = Lists.newArrayList();
     for (WebElement element : tournamentList.getOptions()) {
-      if (element.getText().startsWith("Tuesday DYP")) {
-        names.add(element.getText());
-      }
+      names.add(element.getText());
     }
     ImmutableList.Builder<TournamentResults> results = ImmutableList.builder();
     int count = 0;

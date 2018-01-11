@@ -24,11 +24,14 @@ public abstract class TournamentResults {
   public static Builder builder() {
     return new AutoValue_TournamentResults.Builder();
   }
+  public abstract String tournamentId();
   public abstract ImmutableList<EventResults> events();
   
   @AutoValue.Builder
   public static abstract class Builder {
     private final List<EventResults> results = Lists.newArrayList();
+    
+    public abstract Builder tournamentId(String tournamentId);
     
     public Builder addEvent(EventResults result) {
       results.add(result);
