@@ -12,7 +12,8 @@ public abstract class Tournament {
   public abstract String location();
   public abstract String city();
   public abstract String state();
-  
+  public abstract Builder toBuilder();
+
   public static Builder builder() {
     return new AutoValue_Tournament.Builder();
   }

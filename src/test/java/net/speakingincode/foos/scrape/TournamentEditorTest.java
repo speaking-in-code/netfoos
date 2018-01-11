@@ -1,6 +1,5 @@
 package net.speakingincode.foos.scrape;
 
-import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 
@@ -8,9 +7,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
-import com.google.common.base.Charsets;
-import com.google.common.io.Files;
 
 public class TournamentEditorTest {
   private Credentials credentials;
@@ -30,7 +26,13 @@ public class TournamentEditorTest {
   
   @Test
   public void createsAndDeletes() throws IOException {
-    Tournament t = Tournament.builder()
+    TournamentEditor editor = new TournamentEditor(driver, credentials);
+    String id = editor.create(makeTournament());
+    editor.deleteTournament(id);
+  }
+  
+  private Tournament makeTournament() {
+    return Tournament.builder()
         .setName("Test Tournament")
         .setCity("Smallville")
         .setState("KS")
@@ -38,14 +40,47 @@ public class TournamentEditorTest {
         .setLocation("Foos Club")
         .setDate(LocalDate.of(2018, 01, 03))
         .build();
-    TournamentEditor editor = new TournamentEditor(driver, credentials);
-    String id = editor.create(t);
-    editor.deleteTournament(id);
   }
   
   @Test(expected = IOException.class)
   public void deleteNotFound() throws IOException {
     TournamentEditor editor = new TournamentEditor(driver, credentials);
     editor.deleteTournament("51377");
+  }
+  
+  @Test
+  public void createEvent() throws Exception {
+    TournamentEditor editor = new TournamentEditor(driver, credentials);
+    String tournament = editor.create(
+        makeTournament().toBuilder().setName("Create Event Test").build());
+    try {
+      editor.createEvent(SingleMatchEvent.builder()
+          .tournamentId(tournament)
+          .winnerPlayerOne("Alder, Wes")
+          .winnerPlayerTwo("Adams, Clay")
+          .loserPlayerOne("X, Jay")
+          .loserPlayerTwo("X, Reg")
+          .build());
+    } finally {
+      editor.deleteTournament(tournament);
+    }
+  }
+  
+  @Test(expected = IOException.class)
+  public void createEventMissingPlayer() throws Exception {
+    TournamentEditor editor = new TournamentEditor(driver, credentials);
+    String tournament = editor.create(
+        makeTournament().toBuilder().setName("No Such Player Test").build());
+    try {
+      editor.createEvent(SingleMatchEvent.builder()
+          .tournamentId(tournament)
+          .winnerPlayerOne("Nobody, Nohow")
+          .winnerPlayerTwo("Adams, Clay")
+          .loserPlayerOne("X, Jay")
+          .loserPlayerTwo("X, Reg")
+          .build());
+    } finally {
+      editor.deleteTournament(tournament);
+    }
   }
 }
