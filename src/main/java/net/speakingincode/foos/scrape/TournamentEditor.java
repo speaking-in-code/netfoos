@@ -2,6 +2,7 @@ package net.speakingincode.foos.scrape;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -10,10 +11,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class TournamentEditor {
+  private static final Logger log = Logger.getLogger(TournamentEditor.class.getName());
   private final WebDriver driver;
   private final Credentials credentials;
   
-  public TournamentEditor(WebDriver driver, Credentials credentials) {
+  public TournamentEditor(Credentials credentials, WebDriver driver) {
     this.driver = driver;
     this.credentials = credentials;
   }
@@ -24,6 +26,7 @@ public class TournamentEditor {
    * @return netfoos tournament ID.
    */
   public String create(Tournament tournament) throws IOException {
+    log.info("Creating tournament: " + tournament);
     new NetfoosLogin(credentials, driver).login();
     driver.findElement(By.linkText("Add New Tournament")).click();
     checkPageContains("Add New Tournament");
@@ -36,15 +39,18 @@ public class TournamentEditor {
     selectField("netfoos_end_dd", twoDigitPad(tournament.date().getDayOfMonth()));
     setText("description", tournament.description());
     setText("locname", tournament.location());
+    setText("locaddress", tournament.address());
     setText("loccity", tournament.city());
     setText("locstate", tournament.state());
+    setText("loczip", tournament.zip());
     driver.findElement(MoreBy.submitValue("Save Tournament")).click();
     checkPageContains("Tournament Added Successfully");
     checkPageContains(tournament.name());
     TournamentScraper scraper = new TournamentScraper(driver, credentials);
-    TournamentResults result = scraper.getOneResult(
-        String.format("%s (%04d-%02d-%02d)", tournament.name(), tournament.date().getYear(),
-            tournament.date().getMonthValue(), tournament.date().getDayOfMonth()));
+    String name = String.format("%s (%04d-%02d-%02d)", tournament.name(), tournament.date().getYear(),
+        tournament.date().getMonthValue(), tournament.date().getDayOfMonth());
+    TournamentResults result = scraper.getOneResult(name);
+    log.info("Created tournament " + name);
     return result.tournamentId();
   }
   
@@ -78,6 +84,7 @@ public class TournamentEditor {
    * @throws IOException 
    */
   public void deleteTournament(String netfoosId) throws IOException {
+    log.info("Deleting tournament: " + netfoosId);
     new NetfoosLogin(credentials, driver).login();
     driver.findElement(By.linkText("Manage Tournaments")).click();
     checkPageContains("Manage Tournaments");
@@ -98,54 +105,64 @@ public class TournamentEditor {
    * @return netfoos event ID
    */
   public String createEvent(SingleMatchEvent event) throws IOException {
-    new NetfoosLogin(credentials, driver).login();
-    driver.findElement(By.linkText("Manage Tournaments")).click();
-    checkPageContains("Manage Tournaments");
-    driver.findElement(MoreBy.linkTextAndArg("Add Event",
-        "netfoos_sub_id=" + event.tournamentId())).click();
-    checkPageContains("Add New Event");
-    WebElement tournName = driver.findElement(By.name("tournname"));
-    tournName.sendKeys("Monster DYP Seeding Round");
-    Select chartUsed = new Select(driver.findElement(By.name("charttype")));
-    chartUsed.selectByVisibleText("Single Elimination: Standard 8 Team Chart");
-    driver.findElement(MoreBy.submitValue("Save Event")).click();
-    checkPageContains("Event Added Successfully");
-    
-    // Search for the <td> element that has a green link in it. That's the edit event link.
-    List<WebElement> tds = driver.findElements(By.tagName("td"));
-    WebElement editResults = null;
-    for (WebElement td : tds) {
-      if ("#CCFFCC".equals(td.getAttribute("bgcolor"))) {
-        editResults = td.findElement(By.linkText("Edit Results"));
-        break;
+    boolean ok = false;
+    String eventId = null;
+    try {
+      log.info("Creating event " + event);
+      new NetfoosLogin(credentials, driver).login();
+      driver.findElement(By.linkText("Manage Tournaments")).click();
+      checkPageContains("Manage Tournaments");
+      driver.findElement(MoreBy.linkTextAndArg("Add Event",
+          "netfoos_sub_id=" + event.tournamentId())).click();
+      checkPageContains("Add New Event");
+      WebElement tournName = driver.findElement(By.name("tournname"));
+      tournName.sendKeys("Monster DYP Seeding Round");
+      Select chartUsed = new Select(driver.findElement(By.name("charttype")));
+      chartUsed.selectByVisibleText("Single Elimination: Standard 8 Team Chart");
+      driver.findElement(MoreBy.submitValue("Save Event")).click();
+      checkPageContains("Event Added Successfully");
+
+      // Search for the <td> element that has a green link in it. That's the edit event link.
+      List<WebElement> tds = driver.findElements(By.tagName("td"));
+      WebElement editResults = null;
+      for (WebElement td : tds) {
+        if ("#CCFFCC".equals(td.getAttribute("bgcolor"))) {
+          editResults = td.findElement(By.linkText("Edit Results"));
+          break;
+        }
+      }
+      ParsedUrl url = ParsedUrl.parse(editResults.getAttribute("href"));
+      eventId = url.getQueryArgs().get("netfoos_id").iterator().next();
+      editResults.click();
+      checkPageContains("Manage Event Results");
+
+      // Create the chart.
+      driver.findElement(By.linkText("Create Chart")).click();
+      checkPageContains("Create Initial Chart");
+      selectPlayer("P1T1", event.winnerPlayerOne());
+      selectPlayer("P2T1", event.winnerPlayerTwo());
+      selectPlayer("P1T2", event.loserPlayerOne());
+      selectPlayer("P2T2", event.loserPlayerTwo());
+      driver.findElement(MoreBy.submitValue("Create Chart")).click();
+      checkPageContains("Initial Bye Matches Auto Completed");
+
+      // Enter the results
+      driver.findElement(By.linkText("Enter Tournament Director Admin")).click();
+      checkPageContains("Select Winner");
+      // Autofill the bye matches by clicking this link.
+      driver.findElement(By.linkText("Back to Manage Event")).click();
+      // Now enter tournament admin, to finish the tournament.
+      driver.findElement(By.linkText("Enter Tournament Director Admin")).click();
+      Select results = new Select(driver.findElement(By.name("matchresults8")));
+      results.selectByValue("T1");
+      driver.findElement(MoreBy.submitValue("Save Winner")).click();
+      checkPageContains("No Matches To Play");
+      ok = true;
+    } finally {
+      if (!ok) {
+        DamnItLogger.log(driver);
       }
     }
-    ParsedUrl url = ParsedUrl.parse(editResults.getAttribute("href"));
-    String eventId = url.getQueryArgs().get("netfoos_id").iterator().next();
-    editResults.click();
-    checkPageContains("Manage Event Results");
-    
-    // Create the chart.
-    driver.findElement(By.linkText("Create Chart")).click();
-    checkPageContains("Create Initial Chart");
-    selectPlayer("P1T1", event.winnerPlayerOne());
-    selectPlayer("P2T1", event.winnerPlayerTwo());
-    selectPlayer("P1T2", event.loserPlayerOne());
-    selectPlayer("P2T2", event.loserPlayerTwo());
-    driver.findElement(MoreBy.submitValue("Create Chart")).click();
-    checkPageContains("Initial Bye Matches Auto Completed");
-    
-    // Enter the results
-    driver.findElement(By.linkText("Enter Tournament Director Admin")).click();
-    checkPageContains("Select Winner");
-    // Autofill the bye matches by clicking this link.
-    driver.findElement(By.linkText("Back to Manage Event")).click();
-    // Now enter tournament admin, to finish the tournament.
-    driver.findElement(By.linkText("Enter Tournament Director Admin")).click();
-    Select results = new Select(driver.findElement(By.name("matchresults8")));
-    results.selectByValue("T1");
-    driver.findElement(MoreBy.submitValue("Save Winner")).click();
-    checkPageContains("No Matches To Play");
     return eventId;
   }
 

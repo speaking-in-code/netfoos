@@ -1,0 +1,6 @@
+#!/bin/bash
+
+readonly NETFOOS_JAR=~/sb/netfoos/target/netfoos-1.0-SNAPSHOT.jar
+readonly MAIN_CLASS=net.speakingincode.foos.app.MonsterResultsApp
+
+exec java -cp ${NETFOOS_JAR} ${MAIN_CLASS} $*

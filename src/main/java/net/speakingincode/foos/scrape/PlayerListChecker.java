@@ -10,9 +10,11 @@ import org.openqa.selenium.WebElement;
 import com.google.common.collect.ImmutableSet;
 
 public class PlayerListChecker {
+  private final Credentials credentials;
   private final WebDriver driver;
   
-  public PlayerListChecker(WebDriver driver) {
+  public PlayerListChecker(Credentials credentials, WebDriver driver) {
+    this.credentials = credentials;
     this.driver = driver;
   }
   
@@ -25,6 +27,7 @@ public class PlayerListChecker {
    */
   public ImmutableSet<String> findMissingPlayers(Iterable<String> players)
       throws IOException {
+    new NetfoosLogin(credentials, driver).login();
     ImmutableSet.Builder<String> notFound = ImmutableSet.builder();
     WebElement manage = driver.findElement(By.linkText("Manage Players"));
     if (manage == null) {
@@ -33,7 +36,12 @@ public class PlayerListChecker {
     manage.click();
     checkOnManagePlayers();
     for (String player : players) {
-      List<WebElement> links = driver.findElements(By.linkText(player));
+      // No nick names allowed.
+      if (player.contains("\"")) {
+        notFound.add(player);
+        continue;
+      }
+      List<WebElement> links = driver.findElements(MoreBy.linkTextPrefix(player));
       if (links.size() != 1) {
         notFound.add(player);
       }

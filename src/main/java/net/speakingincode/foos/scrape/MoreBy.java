@@ -67,4 +67,31 @@ public class MoreBy {
       return out.build();
     }
   }
+  
+  /**
+   * Matches links with the specified text and CGI arg.
+   */
+  public static By linkTextPrefix(String prefix) {
+    return new ByLinkTextPrefix(prefix);
+  }
+  
+  private static class ByLinkTextPrefix extends By {
+    private final String prefix;
+    public ByLinkTextPrefix(String prefix) {
+      this.prefix = prefix;
+    }
+
+    @Override
+    public List<WebElement> findElements(SearchContext context) {
+      List<WebElement> list = context.findElements(By.partialLinkText(prefix));
+      ImmutableList.Builder<WebElement> out = ImmutableList.builder();
+      for (WebElement item : list) {
+        if (item.getText().startsWith(prefix)) {
+          out.add(item);
+        }
+      }
+      return out.build();
+    }
+    
+  }
 }

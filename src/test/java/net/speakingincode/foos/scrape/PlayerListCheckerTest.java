@@ -20,8 +20,7 @@ public class PlayerListCheckerTest {
   public void before() throws IOException {
     Credentials credentials = Credentials.load();
     driver = new HtmlUnitDriver();
-    new NetfoosLogin(credentials, driver).login();
-    checker = new PlayerListChecker(driver);
+    checker = new PlayerListChecker(credentials, driver);
   }
   
   @After
@@ -33,6 +32,13 @@ public class PlayerListCheckerTest {
   public void allFound() throws IOException {
     ImmutableSet<String> missing = checker.findMissingPlayers(ImmutableSet.of(
         "Eaton, Brian", "Fick, Jim"));
+    assertThat(missing, empty());
+  }
+  
+  @Test
+  public void nickNamesIgnored() throws IOException {
+    ImmutableSet<String> missing = checker.findMissingPlayers(ImmutableSet.of(
+        "Rado, Rod"));
     assertThat(missing, empty());
   }
   

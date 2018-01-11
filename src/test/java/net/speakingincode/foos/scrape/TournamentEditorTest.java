@@ -26,7 +26,7 @@ public class TournamentEditorTest {
   
   @Test
   public void createsAndDeletes() throws IOException {
-    TournamentEditor editor = new TournamentEditor(driver, credentials);
+    TournamentEditor editor = new TournamentEditor(credentials, driver);
     String id = editor.create(makeTournament());
     editor.deleteTournament(id);
   }
@@ -44,13 +44,13 @@ public class TournamentEditorTest {
   
   @Test(expected = IOException.class)
   public void deleteNotFound() throws IOException {
-    TournamentEditor editor = new TournamentEditor(driver, credentials);
+    TournamentEditor editor = new TournamentEditor(credentials, driver);
     editor.deleteTournament("51377");
   }
   
   @Test
   public void createEvent() throws Exception {
-    TournamentEditor editor = new TournamentEditor(driver, credentials);
+    TournamentEditor editor = new TournamentEditor(credentials, driver);
     String tournament = editor.create(
         makeTournament().toBuilder().setName("Create Event Test").build());
     try {
@@ -68,7 +68,7 @@ public class TournamentEditorTest {
   
   @Test(expected = IOException.class)
   public void createEventMissingPlayer() throws Exception {
-    TournamentEditor editor = new TournamentEditor(driver, credentials);
+    TournamentEditor editor = new TournamentEditor(credentials, driver);
     String tournament = editor.create(
         makeTournament().toBuilder().setName("No Such Player Test").build());
     try {
