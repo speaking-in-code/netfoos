@@ -38,7 +38,9 @@ public class TournamentEditorTest {
         .setState("KS")
         .setDescription("Fun Tournament")
         .setLocation("Foos Club")
-        .setDate(LocalDate.of(2018, 01, 03))
+        .setAddress("101 Foosball St")
+        .setZip("10001")
+        .setDate(LocalDate.now())
         .build();
   }
   
@@ -51,8 +53,13 @@ public class TournamentEditorTest {
   @Test
   public void createEvent() throws Exception {
     TournamentEditor editor = new TournamentEditor(credentials, driver);
-    String tournament = editor.create(
-        makeTournament().toBuilder().setName("Create Event Test").build());
+    String tournament = null;
+    try {
+      tournament = editor.create(makeTournament().toBuilder().setName("Create Event Test").build());
+    } catch (IOException e) {
+      DamnItLogger.log(driver);
+      throw e;
+    }
     try {
       editor.createEvent(SingleMatchEvent.builder()
           .tournamentId(tournament)

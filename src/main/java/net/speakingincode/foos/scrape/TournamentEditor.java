@@ -105,6 +105,9 @@ public class TournamentEditor {
    * @return netfoos event ID
    */
   public String createEvent(SingleMatchEvent event) throws IOException {
+    if (event.tie()) {
+      return null;
+    }
     boolean ok = false;
     String eventId = null;
     try {

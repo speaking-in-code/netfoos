@@ -32,7 +32,7 @@ public class MonsterResultsApp {
   private static final Logger log = Logger.getLogger(MonsterResultsApp.class.getName());
   private static final Pattern infoPattern = Pattern.compile("(.*): (.*)");
   private static final Pattern resultPattern = Pattern.compile(
-      "(.*) and (.*) defeat (.*) and (.*)");
+      "(.*) and (.*) (defeat|tie) (.*) and (.*)");
   private static final Credentials credentials = Credentials.load();
   
   public static void main(String[] args) throws IOException {
@@ -74,22 +74,35 @@ public class MonsterResultsApp {
   }
 
   static class Record {
-    float wins = 0;
-    float matches = 0;
+    int wins = 0;
+    int ties = 0;
+    int losses = 0;
+    
+    public float getAveragePoints() {
+      return ((float) (2 * wins + ties)) / ((float) (wins + ties + losses));
+    }
   }
   
   static enum WinLoss {
     WIN,
+    TIE,
     LOSS
   }
   
   private static void summarizeResults(List<SingleMatchEvent> matches) {
     final Map<String, Record> records = Maps.newHashMap();
     for (SingleMatchEvent match : matches) {
-      record(records, WinLoss.WIN, match.winnerPlayerOne());
-      record(records, WinLoss.WIN, match.winnerPlayerTwo());
-      record(records, WinLoss.LOSS, match.loserPlayerOne());
-      record(records, WinLoss.LOSS, match.loserPlayerTwo());
+      if (match.tie()) {
+        record(records, WinLoss.TIE, match.winnerPlayerOne());
+        record(records, WinLoss.TIE, match.winnerPlayerTwo());
+        record(records, WinLoss.TIE, match.loserPlayerOne());
+        record(records, WinLoss.TIE, match.loserPlayerTwo());
+      } else {
+        record(records, WinLoss.WIN, match.winnerPlayerOne());
+        record(records, WinLoss.WIN, match.winnerPlayerTwo());
+        record(records, WinLoss.LOSS, match.loserPlayerOne());
+        record(records, WinLoss.LOSS, match.loserPlayerTwo());
+      }
     }
     List<String> sorted = Lists.newArrayList(records.keySet());
     sorted.sort(new Comparator<String>() {
@@ -97,7 +110,7 @@ public class MonsterResultsApp {
       public int compare(String p1, String p2) {
         Record r1 = records.get(p1);
         Record r2 = records.get(p2);
-        float delta = r1.wins/r1.matches - r2.wins/r2.matches;
+        float delta = r1.getAveragePoints() - r2.getAveragePoints();
         if (delta < 0) {
           return +1;
         } else if (delta > 0) {
@@ -108,11 +121,11 @@ public class MonsterResultsApp {
       }
     });
     StringBuilder result = new StringBuilder();
-    result.append("Per Player Results: wins/total matches\n");
+    result.append("Per Player Results: wins-ties-losses matches\n");
     for (String player : sorted) {
       Record record = records.get(player);
-      result.append(String.format("  %s: %d/%d\n", player,
-          (int) record.wins, (int) record.matches));
+      result.append(String.format("  %s: %d-%d-%d\n", player,
+          record.wins, record.ties, record.losses));
     }
     log.info("\n" + result.toString());
   }
@@ -125,8 +138,11 @@ public class MonsterResultsApp {
     }
     if (winLoss == WinLoss.WIN) {
       record.wins++;
+    } else if (winLoss == WinLoss.TIE) {
+      record.ties++;
+    } else {
+      record.losses++;
     }
-    record.matches++;
   }
 
   private static MonsterResult parseInputFile(File in) throws IOException {
@@ -163,8 +179,11 @@ public class MonsterResultsApp {
       SingleMatchEvent.Builder match = SingleMatchEvent.builder();
       match.winnerPlayerOne(m.group(1));
       match.winnerPlayerTwo(m.group(2));
-      match.loserPlayerOne(m.group(3));
-      match.loserPlayerTwo(m.group(4));
+      match.loserPlayerOne(m.group(4));
+      match.loserPlayerTwo(m.group(5));
+      if ("tie".equals(m.group(3))) {
+        match.tie(true);
+      }
       for (int i = 1; i <= 4; ++i) {
         players.add(m.group(i));
       }
