@@ -184,8 +184,8 @@ public class MonsterResultsApp {
       if ("tie".equals(m.group(3))) {
         match.tie(true);
       }
-      for (int i = 1; i <= 4; ++i) {
-        players.add(m.group(i));
+      for (int player : new int[] { 1, 2, 4, 5 }) {
+        players.add(m.group(player));
       }
       matches.add(match);
     }
