@@ -32,7 +32,7 @@ public class MonsterResultsApp {
   private static final Logger log = Logger.getLogger(MonsterResultsApp.class.getName());
   private static final Pattern infoPattern = Pattern.compile("(.*): (.*)");
   private static final Pattern resultPattern = Pattern.compile(
-      "(.*) and (.*) (defeat|tie) (.*) and (.*)");
+      "(?<w1>.*) and (?<w2>.*) (?<result>defeat|tie) (?<l1>.*) and (?<l2>[^;]*)(?:; k=(?<kValue>\\d+))?");
   private static final Credentials credentials = Credentials.load();
   
   public static void main(String[] args) throws IOException {
@@ -160,6 +160,7 @@ public class MonsterResultsApp {
     tournament.setCity(parse("City", lines.get(lineNum++)));
     tournament.setState(parse("State", lines.get(lineNum++)));
     tournament.setZip(parse("Zip", lines.get(lineNum++)));
+    String defaultKValue = parse("KValue", lines.get(lineNum++));
     int failCount = 0;
     ImmutableSet.Builder<String> players = ImmutableSet.builder();
     ImmutableList.Builder<SingleMatchEvent.Builder> matches = ImmutableList.builder();
@@ -177,14 +178,19 @@ public class MonsterResultsApp {
         ++failCount;
       }
       SingleMatchEvent.Builder match = SingleMatchEvent.builder();
-      match.winnerPlayerOne(m.group(1));
-      match.winnerPlayerTwo(m.group(2));
-      match.loserPlayerOne(m.group(4));
-      match.loserPlayerTwo(m.group(5));
-      if ("tie".equals(m.group(3))) {
+      match.winnerPlayerOne(m.group("w1"));
+      match.winnerPlayerTwo(m.group("w2"));
+      match.loserPlayerOne(m.group("l1"));
+      match.loserPlayerTwo(m.group("l2"));
+      if ("tie".equals(m.group("result"))) {
         match.tie(true);
       }
-      for (int player : new int[] { 1, 2, 4, 5 }) {
+      String kValue = m.group("kValue");
+      if (kValue == null) {
+        kValue = defaultKValue;
+      }
+      match.kValue(kValue.trim());
+      for (String player : new String[] { "w1", "w2", "l1", "l2" }) {
         players.add(m.group(player));
       }
       matches.add(match);

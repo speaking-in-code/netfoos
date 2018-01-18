@@ -9,6 +9,7 @@ public abstract class SingleMatchEvent {
         .tie(false);
   }
   public abstract String tournamentId();
+  public abstract String kValue();
   public abstract String winnerPlayerOne();
   public abstract String winnerPlayerTwo();
   public abstract String loserPlayerOne();
@@ -18,6 +19,7 @@ public abstract class SingleMatchEvent {
   @AutoValue.Builder
   public static abstract class Builder {
     public abstract Builder tournamentId(String tournamentId);
+    public abstract Builder kValue(String kValue);
     public abstract Builder winnerPlayerOne(String winnerPlayerOne);
     public abstract Builder winnerPlayerTwo(String winnerPlayerTwo);
     public abstract Builder loserPlayerOne(String loserPlayerOne);

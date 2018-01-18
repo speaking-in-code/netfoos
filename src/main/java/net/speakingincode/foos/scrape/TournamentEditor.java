@@ -105,6 +105,7 @@ public class TournamentEditor {
    * @return netfoos event ID
    */
   public String createEvent(SingleMatchEvent event) throws IOException {
+    // Can't enter ties in netfoos.
     if (event.tie()) {
       return null;
     }
@@ -122,6 +123,9 @@ public class TournamentEditor {
       tournName.sendKeys("Monster DYP Seeding Round");
       Select chartUsed = new Select(driver.findElement(By.name("charttype")));
       chartUsed.selectByVisibleText("Single Elimination: Standard 8 Team Chart");
+      WebElement elok = driver.findElement(By.name("elok"));
+      elok.clear();
+      elok.sendKeys(event.kValue());
       driver.findElement(MoreBy.submitValue("Save Event")).click();
       checkPageContains("Event Added Successfully");
 

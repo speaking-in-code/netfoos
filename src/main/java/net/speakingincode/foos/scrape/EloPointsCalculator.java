@@ -112,7 +112,7 @@ public class EloPointsCalculator {
     // Bonus points for winning. Setting this wrong can make local points diverge from IFP
     // points very quickly.
     // This is "K / (Finish * 16) (Awards least points)"
-    bonusPoints.selectByValue("16");
+    bonusPoints.selectByValue("8");
   }
   
   private void startCalculation() {

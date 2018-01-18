@@ -30,7 +30,7 @@ public class TournamentEditorTest {
     String id = editor.create(makeTournament());
     editor.deleteTournament(id);
   }
-  
+
   private Tournament makeTournament() {
     return Tournament.builder()
         .setName("Test Tournament")
@@ -53,23 +53,25 @@ public class TournamentEditorTest {
   @Test
   public void createEvent() throws Exception {
     TournamentEditor editor = new TournamentEditor(credentials, driver);
-    String tournament = null;
+    Tournament tournament = makeTournament().toBuilder().setName("Create Event Test").build();
+    String tournamentId = null;
     try {
-      tournament = editor.create(makeTournament().toBuilder().setName("Create Event Test").build());
+      tournamentId = editor.create(tournament);
     } catch (IOException e) {
       DamnItLogger.log(driver);
       throw e;
     }
     try {
       editor.createEvent(SingleMatchEvent.builder()
-          .tournamentId(tournament)
+          .tournamentId(tournamentId)
           .winnerPlayerOne("Alder, Wes")
           .winnerPlayerTwo("Adams, Clay")
           .loserPlayerOne("X, Jay")
           .loserPlayerTwo("X, Reg")
+          .kValue("32")
           .build());
     } finally {
-      editor.deleteTournament(tournament);
+      editor.deleteTournament(tournamentId);
     }
   }
   
@@ -85,6 +87,7 @@ public class TournamentEditorTest {
           .winnerPlayerTwo("Adams, Clay")
           .loserPlayerOne("X, Jay")
           .loserPlayerTwo("X, Reg")
+          .kValue("32")
           .build());
     } finally {
       editor.deleteTournament(tournament);
