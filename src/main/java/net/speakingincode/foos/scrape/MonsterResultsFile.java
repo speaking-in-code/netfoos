@@ -1,16 +1,15 @@
 package net.speakingincode.foos.scrape;
 
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Charsets;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
-import com.google.common.io.Files;
 
-import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,17 +25,16 @@ public class MonsterResultsFile {
         if (lines.size() < 6) {
             throw new IOException("Input file too short:\n" + Joiner.on('\n').join(lines));
         }
-        Tournament.Builder tournament = Tournament.builder();
+        Tournament.Builder tb = Tournament.builder();
         int lineNum = 0;
-        tournament.setName(parse("Name", lines.get(lineNum++)));
-        tournament.setDescription(parse("Description", lines.get(lineNum++)));
-        tournament.setDate(LocalDate.parse(parse("Date", lines.get(lineNum++))));
-        tournament.setLocation(parse("Location", lines.get(lineNum++)));
-        tournament.setAddress(parse("Address", lines.get(lineNum++)));
-        tournament.setCity(parse("City", lines.get(lineNum++)));
-        tournament.setState(parse("State", lines.get(lineNum++)));
-        tournament.setZip(parse("Zip", lines.get(lineNum++)));
-        String defaultKValue = parse("KValue", lines.get(lineNum++));
+        for (String line : lines) {
+            ++lineNum;
+            if (line.trim().isEmpty()) {
+                break;
+            }
+            parseLine(tb, line);
+        }
+        Tournament tournament = tb.build();
         int failCount = 0;
         ImmutableSet.Builder<String> players = ImmutableSet.builder();
         ImmutableList.Builder<SingleMatchEvent> matches = ImmutableList.builder();
@@ -63,7 +61,7 @@ public class MonsterResultsFile {
             }
             String kValue = m.group("kValue");
             if (kValue == null) {
-                kValue = defaultKValue;
+                kValue = tournament.defaultKValue();
             }
             match.kValue(kValue.trim());
             for (String player : new String[] { "w1", "w2", "l1", "l2" }) {
@@ -77,21 +75,84 @@ public class MonsterResultsFile {
         if (failCount > 0) {
             throw new IOException("Failed to parse some result lines.");
         }
-        result.tournament(tournament.build());
+        result.tournament(tournament);
         result.players(players.build());
         result.matches(matches.build());
         return result.build();
     }
 
-    private static String parse(String field, String line) throws IOException {
+    private interface FieldSetter {
+       void setField(Tournament.Builder builder, String value);
+    }
+
+    private static Map<String, FieldSetter> fieldSetters;
+    static {
+        ImmutableMap.Builder<String, FieldSetter> b = ImmutableMap.builder();
+        b.put("Name", new FieldSetter() {
+            public void setField(Tournament.Builder b, String v) {
+                b.setName(v);
+            }
+        });
+        b.put("Description", new FieldSetter() {
+            public void setField(Tournament.Builder b, String v) {
+                b.setDescription(v);
+            }
+        });
+        b.put("Date", new FieldSetter() {
+            public void setField(Tournament.Builder b, String v) {
+                b.setDate(LocalDate.parse(v));
+            }
+        });
+        b.put("Location", new FieldSetter() {
+            public void setField(Tournament.Builder b, String v) {
+                b.setLocation(v);
+            }
+        });
+        b.put("Address", new FieldSetter() {
+            public void setField(Tournament.Builder b, String v) {
+                b.setAddress(v);
+            }
+        });
+        b.put("City", new FieldSetter() {
+            public void setField(Tournament.Builder b, String v) {
+                b.setCity(v);
+            }
+        });
+        b.put("State", new FieldSetter() {
+            public void setField(Tournament.Builder b, String v) {
+                b.setState(v);
+            }
+        });
+        b.put("Zip", new FieldSetter() {
+            public void setField(Tournament.Builder b, String v) {
+                b.setZip(v);
+            }
+        });
+        b.put("KValue", new FieldSetter() {
+            public void setField(Tournament.Builder b, String v) {
+                b.setDefaultKValue(v);
+            }
+        });
+        b.put("Output Format", new FieldSetter() {
+            public void setField(Tournament.Builder b, String v) {
+                b.setOutputFormat(Tournament.OutputFormatType.valueOf(v.toUpperCase()));
+            }
+        });
+        fieldSetters = b.build();
+    }
+
+    private static void parseLine(Tournament.Builder builder, String line) throws IOException {
         Matcher m = infoPattern.matcher(line);
         if (!m.matches()) {
             throw new IOException("Expected pattern '" + infoPattern.pattern() + "', got " +
                 line);
         }
-        if (!m.group(1).equals(field)) {
-            throw new IOException("Expected leading '" + field + "': got " + m.group(1));
+        String key = m.group(1);
+        String value = m.group(2);
+        FieldSetter setter = fieldSetters.get(key);
+        if (setter == null) {
+            throw new IOException("Unknown field: " + key);
         }
-        return m.group(2);
+        setter.setField(builder, value);
     }
 }

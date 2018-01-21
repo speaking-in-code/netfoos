@@ -6,12 +6,19 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.io.Files;
-import net.speakingincode.foos.scrape.*;
+import net.speakingincode.foos.scrape.Credentials;
+import net.speakingincode.foos.scrape.MonsterResult;
+import net.speakingincode.foos.scrape.MonsterResultsFile;
+import net.speakingincode.foos.scrape.PlayerListChecker;
+import net.speakingincode.foos.scrape.SingleMatchEvent;
+import net.speakingincode.foos.scrape.Tournament;
+import net.speakingincode.foos.scrape.TournamentEditor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -41,7 +48,7 @@ public class MonsterResultsApp {
     String tournamentId = editor.create(result.tournament());
     log.info("Creating " + result.matches().size() + " matches.");
 
-    summarizeResults(result.matches());
+    summarizeResults(result.tournament(), result.matches());
     
     int failCount = 0;
     int matchCount = 1;
@@ -73,48 +80,70 @@ public class MonsterResultsApp {
     TIE,
     LOSS
   }
-  
-  private static void summarizeResults(List<SingleMatchEvent> matches) {
+
+  public MonsterResultsApp() {
+  }
+
+  private static void summarizeResults(Tournament tournament, List<SingleMatchEvent> matches) {
     final Map<String, Record> records = Maps.newHashMap();
     for (SingleMatchEvent match : matches) {
+      String w1;
+      String w2;
+      String l1;
+      String l2;
+      switch (tournament.outputFormat()) {
+        case TEAM:
+          w1 = match.winnerPlayerOne() + " & " + match.winnerPlayerTwo();
+          w2 = null;
+          l1 = match.loserPlayerOne() + " & " + match.loserPlayerTwo();
+          l2 = null;
+          break;
+        case INDIVIDUAL:
+          w1 = match.winnerPlayerOne();
+          w2 = match.winnerPlayerTwo();
+          l1 = match.loserPlayerOne();
+          l2 = match.loserPlayerTwo();
+          break;
+        default:
+          throw new RuntimeException("Unknown output format type.");
+      }
       if (match.tie()) {
-        record(records, WinLoss.TIE, match.winnerPlayerOne());
-        if (match.winnerPlayerTwo() != null) {
-          record(records, WinLoss.TIE, match.winnerPlayerTwo());
+        record(records, WinLoss.TIE, w1);
+        if (w2 != null) {
+          record(records, WinLoss.TIE, w2);
         }
-        record(records, WinLoss.TIE, match.loserPlayerOne());
-        if (match.loserPlayerTwo() != null) {
-          record(records, WinLoss.TIE, match.loserPlayerTwo());
+        record(records, WinLoss.TIE, l1);
+        if (l2 != null) {
+          record(records, WinLoss.TIE, l2);
         }
       } else {
-        record(records, WinLoss.WIN, match.winnerPlayerOne());
-        if (match.winnerPlayerTwo() != null) {
-          record(records, WinLoss.WIN, match.winnerPlayerTwo());
+        record(records, WinLoss.WIN, w1);
+        if (w2 != null) {
+          record(records, WinLoss.WIN, w2);
         }
-        record(records, WinLoss.LOSS, match.loserPlayerOne());
-        if (match.loserPlayerTwo() != null) {
-          record(records, WinLoss.LOSS, match.loserPlayerTwo());
+        record(records, WinLoss.LOSS, l1);
+        if (l2 != null) {
+          record(records, WinLoss.LOSS, l2);
         }
       }
     }
+
     List<String> sorted = Lists.newArrayList(records.keySet());
-    sorted.sort(new Comparator<String>() {
-      @Override
-      public int compare(String p1, String p2) {
-        Record r1 = records.get(p1);
-        Record r2 = records.get(p2);
-        float delta = r1.getAveragePoints() - r2.getAveragePoints();
-        if (delta < 0) {
-          return +1;
-        } else if (delta > 0) {
-          return -1;
-        } else {
-          return 0;
-        }
-      }
-    });
+    Collections.sort(sorted, Comparator.comparingDouble(key -> {
+      return records.get(key).getAveragePoints();
+    }).thenComparingInt(key -> {
+      return records.get(key).wins;
+    }).reversed());
+
     StringBuilder result = new StringBuilder();
-    result.append("Per Player Results: wins-ties-losses matches\n");
+    switch (tournament.outputFormat()) {
+      case TEAM:
+        result.append("Team Results: wins-ties-losses matches\n");
+        break;
+      case INDIVIDUAL:
+        result.append("Player Results: wins-ties-losses matches\n");
+        break;
+    }
     for (String player : sorted) {
       Record record = records.get(player);
       result.append(String.format("  %s: %d-%d-%d\n", player,

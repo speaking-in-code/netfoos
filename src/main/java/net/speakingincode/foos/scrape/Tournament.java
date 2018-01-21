@@ -6,6 +6,11 @@ import com.google.auto.value.AutoValue;
 
 @AutoValue
 public abstract class Tournament {
+  public enum OutputFormatType {
+    TEAM,
+    INDIVIDUAL
+  }
+
   public abstract String name();
   public abstract LocalDate date();
   public abstract String description();
@@ -14,6 +19,8 @@ public abstract class Tournament {
   public abstract String city();
   public abstract String state();
   public abstract String zip();
+  public abstract String defaultKValue();
+  public abstract OutputFormatType outputFormat();
   public abstract Builder toBuilder();
 
   public static Builder builder() {
@@ -30,6 +37,8 @@ public abstract class Tournament {
     public abstract Builder setCity(String city);
     public abstract Builder setState(String state);
     public abstract Builder setZip(String zip);
+    public abstract Builder setDefaultKValue(String kValue);
+    public abstract Builder setOutputFormat(OutputFormatType outputFormat);
     public abstract Tournament build();
   }
 }

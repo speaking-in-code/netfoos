@@ -41,6 +41,8 @@ public class TournamentEditorTest {
         .setAddress("101 Foosball St")
         .setZip("10001")
         .setDate(LocalDate.now())
+        .setDefaultKValue("32")
+        .setOutputFormat(Tournament.OutputFormatType.INDIVIDUAL)
         .build();
   }
   

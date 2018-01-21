@@ -25,7 +25,9 @@ public class MonsterResultsFileTest {
             "City: Smallville",
             "State: CA",
             "Zip: 94040",
-            "KValue: 12");
+            "KValue: 12",
+            "Output Format: individual",
+            "");
     }
     @Test
     public void readsTournament() throws IOException {
