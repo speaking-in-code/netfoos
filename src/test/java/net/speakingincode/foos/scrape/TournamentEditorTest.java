@@ -62,8 +62,7 @@ public class TournamentEditorTest {
       throw e;
     }
     try {
-      editor.createEvent(SingleMatchEvent.builder()
-          .tournamentId(tournamentId)
+      editor.createEvent(tournamentId, 1, SingleMatchEvent.builder()
           .winnerPlayerOne("Alder, Wes")
           .winnerPlayerTwo("Adams, Clay")
           .loserPlayerOne("X, Jay")
@@ -81,8 +80,7 @@ public class TournamentEditorTest {
     String tournament = editor.create(
         makeTournament().toBuilder().setName("No Such Player Test").build());
     try {
-      editor.createEvent(SingleMatchEvent.builder()
-          .tournamentId(tournament)
+      editor.createEvent(tournament, 1, SingleMatchEvent.builder()
           .winnerPlayerOne("Nobody, Nohow")
           .winnerPlayerTwo("Adams, Clay")
           .loserPlayerOne("X, Jay")
@@ -93,4 +91,27 @@ public class TournamentEditorTest {
       editor.deleteTournament(tournament);
     }
   }
+
+  @Test
+  public void createSinglesEvent() throws Exception {
+    TournamentEditor editor = new TournamentEditor(credentials, driver);
+    Tournament tournament = makeTournament().toBuilder().setName("Singles Event Test").build();
+    String tournamentId = null;
+    try {
+      tournamentId = editor.create(tournament);
+    } catch (IOException e) {
+      DamnItLogger.log(driver);
+      throw e;
+    }
+    try {
+      editor.createEvent(tournamentId, 1, SingleMatchEvent.builder()
+          .winnerPlayerOne("Alder, Wes")
+          .loserPlayerOne("X, Jay")
+          .kValue("32")
+          .build());
+    } finally {
+      editor.deleteTournament(tournamentId);
+    }
+  }
+
 }

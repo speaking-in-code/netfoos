@@ -104,7 +104,7 @@ public class TournamentEditor {
    * 
    * @return netfoos event ID
    */
-  public String createEvent(SingleMatchEvent event) throws IOException {
+  public String createEvent(String tournamentId, int matchCount, SingleMatchEvent event) throws IOException {
     // Can't enter ties in netfoos.
     if (event.tie()) {
       return null;
@@ -117,10 +117,10 @@ public class TournamentEditor {
       driver.findElement(By.linkText("Manage Tournaments")).click();
       checkPageContains("Manage Tournaments");
       driver.findElement(MoreBy.linkTextAndArg("Add Event",
-          "netfoos_sub_id=" + event.tournamentId())).click();
+          "netfoos_sub_id=" + tournamentId)).click();
       checkPageContains("Add New Event");
       WebElement tournName = driver.findElement(By.name("tournname"));
-      tournName.sendKeys("Monster DYP Seeding Round");
+      tournName.sendKeys("Tournament Match " + matchCount);
       Select chartUsed = new Select(driver.findElement(By.name("charttype")));
       chartUsed.selectByVisibleText("Single Elimination: Standard 8 Team Chart");
       WebElement elok = driver.findElement(By.name("elok"));
@@ -147,9 +147,13 @@ public class TournamentEditor {
       driver.findElement(By.linkText("Create Chart")).click();
       checkPageContains("Create Initial Chart");
       selectPlayer("P1T1", event.winnerPlayerOne());
-      selectPlayer("P2T1", event.winnerPlayerTwo());
+      if (event.winnerPlayerTwo() != null) {
+        selectPlayer("P2T1", event.winnerPlayerTwo());
+      }
       selectPlayer("P1T2", event.loserPlayerOne());
-      selectPlayer("P2T2", event.loserPlayerTwo());
+      if (event.loserPlayerTwo() != null) {
+        selectPlayer("P2T2", event.loserPlayerTwo());
+      }
       driver.findElement(MoreBy.submitValue("Create Chart")).click();
       checkPageContains("Initial Bye Matches Auto Completed");
 

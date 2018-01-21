@@ -111,7 +111,7 @@ public class EloPointsCalculator {
     Select bonusPoints = new Select(driver.findElement(By.name("nfts_mod_9")));
     // Bonus points for winning. Setting this wrong can make local points diverge from IFP
     // points very quickly.
-    // This is "K / (Finish * 16) (Awards least points)"
+    // This is "K / (Finish * 8) (Awards least points)"
     bonusPoints.selectByValue("8");
   }
   
