@@ -19,7 +19,7 @@ public class MonsterResultsFile {
     private static final Pattern infoPattern = Pattern.compile("(.*): (.*)");
     @VisibleForTesting
     static final Pattern resultPattern = Pattern.compile(
-        "(?<w1>[^&]+)(?: & (?<w2>.*))? (?<result>defeat|tie) (?<l1>[^&]+)(?: & (?<l2>[^;]*))?(?:; k=(?<kValue>\\d+))?");
+        "(?<w1>[^&]+)(?: & (?<w2>.*))? (?<result>defeat|tie) (?<l1>[^&;]+)(?: & (?<l2>[^;]*))?(?:; k=(?<kValue>\\d+))?");
 
     public static MonsterResult load(List<String> lines) throws IOException {
         if (lines.size() < 6) {

@@ -119,4 +119,15 @@ public class MonsterResultsFileTest {
             .kValue("12")
             .build()));
     }
+
+    @Test
+    public void parseSinglesLineWithKValue() {
+        Matcher m = MonsterResultsFile.resultPattern.matcher("Alice defeat Bob; k=16");
+        assertThat(m.matches(), is(true));
+        assertThat(m.group("w1"), is("Alice"));
+        assertThat(m.group("w2"), Matchers.nullValue());
+        assertThat(m.group("l1"), is("Bob"));
+        assertThat(m.group("l2"), Matchers.nullValue());
+        assertThat(m.group("kValue"), is("16"));
+    }
 }
