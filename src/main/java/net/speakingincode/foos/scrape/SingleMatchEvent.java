@@ -10,13 +10,14 @@ public abstract class SingleMatchEvent {
     return new AutoValue_SingleMatchEvent.Builder()
         .tie(false);
   }
+  public abstract Builder toBuilder();
   public abstract String kValue();
   public abstract String winnerPlayerOne();
   public abstract @Nullable String winnerPlayerTwo();
   public abstract String loserPlayerOne();
   public abstract @Nullable String loserPlayerTwo();
   public abstract boolean tie();
-  
+
   @AutoValue.Builder
   public static abstract class Builder {
     public abstract Builder kValue(String kValue);

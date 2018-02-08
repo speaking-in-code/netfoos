@@ -17,6 +17,7 @@ public abstract class MonsterResult {
     public static Builder builder() {
         return new AutoValue_MonsterResult.Builder();
     }
+    public abstract Builder toBuilder();
     public abstract Tournament tournament();
     public abstract ImmutableSet<String> players();
     public abstract ImmutableList<SingleMatchEvent> matches();

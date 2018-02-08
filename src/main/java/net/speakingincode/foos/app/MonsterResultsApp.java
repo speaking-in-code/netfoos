@@ -2,6 +2,8 @@ package net.speakingincode.foos.app;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Joiner;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -36,23 +38,24 @@ public class MonsterResultsApp {
     }
     WebDriver driver = new HtmlUnitDriver();
     List<String> lines = Files.readLines(new File(args[0]), Charsets.UTF_8);
-    MonsterResult result = MonsterResultsFile.load(lines);
+    MonsterResult shortNames = MonsterResultsFile.load(lines);
+    MonsterResult fullNames = transformToFullNames(shortNames);
     ImmutableSet<String> missing =
-        new PlayerListChecker(credentials, driver).findMissingPlayers(result.players());
+        new PlayerListChecker(credentials, driver).findMissingPlayers(fullNames.players());
     if (!missing.isEmpty()) {
       log.warning("Missing some players, no results entered:\n" + 
           Joiner.on("\n").join(missing));
       System.exit(1);
     }
     TournamentEditor editor = new TournamentEditor(credentials, driver);
-    String tournamentId = editor.create(result.tournament());
-    log.info("Creating " + result.matches().size() + " matches.");
+    String tournamentId = editor.create(fullNames.tournament());
+    log.info("Creating " + fullNames.matches().size() + " matches.");
 
-    summarizeResults(result.tournament(), result.matches());
+    summarizeResults(shortNames.tournament(), shortNames.matches());
     
     int failCount = 0;
     int matchCount = 1;
-    for (SingleMatchEvent match : result.matches()) {
+    for (SingleMatchEvent match : fullNames.matches()) {
       try {
         editor.createEvent(tournamentId, matchCount++, match);
       } catch (IOException e) {
@@ -165,5 +168,58 @@ public class MonsterResultsApp {
     } else {
       record.losses++;
     }
+  }
+
+  private static MonsterResult transformToFullNames(MonsterResult orig) {
+    MonsterResult.Builder b = orig.toBuilder();
+    ImmutableSet.Builder<String> players = ImmutableSet.builder();
+    for (String player : orig.players()) {
+      String renamed = rename(player);
+      players.add(renamed);
+    }
+    b.players(players.build());
+    ImmutableList.Builder<SingleMatchEvent> matches = ImmutableList.builder();
+    for (SingleMatchEvent e : orig.matches()) {
+        SingleMatchEvent.Builder renamed = e.toBuilder();
+        renamed.winnerPlayerOne(rename(e.winnerPlayerOne()));
+        renamed.winnerPlayerTwo(rename(e.winnerPlayerTwo()));
+        renamed.loserPlayerOne(rename(e.loserPlayerOne()));
+        renamed.loserPlayerTwo(rename(e.loserPlayerTwo()));
+        matches.add(renamed.build());
+    }
+    b.matches(matches.build());
+    return b.build();
+  }
+
+  private static String rename(String in) {
+    return NAME_MAP.getOrDefault(in, in);
+  }
+
+  private static final ImmutableMap<String, String> NAME_MAP;
+
+  static {
+    ImmutableMap.Builder<String, String> b = ImmutableMap.builder();
+    b.put("Amy", "Miao, Amy");
+    b.put("Brian", "Eaton, Brian");
+    b.put("Buzz", "Richardson, Jeramie");
+    b.put("Clement", "Fuji Tsang, Clement");
+    b.put("Daniel", "Dechert, Daniel");
+    b.put("James", "Castillo, James");
+    b.put("Kin", "Lo, Kin");
+    b.put("Kyle", "Moss, Kyle");
+    b.put("Marcos", "Ramirez, Marcos");
+    b.put("Min", "Wu, Min");
+    b.put("Mo", "Uddin, Mohammed");
+    b.put("Naveen", "Veeravalli, Naveen");
+    b.put("Natalie", "Zhang, Natalie");
+    b.put("Nick", "Furci, Nick");
+    b.put("Paddu", "Vedam, Paddu");
+    b.put("Paul", "Richards, Paul");
+    b.put("Phil", "Schlaefer, Phil");
+    b.put("Ray", "Cota, Ray");
+    b.put("Sergie", "Aragones, Sergie");
+    b.put("Simeon", "Yep, Simeon");
+    b.put("Vera", "Urbanovich, Vera");
+    NAME_MAP = b.build();
   }
 }
