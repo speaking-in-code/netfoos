@@ -41,7 +41,7 @@ public class PlayerListChecker {
         notFound.add(player);
         continue;
       }
-      List<WebElement> links = driver.findElements(MoreBy.linkTextPrefix(player));
+      List<WebElement> links = driver.findElements(MoreBy.linkPlayerName(player));
       if (links.size() != 1) {
         notFound.add(player);
       }

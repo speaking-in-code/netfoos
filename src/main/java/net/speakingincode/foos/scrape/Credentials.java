@@ -19,11 +19,11 @@ public class Credentials {
 	    }
 	    return new Credentials(username, password);
 	  } catch (IOException e) {
-	    throw new RuntimeException("Error laoding credentials", e);
+	    throw new RuntimeException("Error loading credentials", e);
 	  }
 	}
 	
-	private static String getNetfoosRcPath() {
+	static String getNetfoosRcPath() {
     return System.getenv("HOME") + "/.netfoosrc";
   }
 

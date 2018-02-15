@@ -2,6 +2,7 @@ package net.speakingincode.foos.scrape;
 
 import java.util.List;
 
+import com.google.common.annotations.VisibleForTesting;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
@@ -71,27 +72,37 @@ public class MoreBy {
   /**
    * Matches links with the specified text and CGI arg.
    */
-  public static By linkTextPrefix(String prefix) {
-    return new ByLinkTextPrefix(prefix);
+  public static By linkPlayerName(String name) {
+    return new ByLinkPlayerName(name);
   }
   
-  private static class ByLinkTextPrefix extends By {
-    private final String prefix;
-    public ByLinkTextPrefix(String prefix) {
-      this.prefix = prefix;
+  private static class ByLinkPlayerName extends By {
+    private final String toFind;
+    public ByLinkPlayerName(String toFind) {
+      this.toFind = toFind;
     }
 
     @Override
     public List<WebElement> findElements(SearchContext context) {
-      List<WebElement> list = context.findElements(By.partialLinkText(prefix));
+      List<WebElement> list = context.findElements(By.partialLinkText(toFind));
       ImmutableList.Builder<WebElement> out = ImmutableList.builder();
       for (WebElement item : list) {
-        if (item.getText().startsWith(prefix)) {
+        String name = item.getText();
+        // Name format is like this for people with nicknames:
+        //    Schlaefer, Phil "Dr. Doom"
+        // or like this for people without:
+        //    Eaton, Brian
+        String noNickName = removeNickName(name);
+        if (toFind.equals(noNickName)) {
           out.add(item);
         }
       }
       return out.build();
     }
-    
+  }
+
+  @VisibleForTesting
+  static String removeNickName(String name) {
+    return name.split("\"")[0].trim();
   }
 }

@@ -3,7 +3,6 @@ package net.speakingincode.foos.app;
 import com.google.common.base.Charsets;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -11,6 +10,7 @@ import com.google.common.io.Files;
 import net.speakingincode.foos.scrape.Credentials;
 import net.speakingincode.foos.scrape.MonsterResult;
 import net.speakingincode.foos.scrape.MonsterResultsFile;
+import net.speakingincode.foos.scrape.NameMap;
 import net.speakingincode.foos.scrape.PlayerListChecker;
 import net.speakingincode.foos.scrape.SingleMatchEvent;
 import net.speakingincode.foos.scrape.Tournament;
@@ -30,6 +30,7 @@ import java.util.logging.Logger;
 public class MonsterResultsApp {
   private static final Logger log = Logger.getLogger(MonsterResultsApp.class.getName());
   private static final Credentials credentials = Credentials.load();
+  private static final NameMap nameMap = NameMap.load();
   
   public static void main(String[] args) throws IOException {
     if (args.length != 1) {
@@ -174,52 +175,20 @@ public class MonsterResultsApp {
     MonsterResult.Builder b = orig.toBuilder();
     ImmutableSet.Builder<String> players = ImmutableSet.builder();
     for (String player : orig.players()) {
-      String renamed = rename(player);
+      String renamed = nameMap.fullName(player);
       players.add(renamed);
     }
     b.players(players.build());
     ImmutableList.Builder<SingleMatchEvent> matches = ImmutableList.builder();
     for (SingleMatchEvent e : orig.matches()) {
         SingleMatchEvent.Builder renamed = e.toBuilder();
-        renamed.winnerPlayerOne(rename(e.winnerPlayerOne()));
-        renamed.winnerPlayerTwo(rename(e.winnerPlayerTwo()));
-        renamed.loserPlayerOne(rename(e.loserPlayerOne()));
-        renamed.loserPlayerTwo(rename(e.loserPlayerTwo()));
+        renamed.winnerPlayerOne(nameMap.fullName(e.winnerPlayerOne()));
+        renamed.winnerPlayerTwo(nameMap.fullName(e.winnerPlayerTwo()));
+        renamed.loserPlayerOne(nameMap.fullName(e.loserPlayerOne()));
+        renamed.loserPlayerTwo(nameMap.fullName(e.loserPlayerTwo()));
         matches.add(renamed.build());
     }
     b.matches(matches.build());
     return b.build();
-  }
-
-  private static String rename(String in) {
-    return NAME_MAP.getOrDefault(in, in);
-  }
-
-  private static final ImmutableMap<String, String> NAME_MAP;
-
-  static {
-    ImmutableMap.Builder<String, String> b = ImmutableMap.builder();
-    b.put("Amy", "Miao, Amy");
-    b.put("Brian", "Eaton, Brian");
-    b.put("Buzz", "Richardson, Jeramie");
-    b.put("Clement", "Fuji Tsang, Clement");
-    b.put("Daniel", "Dechert, Daniel");
-    b.put("James", "Castillo, James");
-    b.put("Kin", "Lo, Kin");
-    b.put("Kyle", "Moss, Kyle");
-    b.put("Marcos", "Ramirez, Marcos");
-    b.put("Min", "Wu, Min");
-    b.put("Mo", "Uddin, Mohammed");
-    b.put("Naveen", "Veeravalli, Naveen");
-    b.put("Natalie", "Zhang, Natalie");
-    b.put("Nick", "Furci, Nick");
-    b.put("Paddu", "Vedam, Paddu");
-    b.put("Paul", "Richards, Paul");
-    b.put("Phil", "Schlaefer, Phil");
-    b.put("Ray", "Cota, Ray");
-    b.put("Sergie", "Aragones, Sergie");
-    b.put("Simeon", "Yep, Simeon");
-    b.put("Vera", "Urbanovich, Vera");
-    NAME_MAP = b.build();
   }
 }
