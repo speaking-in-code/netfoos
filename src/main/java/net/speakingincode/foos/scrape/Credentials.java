@@ -9,7 +9,7 @@ public class Credentials {
 	private final String password;
 	
 	public static Credentials load() {
-	  try (FileReader reader = new FileReader(getNetfoosRcPath())) {
+	  try (FileReader reader = new FileReader(PreferenceFiles.getNetfoosRcPath())) {
 	    Properties properties = new Properties();
 	    properties.load(reader);
 	    String username = properties.getProperty("username");
@@ -23,10 +23,6 @@ public class Credentials {
 	  }
 	}
 	
-	static String getNetfoosRcPath() {
-    return System.getenv("HOME") + "/.netfoosrc";
-  }
-
   public static Credentials create(String username, String password) {
 		return new Credentials(username, password);
 	}

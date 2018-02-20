@@ -1,21 +1,31 @@
 package net.speakingincode.foos.scrape;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
-import java.io.FileReader;
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Properties;
+import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Map;
 
 /**
  * Used for handling short player names in Monster DYP results files. Maps from short names to full name stored in
  * .netfoosrc.
  */
 public class NameMap {
+    private static final Gson gson = new GsonBuilder().create();
+    private static final Type mapType = new TypeToken<Map<String, String>>(){}.getType();
+
     public static NameMap load() {
-        try (FileReader reader = new FileReader(Credentials.getNetfoosRcPath())) {
-            Properties properties = new Properties();
-            properties.load(reader);
-            return new NameMap(properties);
+        try (BufferedReader reader = Files.newBufferedReader(
+            Paths.get(PreferenceFiles.getNameMapPath()), StandardCharsets.UTF_8)) {
+            Map<String, String> names = gson.fromJson(reader, mapType);
+            return new NameMap(names);
         } catch (IOException e) {
             throw new RuntimeException("Error loading credentials", e);
         }
@@ -23,16 +33,8 @@ public class NameMap {
 
     private final ImmutableMap<String, String> map;
 
-    private NameMap(Properties properties) {
-        ImmutableMap.Builder<String, String> b = ImmutableMap.builder();
-        for (String name : properties.stringPropertyNames()) {
-            if ("username".equals(name) || "password".equals(name)) {
-                continue;
-            }
-            String fullName = properties.getProperty(name);
-            b.put(name, fullName);
-        }
-        map = b.build();
+    private NameMap(Map<String, String> in) {
+        map = ImmutableMap.copyOf(in);
     }
 
     public String fullName(String name) {
