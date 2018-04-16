@@ -30,10 +30,6 @@ public class PointsBook {
   private static final String SPREADSHEET_URL =
       "https://docs.google.com/spreadsheets/d/1LUAH8ZzsfN7VQwS27pLzS-0ksiAoxfgWXTlRS30j9pQ/pubhtml";
   
-  private static final Gson gson = new GsonBuilder()
-      .registerTypeAdapterFactory(MyAdapterFactory.create())
-      .create();
-
   private final ImmutableMap<String, PointsBookPlayer> nameToPlayer;
   
   private PointsBook(PointsBookData pointsBook) {
@@ -57,7 +53,7 @@ public class PointsBook {
    */
   @VisibleForTesting
   public static PointsBook loadFromString(String text) throws IOException {
-    return new PointsBook(gson.fromJson(text, PointsBookData.class));
+    return new PointsBook(GsonUtil.gson().fromJson(text, PointsBookData.class));
   }
   
   /**
@@ -89,7 +85,7 @@ public class PointsBook {
    */
   public PointsBook updateAllPlayers(ImmutableList<Player> all) throws IOException {
     PointsBookData newData = getUpdate(all);
-    String input = gson.toJson(newData);
+    String input = GsonUtil.gson().toJson(newData);
     String text = readScriptResponse(Request.Post(SHEETS_UPDATE_SCRIPT_URL)
         .bodyString(input, ContentType.APPLICATION_JSON));
     if (!text.equals("Completed response")) {

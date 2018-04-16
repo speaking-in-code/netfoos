@@ -1,11 +1,14 @@
 package net.speakingincode.foos.scrape;
 
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Charsets;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.io.Files;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
@@ -20,6 +23,11 @@ public class MonsterResultsFile {
     @VisibleForTesting
     static final Pattern resultPattern = Pattern.compile(
         "(?<w1>[^&]+)(?: & (?<w2>.*))? (?<result>defeat|tie) (?<l1>[^&;]+)(?: & (?<l2>[^;]*))?(?:; k=(?<kValue>\\d+))?");
+
+    public static MonsterResult load(File file) throws IOException {
+        List<String> lines = Files.readLines(file, Charsets.UTF_8);
+        return load(lines);
+    }
 
     public static MonsterResult load(List<String> lines) throws IOException {
         if (lines.size() < 6) {

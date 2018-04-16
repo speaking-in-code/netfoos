@@ -8,6 +8,8 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.io.Files;
 import net.speakingincode.foos.scrape.Credentials;
+import net.speakingincode.foos.scrape.KToolFile;
+import net.speakingincode.foos.scrape.KToolFileConfig;
 import net.speakingincode.foos.scrape.MonsterResult;
 import net.speakingincode.foos.scrape.MonsterResultsFile;
 import net.speakingincode.foos.scrape.NameMap;
@@ -19,6 +21,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
@@ -33,13 +36,23 @@ public class MonsterResultsApp {
   private static final NameMap nameMap = NameMap.load();
   
   public static void main(String[] args) throws IOException {
-    if (args.length != 1) {
-      log.warning("Usage: netfoos-monster-results input.txt");
+    if (args.length != 1 && args.length != 2) {
+      log.warning("Usage: netfoos-monster-results [input.txt|input.ktool location.txt]");
       System.exit(1);
     }
     WebDriver driver = new HtmlUnitDriver();
-    List<String> lines = Files.readLines(new File(args[0]), Charsets.UTF_8);
-    MonsterResult shortNames = MonsterResultsFile.load(lines);
+    String fileName = args[0];
+    MonsterResult shortNames = null;
+    if (args.length == 1) {
+      List<String> lines = Files.readLines(new File(fileName), Charsets.UTF_8);
+      shortNames = MonsterResultsFile.load(lines);
+    } else if (args.length == 2) {
+      KToolFileConfig.Builder config = KToolFileConfig.builder();
+      config.ktool(new FileInputStream(args[0]));
+      config.metadata(new FileInputStream(args[1]));
+      shortNames = KToolFile.load(config.build());
+    }
+
     MonsterResult fullNames = transformToFullNames(shortNames);
     ImmutableSet<String> missing =
         new PlayerListChecker(credentials, driver).findMissingPlayers(fullNames.players());
@@ -48,12 +61,12 @@ public class MonsterResultsApp {
           Joiner.on("\n").join(missing));
       System.exit(1);
     }
+
+    summarizeResults(shortNames.tournament(), shortNames.matches());
     TournamentEditor editor = new TournamentEditor(credentials, driver);
     String tournamentId = editor.create(fullNames.tournament());
     log.info("Creating " + fullNames.matches().size() + " matches.");
 
-    summarizeResults(shortNames.tournament(), shortNames.matches());
-    
     int failCount = 0;
     int matchCount = 1;
     for (SingleMatchEvent match : fullNames.matches()) {
