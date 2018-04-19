@@ -18,7 +18,7 @@ public class KToolFileTest {
                 .metadata(metadata)
                 .build();
             MonsterResult result = KToolFile.load(config);
-            assertThat(result.matches().size(), equalTo(27));
+            assertThat(result.matches().size(), equalTo(28));
             // Single game, race to 7.
             assertThat(result.matches().get(0).kValue(), equalTo("16"));
             // Playoff game, best 2/3.

@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
@@ -24,6 +25,9 @@ public class ChangeSummarizer {
     ImmutableMap<String, PointsBookPlayer> oldPlayers = makePlayerMap(oldPoints);
     ImmutableMap<String, PointsBookPlayer> newPlayers = makePlayerMap(newPoints);
 
+    System.out.println("Old Players:\n" + Joiner.on('\n').join(oldPlayers.entrySet()));
+    System.out.println("\n\n");
+    System.out.println("New Players:\n" + Joiner.on('\n').join(newPlayers.entrySet()));
     List<Player> locals = Lists.newArrayList();
     for (Map.Entry<String, PointsBookPlayer> player : newPlayers.entrySet()) {
       if (player.getValue().local() == 0) {

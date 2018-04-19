@@ -38,22 +38,21 @@ public class KToolFile {
         }
         ImmutableList.Builder<SingleMatchEvent> matches = ImmutableList.builder();
         SingleMatchEvent.Builder b = SingleMatchEvent.builder();
-        for (KToolPlay match : results.plays()) {
+        addPlays(results.plays(), matches, idToPlayer, idToTeam);
+        for (KToolResults.Level level : results.ko().levels()) {
+            addPlays(level.plays(), matches, idToPlayer, idToTeam);
+        }
+        addPlays(results.ko().third().plays(), matches, idToPlayer, idToTeam);
+        return matches.build();
+    }
+
+    private static void addPlays(List<KToolPlay> plays, ImmutableList.Builder<SingleMatchEvent> matches, Map<String, String> idToPlayer, Map<String, KToolTeam> idToTeam) {
+        for (KToolPlay match : plays) {
             if (!match.valid()) {
                 continue;
             }
             matches.add(makeMatch(match, idToPlayer, idToTeam));
         }
-        for (KToolResults.Level level : results.ko().levels()) {
-            for (KToolPlay match : level.plays()) {
-                if (!match.valid()) {
-                    continue;
-                }
-                matches.add(makeMatch(match, idToPlayer, idToTeam));
-            }
-
-        }
-        return matches.build();
     }
 
     private static SingleMatchEvent makeMatch(KToolPlay match, Map<String, String> idToPlayer, Map<String, KToolTeam> idToTeam) {

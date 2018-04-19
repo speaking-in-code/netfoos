@@ -34,6 +34,8 @@ public class KToolResultsTest {
              String json = CharStreams.toString(new InputStreamReader(testInput, Charsets.UTF_8));
              KToolResults result = KToolResults.fromJson(json);
              assertThat(result.players().get(0).name(), equalTo("Vera"));
+             assertThat(result.ko().third().plays().get(0).team1().id(),
+                equalTo("c7bbd364-8db4-4238-fdc5-37935966493a"));
         }
     }
 }
