@@ -37,7 +37,8 @@ public class MonsterResultsFile {
         int lineNum = 0;
         for (String line : lines) {
             ++lineNum;
-            if (line.trim().isEmpty()) {
+            line = line.trim();
+            if (line.isEmpty()) {
                 break;
             }
             parseLine(tb, line);

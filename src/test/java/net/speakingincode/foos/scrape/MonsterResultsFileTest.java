@@ -17,7 +17,7 @@ import java.util.regex.Matcher;
 public class MonsterResultsFileTest {
     private List<String> description() {
         return Lists.newArrayList(
-        "Name: Tournament Name",
+        "Name: Tournament Name ",
             "Description: Some Description",
             "Date: 2018-01-21",
             "Location: Dingy Pool Hall",
