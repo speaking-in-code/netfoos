@@ -14,9 +14,11 @@ import net.speakingincode.foos.scrape.MonsterResult;
 import net.speakingincode.foos.scrape.MonsterResultsFile;
 import net.speakingincode.foos.scrape.NameMap;
 import net.speakingincode.foos.scrape.PlayerListChecker;
+import net.speakingincode.foos.scrape.RankStrings;
 import net.speakingincode.foos.scrape.SingleMatchEvent;
 import net.speakingincode.foos.scrape.Tournament;
 import net.speakingincode.foos.scrape.TournamentEditor;
+import net.speakingincode.foos.scrape.TournamentResults;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
@@ -36,22 +38,21 @@ public class MonsterResultsApp {
   private static final NameMap nameMap = NameMap.load();
   
   public static void main(String[] args) throws IOException {
-    if (args.length != 1 && args.length != 2) {
-      log.warning("Usage: netfoos-monster-results [input.txt|input.ktool location.txt]");
+    if (args.length != 2) {
+      log.warning("Usage: netfoos-monster-results input.ktool location.json");
       System.exit(1);
     }
     WebDriver driver = new HtmlUnitDriver();
-    String fileName = args[0];
     MonsterResult shortNames = null;
-    if (args.length == 1) {
-      List<String> lines = Files.readLines(new File(fileName), Charsets.UTF_8);
-      shortNames = MonsterResultsFile.load(lines);
-    } else if (args.length == 2) {
-      KToolFileConfig.Builder config = KToolFileConfig.builder();
-      config.ktool(new FileInputStream(args[0]));
-      config.metadata(new FileInputStream(args[1]));
-      shortNames = KToolFile.load(config.build());
+    KToolFileConfig.Builder config = KToolFileConfig.builder();
+    for (String arg : args) {
+      if (arg.endsWith(".ktool")) {
+        config.ktool(new FileInputStream(arg));
+      } else {
+        config.metadata(new FileInputStream(arg));
+      }
     }
+    shortNames = KToolFile.load(config.build());
 
     MonsterResult fullNames = transformToFullNames(shortNames);
     ImmutableSet<String> missing =
@@ -62,7 +63,7 @@ public class MonsterResultsApp {
       System.exit(1);
     }
 
-    summarizeResults(shortNames.tournament(), shortNames.matches());
+    summarizeResults(shortNames);
     TournamentEditor editor = new TournamentEditor(credentials, driver);
     String tournamentId = editor.create(fullNames.tournament());
     log.info("Creating " + fullNames.matches().size() + " matches.");
@@ -101,14 +102,14 @@ public class MonsterResultsApp {
   public MonsterResultsApp() {
   }
 
-  private static void summarizeResults(Tournament tournament, List<SingleMatchEvent> matches) {
+  private static void summarizeResults(MonsterResult monsterResult) {
     final Map<String, Record> records = Maps.newHashMap();
-    for (SingleMatchEvent match : matches) {
+    for (SingleMatchEvent match : monsterResult.matches()) {
       String w1;
       String w2;
       String l1;
       String l2;
-      switch (tournament.outputFormat()) {
+      switch (monsterResult.tournament().outputFormat()) {
         case TEAM:
           w1 = match.winnerPlayerOne() + " & " + match.winnerPlayerTwo();
           w2 = null;
@@ -153,7 +154,20 @@ public class MonsterResultsApp {
     }).reversed());
 
     StringBuilder result = new StringBuilder();
-    switch (tournament.outputFormat()) {
+    if (!monsterResult.finishes().isEmpty()) {
+      result.append("Playoff Results\n");
+      for (TournamentResults.Finish f : monsterResult.finishes()) {
+        result.append(RankStrings.toStringRank(f.finish()));
+        result.append(": ");
+        result.append(f.playerOne());
+        if (f.playerTwo() != null) {
+          result.append(" & ");
+          result.append(f.playerTwo());
+        }
+        result.append("\n");
+      }
+    }
+    switch (monsterResult.tournament().outputFormat()) {
       case TEAM:
         result.append("Team Results: wins-ties-losses matches\n");
         break;

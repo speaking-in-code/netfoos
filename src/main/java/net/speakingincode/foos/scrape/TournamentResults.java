@@ -55,7 +55,7 @@ public abstract class TournamentResults {
     public abstract int finish();
     public abstract String playerOne();
     public abstract @Nullable String playerTwo();
-    
+
     @AutoValue.Builder
     public abstract static class Builder {
       public abstract Finish build();

@@ -1,0 +1,10 @@
+{
+  "name": "Monster DYP Rounds",
+  "description": "Monster DYP Individual Match Results",
+  "location": "California Billiards",
+  "address": "40510 Albrae St",
+  "city": "Fremont",
+  "state": "CA",
+  "zip": "94538",
+  "outputFormat": "individual"
+}

@@ -51,9 +51,9 @@ public abstract class KToolResults {
     @AutoValue
     public abstract static class KnockOut {
         public abstract List<Level> levels();
-        public abstract Third third();
+        public abstract Level third();
 
-        public static KnockOut create(List<Level> l, Third t) {
+        public static KnockOut create(List<Level> l, Level t) {
             return new AutoValue_KToolResults_KnockOut(l, t);
         }
 
@@ -65,9 +65,10 @@ public abstract class KToolResults {
     @AutoValue
     public abstract static class Level {
         public abstract List<KToolPlay> plays();
+        public abstract String name();
 
-        public static Level create(List<KToolPlay> l) {
-            return new AutoValue_KToolResults_Level(l);
+        public static Level create(List<KToolPlay> l, String n) {
+            return new AutoValue_KToolResults_Level(l, n);
         }
 
         public static TypeAdapter<Level> typeAdapter(Gson gson) {
@@ -75,6 +76,7 @@ public abstract class KToolResults {
         }
     }
 
+    /*
     @AutoValue
     public abstract static class Third {
         public abstract List<KToolPlay> plays();
@@ -87,4 +89,5 @@ public abstract class KToolResults {
             return new AutoValue_KToolResults_Third.GsonTypeAdapter(gson);
         }
     }
+    */
 }
