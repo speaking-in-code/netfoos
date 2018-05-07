@@ -18,6 +18,7 @@ import net.speakingincode.foos.scrape.TournamentResults;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Collections;
@@ -31,11 +32,15 @@ public class MonsterResultsApp {
   private static final Logger log = Logger.getLogger(MonsterResultsApp.class.getName());
   private static final Credentials credentials = Credentials.load();
   private static final NameMap nameMap = NameMap.load();
-  
+
+  private static void usageAndExit() {
+    log.warning("Usage: netfoos-monster-results (input.ktool location.tournament)|(event.matches)");
+    System.exit(1);
+  }
+
   public static void main(String[] args) throws IOException {
-    if (args.length != 2) {
-      log.warning("Usage: netfoos-monster-results input.ktool location.json");
-      System.exit(1);
+    if (args.length == 0) {
+      usageAndExit();
     }
     WebDriver driver = new HtmlUnitDriver();
     MonsterResult shortNames = null;
@@ -46,7 +51,9 @@ public class MonsterResultsApp {
       } else if (arg.endsWith(".tournament")) {
         config.metadata(new FileInputStream(arg));
       } else if (arg.endsWith(".matches")) {
-        config.metadata(new FileInputStream(arg));
+        config.matches(new File(arg));
+      } else {
+        usageAndExit();
       }
     }
     shortNames = ResultsParser.load(config.build());
@@ -151,7 +158,7 @@ public class MonsterResultsApp {
     }).reversed());
 
     StringBuilder result = new StringBuilder();
-    if (!monsterResult.finishes().isEmpty()) {
+    if (monsterResult.finishes() != null && !monsterResult.finishes().isEmpty()) {
       result.append("Playoff Results\n");
       for (TournamentResults.Finish f : monsterResult.finishes()) {
         result.append(RankStrings.toStringRank(f.finish()));
