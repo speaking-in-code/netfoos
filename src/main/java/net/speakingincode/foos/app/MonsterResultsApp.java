@@ -1,28 +1,23 @@
 package net.speakingincode.foos.app;
 
-import com.google.common.base.Charsets;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.common.io.Files;
 import net.speakingincode.foos.scrape.Credentials;
-import net.speakingincode.foos.scrape.KToolFile;
-import net.speakingincode.foos.scrape.KToolFileConfig;
+import net.speakingincode.foos.scrape.ResultsParser;
+import net.speakingincode.foos.scrape.ResultsParserConfig;
 import net.speakingincode.foos.scrape.MonsterResult;
-import net.speakingincode.foos.scrape.MonsterResultsFile;
 import net.speakingincode.foos.scrape.NameMap;
 import net.speakingincode.foos.scrape.PlayerListChecker;
 import net.speakingincode.foos.scrape.RankStrings;
 import net.speakingincode.foos.scrape.SingleMatchEvent;
-import net.speakingincode.foos.scrape.Tournament;
 import net.speakingincode.foos.scrape.TournamentEditor;
 import net.speakingincode.foos.scrape.TournamentResults;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Collections;
@@ -44,15 +39,17 @@ public class MonsterResultsApp {
     }
     WebDriver driver = new HtmlUnitDriver();
     MonsterResult shortNames = null;
-    KToolFileConfig.Builder config = KToolFileConfig.builder();
+    ResultsParserConfig.Builder config = ResultsParserConfig.builder();
     for (String arg : args) {
       if (arg.endsWith(".ktool")) {
         config.ktool(new FileInputStream(arg));
-      } else {
+      } else if (arg.endsWith(".tournament")) {
+        config.metadata(new FileInputStream(arg));
+      } else if (arg.endsWith(".matches")) {
         config.metadata(new FileInputStream(arg));
       }
     }
-    shortNames = KToolFile.load(config.build());
+    shortNames = ResultsParser.load(config.build());
 
     MonsterResult fullNames = transformToFullNames(shortNames);
     ImmutableSet<String> missing =

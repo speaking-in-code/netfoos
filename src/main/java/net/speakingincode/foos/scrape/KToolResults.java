@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
 
+import javax.annotation.Nullable;
 import java.lang.reflect.Type;
 import java.time.Instant;
 import java.time.LocalDate;
@@ -26,7 +27,7 @@ public abstract class KToolResults {
     public abstract List<KToolPlayer> players();
     public abstract List<KToolTeam> teams();
     public abstract List<KToolPlay> plays();
-    public abstract KnockOut ko();
+    public abstract @Nullable KnockOut ko();
 
     @VisibleForTesting
     public static LocalDate getLocalDate(String textDate, ZoneId localZone) {
@@ -40,7 +41,7 @@ public abstract class KToolResults {
     }
 
     public static KToolResults create(String created, List<KToolPlayer> players, List<KToolTeam> teams,
-                                      List<KToolPlay> plays, KnockOut ko) {
+                                      List<KToolPlay> plays, @Nullable KnockOut ko) {
         return new AutoValue_KToolResults(created, players, teams, plays, ko);
     }
 
@@ -75,19 +76,4 @@ public abstract class KToolResults {
             return new AutoValue_KToolResults_Level.GsonTypeAdapter(gson);
         }
     }
-
-    /*
-    @AutoValue
-    public abstract static class Third {
-        public abstract List<KToolPlay> plays();
-
-        public static Third create(List<KToolPlay> l) {
-            return new AutoValue_KToolResults_Third(l);
-        }
-
-        public static TypeAdapter<Third> typeAdapter(Gson gson) {
-            return new AutoValue_KToolResults_Third.GsonTypeAdapter(gson);
-        }
-    }
-    */
 }

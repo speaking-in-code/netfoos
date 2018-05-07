@@ -1,6 +1,8 @@
 package net.speakingincode.foos.scrape;
 
 import com.google.auto.value.AutoValue;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 
@@ -9,7 +11,18 @@ import java.util.List;
 @AutoValue
 public abstract class KToolTeam {
     public abstract String id();
+    public abstract String name();
     public abstract List<Player> players();
+
+    public List<String> teamPlayerNames() {
+        Preconditions.checkState(players().isEmpty(), "Use players list instead");
+        return teamToPlayers(name());
+    }
+
+    public static List<String> teamToPlayers(String teamName) {
+        String[] names = teamName.split("/", 2);
+        return ImmutableList.copyOf(names);
+    }
 
     public static KToolTeam fromJson(String text) {
         return GsonUtil.gson().fromJson(text, KToolTeam.class);
@@ -26,6 +39,7 @@ public abstract class KToolTeam {
     @AutoValue.Builder
     abstract static class Builder {
         public abstract Builder id(String s);
+        public abstract Builder name(String s);
         public abstract Builder players(List<Player> l);
         public abstract KToolTeam build();
     }
