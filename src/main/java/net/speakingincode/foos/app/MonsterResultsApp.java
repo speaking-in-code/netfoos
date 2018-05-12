@@ -161,12 +161,9 @@ public class MonsterResultsApp {
     if (monsterResult.finishes() != null && !monsterResult.finishes().isEmpty()) {
       result.append("Playoff Results\n");
       for (TournamentResults.Finish f : monsterResult.finishes()) {
-        result.append(RankStrings.toStringRank(f.finish()));
-        result.append(": ");
-        result.append(f.playerOne());
+        result.append(String.format("  %s: %s", RankStrings.toStringRank(f.finish()), f.playerOne()));
         if (f.playerTwo() != null) {
-          result.append(" & ");
-          result.append(f.playerTwo());
+          result.append(String.format(" & %s", f.playerTwo()));
         }
         result.append("\n");
       }
