@@ -7,6 +7,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.io.CharStreams;
 
+import javax.annotation.Nullable;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.LocalDate;
@@ -86,15 +87,17 @@ public class ResultsParser {
                         if (level.name().equals("1/1")) {
                             KToolPlay play = level.plays().get(0);
                             if (play.valid()) {
-                                finishes.set(0, makeFinish(0, play.team1()));
-                                finishes.set(1, makeFinish(1, play.team2()));
+                                SingleMatchEvent result = makeMatch(level.plays().get(0));
+                                finishes.set(0, makeFinish(0, result.winnerPlayerOne(), result.winnerPlayerTwo()));
+                                finishes.set(1, makeFinish(1, result.loserPlayerOne(), result.loserPlayerTwo()));
                             }
                         }
                     }
                 KToolPlay third = results.ko().third().plays().get(0);
                 if (third.valid()) {
-                    finishes.set(2, makeFinish(2, third.team1()));
-                    finishes.set(3, makeFinish(3, third.team2()));
+                    SingleMatchEvent result = makeMatch(third);
+                    finishes.set(2, makeFinish(2, result.winnerPlayerOne(), result.winnerPlayerTwo()));
+                    finishes.set(3, makeFinish(3, result.loserPlayerOne(), result.loserPlayerTwo()));
                 }
             }
             ImmutableList.Builder<TournamentResults.Finish> noNulls = ImmutableList.builder();
@@ -106,22 +109,11 @@ public class ResultsParser {
             return noNulls.build();
         }
 
-        private TournamentResults.Finish makeFinish(int place, KToolPlay.Team team) {
+        private TournamentResults.Finish makeFinish(int place, String playerOne, @Nullable String playerTwo) {
             TournamentResults.Finish.Builder finish = TournamentResults.Finish.builder();
             finish.finish(place);
-            KToolTeam t = idToTeam.get(team.id());
-            if (!t.players().isEmpty()) {
-                finish.playerOne(idToPlayer.get(t.players().get(0).id()));
-                if (t.players().size() > 1) {
-                    finish.playerTwo(idToPlayer.get(t.players().get(1).id()));
-                }
-            } else {
-                List<String> names = t.teamPlayerNames();
-                finish.playerOne(names.get(0));
-                if (names.size() > 1) {
-                    finish.playerTwo(names.get(1));
-                }
-            }
+            finish.playerOne(playerOne);
+            finish.playerTwo(playerTwo);
             return finish.build();
         }
 

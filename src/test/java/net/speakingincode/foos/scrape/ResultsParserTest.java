@@ -86,4 +86,22 @@ public class ResultsParserTest {
             ));
         }
     }
+
+    @Test
+    public void team2WinsPlayoffs() throws Exception {
+        try (InputStream ktool = getClass().getResourceAsStream("/team2-wins.ktool");
+             InputStream metadata = getClass().getResourceAsStream("/location.json")) {
+            ResultsParserConfig config = ResultsParserConfig.builder()
+                .ktool(ktool)
+                .metadata(metadata)
+                .build();
+            MonsterResult result = ResultsParser.load(config);
+            assertThat(result.finishes(), Matchers.contains(
+                finish(0, "Nick Furci", "Hamdi"),
+                finish(1, "Kevin", "Morgan"),
+                finish(2, "Lih", "Eric"),
+                finish(3, "Maverick", "Mike")
+            ));
+        }
+    }
 }
