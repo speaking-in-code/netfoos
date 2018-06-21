@@ -1,9 +1,15 @@
 package net.speakingincode.foos.scrape;
 
 import com.google.auto.value.AutoValue;
+import com.google.auto.value.extension.memoized.Memoized;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.ImmutableList;
 import com.google.gson.Gson;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
 import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 
 import javax.annotation.Nullable;
@@ -26,8 +32,41 @@ public abstract class KToolResults {
     public abstract String created();
     public abstract List<KToolPlayer> players();
     public abstract List<KToolTeam> teams();
-    public abstract List<KToolPlay> plays();
-    public abstract @Nullable KnockOut ko();
+
+    @Memoized
+    public List<KToolPlay> plays() {
+        if (v1plays() != null) {
+            return v1plays();
+        }
+        ImmutableList.Builder<KToolPlay> b = ImmutableList.builder();
+        for (KToolRound round : v2rounds()) {
+            b.addAll(round.plays());
+        }
+        return b.build();
+    }
+
+    /**
+     * v1 of the file format has plays as a list.
+     */
+    @SerializedName("plays")
+    abstract @Nullable List<KToolPlay> v1plays();
+
+    /**
+     * v2 of the file format has a list of rounds, with plays internal.
+     */
+    @SerializedName("rounds")
+    abstract @Nullable List<KToolRound> v2rounds();
+
+    @Memoized
+    public @Nullable KnockOut ko() {
+        if (koWrapper() == null) {
+            return null;
+        }
+        return koWrapper().ko();
+    }
+
+    @SerializedName("ko")
+    abstract @Nullable KnockOutWrapper koWrapper();
 
     @VisibleForTesting
     public static LocalDate getLocalDate(String textDate, ZoneId localZone) {
@@ -38,11 +77,6 @@ public abstract class KToolResults {
 
     public LocalDate createdDate() {
         return getLocalDate(created(), ZoneId.systemDefault());
-    }
-
-    public static KToolResults create(String created, List<KToolPlayer> players, List<KToolTeam> teams,
-                                      List<KToolPlay> plays, @Nullable KnockOut ko) {
-        return new AutoValue_KToolResults(created, players, teams, plays, ko);
     }
 
     public static TypeAdapter<KToolResults> typeAdapter(Gson gson) {
@@ -60,6 +94,31 @@ public abstract class KToolResults {
 
         public static TypeAdapter<KnockOut> typeAdapter(Gson gson) {
             return new AutoValue_KToolResults_KnockOut.GsonTypeAdapter(gson);
+        }
+    }
+
+    @AutoValue
+    public abstract static class KnockOutWrapper {
+        public abstract @Nullable KnockOut ko();
+        public static KnockOutWrapper create(KnockOut ko) {
+            return new AutoValue_KToolResults_KnockOutWrapper(ko);
+        }
+    }
+
+    static final Type knockOutWrapperType = new TypeToken<KnockOutWrapper>(){}.getType();
+
+    static class KnockOutWrapperAdapter implements JsonDeserializer<KnockOutWrapper> {
+        public KnockOutWrapper deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext ctx) {
+            KnockOut ko = null;
+            if (json.isJsonArray()) {
+                JsonElement first = json.getAsJsonArray().get(0);
+                ko = ctx.deserialize(first, KnockOut.class);
+            } else if (json.isJsonObject()) {
+                ko = ctx.deserialize(json, KnockOut.class);
+            } else {
+                throw new RuntimeException("Unexpected JSON type: " + json.getClass());
+            }
+            return KnockOutWrapper.create(ko);
         }
     }
 

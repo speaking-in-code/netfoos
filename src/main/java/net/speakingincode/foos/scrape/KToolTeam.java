@@ -6,16 +6,18 @@ import com.google.common.collect.ImmutableList;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 @AutoValue
 public abstract class KToolTeam {
     public abstract String id();
-    public abstract String name();
+    public abstract @Nullable String name();
     public abstract List<Player> players();
 
     public List<String> teamPlayerNames() {
         Preconditions.checkState(players().isEmpty(), "Use players list instead");
+        Preconditions.checkState(name() != null, "Player names not in team name");
         return teamToPlayers(name());
     }
 

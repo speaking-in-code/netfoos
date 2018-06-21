@@ -36,6 +36,19 @@ public class KToolResultsTest {
              assertThat(result.players().get(0).name(), equalTo("Vera"));
              assertThat(result.ko().third().plays().get(0).team1().id(),
                 equalTo("c7bbd364-8db4-4238-fdc5-37935966493a"));
+            assertThat(result.plays().get(0).team1().id(),
+                equalTo("fa30aa22-175f-436c-a0f0-7472a3567d81"));
+        }
+    }
+
+    @Test
+    public void v2format() throws Exception {
+        try (InputStream testInput = getClass().getResourceAsStream("/v2-format.ktool")) {
+            String json = CharStreams.toString(new InputStreamReader(testInput, Charsets.UTF_8));
+            KToolResults result = KToolResults.fromJson(json);
+            assertThat(result.players().get(0).name(), equalTo("Vera"));
+            assertThat(result.plays().get(0).team1().id(), equalTo("SyNgNQNSwWm"));
+            assertThat(result.ko().third().plays().get(0).team1().id(), equalTo("S1sW7ZwvZ7"));
         }
     }
 }

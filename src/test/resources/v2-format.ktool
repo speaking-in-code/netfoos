@@ -1,0 +1,6478 @@
+{
+  "id": "BkyjmrvWX",
+  "type": "Tournament",
+  "name": "06\/19\/18",
+  "created": "2018-06-20T03:01:42.709Z",
+  "groups": [
+    
+  ],
+  "players": [
+    {
+      "id": "Sy7ZpXHwW7",
+      "type": "Player",
+      "_id": "Sy7ZpXHwW7",
+      "stats": {
+        "id": "BJ4ZTQHvWQ",
+        "type": "TableStats",
+        "_id": "BJ4ZTQHvWQ",
+        "games": 4,
+        "points": 3,
+        "won": 1,
+        "lost": 3,
+        "draws": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "sets_diff": -2,
+        "dis_won": 1,
+        "dis_lost": 3,
+        "dis_draw": 0,
+        "dis_diff": -2,
+        "goals": 18,
+        "goals_in": 26,
+        "w_l": 0,
+        "goal_diff": -8,
+        "opponents": {
+          "Skb0XSwbQ": -1,
+          "S1zgJVBwb7": -1,
+          "Hy3pQSvb7": -1,
+          "rJZ04Bvb7": -1,
+          "Syky4rDbQ": -1,
+          "rkYCmBvZ7": 0,
+          "SJ_1NSwZX": 1
+        },
+        "lives": 0,
+        "bh1": 2.9375,
+        "bh2": 21.75,
+        "sb": 6,
+        "points_per_game": 0.75,
+        "corrected_points_per_game": 0.75,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "BJHZpmHw-m",
+        "type": "ParticipantMeta",
+        "_id": "BJHZpmHw-m",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Vera",
+      "weight": 1,
+      "startIndex": 0,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "HyuaQrDb7",
+      "type": "Player",
+      "_id": "HyuaQrDb7",
+      "stats": {
+        "id": "HylOamSPb7",
+        "type": "TableStats",
+        "_id": "HylOamSPb7",
+        "games": 3,
+        "points": 9,
+        "won": 3,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "sets_diff": 3,
+        "dis_won": 3,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 3,
+        "goals": 21,
+        "goals_in": 10,
+        "w_l": 0,
+        "goal_diff": 11,
+        "opponents": {
+          "rkYCmBvZ7": 1,
+          "SJiAQHvWm": 1,
+          "H1k9tBPbm": 1,
+          "S1zgJVBwb7": 1,
+          "BkgAmrwW7": 1,
+          "BJSAmHPbm": 1
+        },
+        "lives": 3,
+        "bh1": 2.5,
+        "bh2": 22.333333333333,
+        "sb": 27,
+        "points_per_game": 3,
+        "corrected_points_per_game": 3,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "rJZdaQBvWQ",
+        "type": "ParticipantMeta",
+        "_id": "rJZdaQBvWQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Brian",
+      "weight": 1,
+      "startIndex": 1,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "Hy3pQSvb7",
+      "type": "Player",
+      "_id": "Hy3pQSvb7",
+      "stats": {
+        "id": "rylha7rwb7",
+        "type": "TableStats",
+        "_id": "rylha7rwb7",
+        "games": 3,
+        "points": 9,
+        "won": 3,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "sets_diff": 3,
+        "dis_won": 3,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 3,
+        "goals": 21,
+        "goals_in": 11,
+        "w_l": 0,
+        "goal_diff": 10,
+        "opponents": {
+          "rJ4R7rPbX": 1,
+          "H181Vrwbm": 1,
+          "Syky4rDbQ": 1,
+          "Sy7ZpXHwW7": 1,
+          "H17CXHwWm": 1,
+          "HJGu4HDW7": 1
+        },
+        "lives": 3,
+        "bh1": 2.1666666666667,
+        "bh2": 23.25,
+        "sb": 24,
+        "points_per_game": 3,
+        "corrected_points_per_game": 3,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "r1Z2pQHv-m",
+        "type": "ParticipantMeta",
+        "_id": "r1Z2pQHv-m",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Rodrigo Z",
+      "weight": 1,
+      "startIndex": 2,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "SJA67rPWQ",
+      "type": "Player",
+      "_id": "SJA67rPWQ",
+      "stats": {
+        "id": "HJgAaQHDb7",
+        "type": "TableStats",
+        "_id": "HJgAaQHDb7",
+        "games": 4,
+        "points": 0,
+        "won": 0,
+        "lost": 4,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 4,
+        "sets_diff": -4,
+        "dis_won": 0,
+        "dis_lost": 4,
+        "dis_draw": 0,
+        "dis_diff": -4,
+        "goals": 15,
+        "goals_in": 28,
+        "w_l": 0,
+        "goal_diff": -13,
+        "opponents": {
+          "BJSAmHPbm": -1,
+          "SJ_1NSwZX": -1,
+          "HJ60Qrwbm": -1,
+          "r1ly4rv-X": -1,
+          "BkgAmrwW7": -1,
+          "SyZxNrwbm": -2,
+          "SJiAQHvWm": -1
+        },
+        "lives": -1,
+        "bh1": 3.125,
+        "bh2": 20.75,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "S1WA6mrPWQ",
+        "type": "ParticipantMeta",
+        "_id": "S1WA6mrPWQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Alex",
+      "weight": 1,
+      "startIndex": 3,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "BkgAmrwW7",
+      "type": "Player",
+      "_id": "BkgAmrwW7",
+      "stats": {
+        "id": "HJxgRXrwZ7",
+        "type": "TableStats",
+        "_id": "HJxgRXrwZ7",
+        "games": 3,
+        "points": 3,
+        "won": 1,
+        "lost": 2,
+        "draws": 0,
+        "sets_won": 1,
+        "sets_lost": 2,
+        "sets_diff": -1,
+        "dis_won": 1,
+        "dis_lost": 2,
+        "dis_draw": 0,
+        "dis_diff": -1,
+        "goals": 14,
+        "goals_in": 17,
+        "w_l": 0,
+        "goal_diff": -3,
+        "opponents": {
+          "ByOAmHv-X": -1,
+          "SyZxNrwbm": -1,
+          "SJA67rPWQ": 1,
+          "r19SjHPZQ": 1,
+          "HyuaQrDb7": -1,
+          "ryl5OBvWm": -1
+        },
+        "lives": 1,
+        "bh1": 3.75,
+        "bh2": 19.25,
+        "sb": 3,
+        "points_per_game": 1,
+        "corrected_points_per_game": 1,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "HkblCXSDWm",
+        "type": "ParticipantMeta",
+        "_id": "HkblCXSDWm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Rod R",
+      "weight": 1,
+      "startIndex": 4,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "Skb0XSwbQ",
+      "type": "Player",
+      "_id": "Skb0XSwbQ",
+      "stats": {
+        "id": "SJebCmBvZQ",
+        "type": "TableStats",
+        "_id": "SJebCmBvZQ",
+        "games": 4,
+        "points": 6,
+        "won": 2,
+        "lost": 2,
+        "draws": 0,
+        "sets_won": 2,
+        "sets_lost": 2,
+        "sets_diff": 0,
+        "dis_won": 2,
+        "dis_lost": 2,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 22,
+        "goals_in": 22,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          "Sy7ZpXHwW7": 1,
+          "rkYCmBvZ7": 2,
+          "ByOAmHv-X": -1,
+          "S1zgJVBwb7": -1,
+          "rJZ04Bvb7": -1,
+          "r1ly4rv-X": -1,
+          "SJ_1NSwZX": 1
+        },
+        "lives": 1,
+        "bh1": 2.75,
+        "bh2": 23.125,
+        "sb": 12,
+        "points_per_game": 1.5,
+        "corrected_points_per_game": 1.5,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "SkbZAmSw-Q",
+        "type": "ParticipantMeta",
+        "_id": "SkbZAmSw-Q",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Mike K",
+      "weight": 1,
+      "startIndex": 5,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "H17CXHwWm",
+      "type": "Player",
+      "_id": "H17CXHwWm",
+      "stats": {
+        "id": "HklXRmBPZ7",
+        "type": "TableStats",
+        "_id": "HklXRmBPZ7",
+        "games": 3,
+        "points": 0,
+        "won": 0,
+        "lost": 3,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "sets_diff": -3,
+        "dis_won": 0,
+        "dis_lost": 3,
+        "dis_draw": 0,
+        "dis_diff": -3,
+        "goals": 15,
+        "goals_in": 21,
+        "w_l": 0,
+        "goal_diff": -6,
+        "opponents": {
+          "r19SjHPZQ": -1,
+          "BkVkVSPbX": -1,
+          "ryl5OBvWm": -1,
+          "Hy3pQSvb7": -1,
+          "HJGu4HDW7": -1,
+          "Syky4rDbQ": -1
+        },
+        "lives": 0,
+        "bh1": 4.1666666666667,
+        "bh2": 17.25,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "S1Z7A7rPWm",
+        "type": "ParticipantMeta",
+        "_id": "S1Z7A7rPWm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Min",
+      "weight": 1,
+      "startIndex": 6,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "rJ4R7rPbX",
+      "type": "Player",
+      "_id": "rJ4R7rPbX",
+      "stats": {
+        "id": "Hke40QrvW7",
+        "type": "TableStats",
+        "_id": "Hke40QrvW7",
+        "games": 4,
+        "points": 3,
+        "won": 1,
+        "lost": 3,
+        "draws": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "sets_diff": -2,
+        "dis_won": 1,
+        "dis_lost": 3,
+        "dis_draw": 0,
+        "dis_diff": -2,
+        "goals": 13,
+        "goals_in": 22,
+        "w_l": 0,
+        "goal_diff": -9,
+        "opponents": {
+          "Hy3pQSvb7": -1,
+          "HJ60Qrwbm": -1,
+          "rkYCmBvZ7": 1,
+          "SJiAQHvWm": 1,
+          "H181Vrwbm": -1,
+          "BJSAmHPbm": -1,
+          "H1k9tBPbm": -1,
+          "BkVkVSPbX": -1
+        },
+        "lives": 0,
+        "bh1": 3.5,
+        "bh2": 19.0625,
+        "sb": 6,
+        "points_per_game": 0.75,
+        "corrected_points_per_game": 0.75,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "BJb4RXrDZX",
+        "type": "ParticipantMeta",
+        "_id": "BJb4RXrDZX",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Rishabh",
+      "weight": 1,
+      "startIndex": 7,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "BJSAmHPbm",
+      "type": "Player",
+      "_id": "BJSAmHPbm",
+      "stats": {
+        "id": "S1xBCXrw-X",
+        "type": "TableStats",
+        "_id": "S1xBCXrw-X",
+        "games": 4,
+        "points": 9,
+        "won": 3,
+        "lost": 1,
+        "draws": 0,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "sets_diff": 2,
+        "dis_won": 3,
+        "dis_lost": 1,
+        "dis_draw": 0,
+        "dis_diff": 2,
+        "goals": 25,
+        "goals_in": 13,
+        "w_l": 0,
+        "goal_diff": 12,
+        "opponents": {
+          "SJA67rPWQ": 1,
+          "Syky4rDbQ": 1,
+          "H1k9tBPbm": 1,
+          "SJ_1NSwZX": 2,
+          "rJ4R7rPbX": 1,
+          "HyuaQrDb7": -1,
+          "ryl5OBvWm": -1
+        },
+        "lives": 2,
+        "bh1": 2.4375,
+        "bh2": 22.625,
+        "sb": 18,
+        "points_per_game": 2.25,
+        "corrected_points_per_game": 2.25,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "rJZHAXSPZ7",
+        "type": "ParticipantMeta",
+        "_id": "rJZHAXSPZ7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Andrey",
+      "weight": 1,
+      "startIndex": 8,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "ByOAmHv-X",
+      "type": "Player",
+      "_id": "ByOAmHv-X",
+      "stats": {
+        "id": "SJluAmHDZX",
+        "type": "TableStats",
+        "_id": "SJluAmHDZX",
+        "games": 3,
+        "points": 9,
+        "won": 3,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "sets_diff": 3,
+        "dis_won": 3,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 3,
+        "goals": 21,
+        "goals_in": 9,
+        "w_l": 0,
+        "goal_diff": 12,
+        "opponents": {
+          "BkgAmrwW7": 1,
+          "r1ly4rv-X": 1,
+          "Skb0XSwbQ": 1,
+          "SyZxNrwbm": 1,
+          "r19SjHPZQ": 1,
+          "rJZ04Bvb7": 1
+        },
+        "lives": 3,
+        "bh1": 3.0833333333333,
+        "bh2": 21.5,
+        "sb": 33,
+        "points_per_game": 3,
+        "corrected_points_per_game": 3,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "ryWO0XBvbX",
+        "type": "ParticipantMeta",
+        "_id": "ryWO0XBvbX",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Kevin",
+      "weight": 1,
+      "startIndex": 9,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "rkYCmBvZ7",
+      "type": "Player",
+      "_id": "rkYCmBvZ7",
+      "stats": {
+        "id": "SylFR7rP-m",
+        "type": "TableStats",
+        "_id": "SylFR7rP-m",
+        "games": 4,
+        "points": 3,
+        "won": 1,
+        "lost": 3,
+        "draws": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "sets_diff": -2,
+        "dis_won": 1,
+        "dis_lost": 3,
+        "dis_draw": 0,
+        "dis_diff": -2,
+        "goals": 16,
+        "goals_in": 25,
+        "w_l": 0,
+        "goal_diff": -9,
+        "opponents": {
+          "Skb0XSwbQ": -2,
+          "S1zgJVBwb7": -1,
+          "HyuaQrDb7": -1,
+          "rJ4R7rPbX": -1,
+          "Sy7ZpXHwW7": 0,
+          "SJiAQHvWm": 1
+        },
+        "lives": 0,
+        "bh1": 2.6875,
+        "bh2": 22.4375,
+        "sb": 6,
+        "points_per_game": 0.75,
+        "corrected_points_per_game": 0.75,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "B1-KRXBP-Q",
+        "type": "ParticipantMeta",
+        "_id": "B1-KRXBP-Q",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Haoran",
+      "weight": 1,
+      "startIndex": 10,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "SJiAQHvWm",
+      "type": "Player",
+      "_id": "SJiAQHvWm",
+      "stats": {
+        "id": "Bygi0XSPZQ",
+        "type": "TableStats",
+        "_id": "Bygi0XSPZQ",
+        "games": 3,
+        "points": 3,
+        "won": 1,
+        "lost": 2,
+        "draws": 0,
+        "sets_won": 1,
+        "sets_lost": 2,
+        "sets_diff": -1,
+        "dis_won": 1,
+        "dis_lost": 2,
+        "dis_draw": 0,
+        "dis_diff": -1,
+        "goals": 12,
+        "goals_in": 18,
+        "w_l": 0,
+        "goal_diff": -6,
+        "opponents": {
+          "HyuaQrDb7": -1,
+          "rJ4R7rPbX": -1,
+          "Syky4rDbQ": -1,
+          "rkYCmBvZ7": -1,
+          "SJA67rPWQ": 1,
+          "HJ60Qrwbm": 1
+        },
+        "lives": 1,
+        "bh1": 2.5,
+        "bh2": 22.166666666667,
+        "sb": 6,
+        "points_per_game": 1,
+        "corrected_points_per_game": 1,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "rk-jAXSD-X",
+        "type": "ParticipantMeta",
+        "_id": "rk-jAXSD-X",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Natalie",
+      "weight": 1,
+      "startIndex": 11,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "HJ60Qrwbm",
+      "type": "Player",
+      "_id": "HJ60Qrwbm",
+      "stats": {
+        "id": "ryxTCXHDZQ",
+        "type": "TableStats",
+        "_id": "ryxTCXHDZQ",
+        "games": 4,
+        "points": 6,
+        "won": 2,
+        "lost": 2,
+        "draws": 0,
+        "sets_won": 2,
+        "sets_lost": 2,
+        "sets_diff": 0,
+        "dis_won": 2,
+        "dis_lost": 2,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 23,
+        "goals_in": 20,
+        "w_l": 0,
+        "goal_diff": 3,
+        "opponents": {
+          "rJ4R7rPbX": 1,
+          "H181Vrwbm": 2,
+          "SJA67rPWQ": 1,
+          "rJZ04Bvb7": -1,
+          "r1ly4rv-X": -1,
+          "SyZxNrwbm": -1,
+          "SJiAQHvWm": -1
+        },
+        "lives": 1,
+        "bh1": 2.625,
+        "bh2": 22.625,
+        "sb": 15,
+        "points_per_game": 1.5,
+        "corrected_points_per_game": 1.5,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "HJW6CXBvbm",
+        "type": "ParticipantMeta",
+        "_id": "HJW6CXBvbm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Tao",
+      "weight": 1,
+      "startIndex": 12,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "Syky4rDbQ",
+      "type": "Player",
+      "_id": "Syky4rDbQ",
+      "stats": {
+        "id": "BJx1JErvWm",
+        "type": "TableStats",
+        "_id": "BJx1JErvWm",
+        "games": 4,
+        "points": 6,
+        "won": 2,
+        "lost": 2,
+        "draws": 0,
+        "sets_won": 2,
+        "sets_lost": 2,
+        "sets_diff": 0,
+        "dis_won": 2,
+        "dis_lost": 2,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 22,
+        "goals_in": 23,
+        "w_l": 0,
+        "goal_diff": -1,
+        "opponents": {
+          "BJSAmHPbm": -1,
+          "SJ_1NSwZX": -1,
+          "Hy3pQSvb7": -1,
+          "rJZ04Bvb7": -1,
+          "Sy7ZpXHwW7": 1,
+          "SJiAQHvWm": 1,
+          "H17CXHwWm": 1,
+          "r1ly4rv-X": 1
+        },
+        "lives": 1,
+        "bh1": 2.8125,
+        "bh2": 20.6875,
+        "sb": 12,
+        "points_per_game": 1.5,
+        "corrected_points_per_game": 1.5,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "SJZyy4BDW7",
+        "type": "ParticipantMeta",
+        "_id": "SJZyy4BDW7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Yue",
+      "weight": 1,
+      "startIndex": 13,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "r1ly4rv-X",
+      "type": "Player",
+      "_id": "r1ly4rv-X",
+      "stats": {
+        "id": "Hyel14rDbX",
+        "type": "TableStats",
+        "_id": "Hyel14rDbX",
+        "games": 4,
+        "points": 6,
+        "won": 2,
+        "lost": 2,
+        "draws": 0,
+        "sets_won": 2,
+        "sets_lost": 2,
+        "sets_diff": 0,
+        "dis_won": 2,
+        "dis_lost": 2,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 22,
+        "goals_in": 23,
+        "w_l": 0,
+        "goal_diff": -1,
+        "opponents": {
+          "ByOAmHv-X": -1,
+          "SyZxNrwbm": -1,
+          "SJA67rPWQ": 1,
+          "H181Vrwbm": 1,
+          "HJ60Qrwbm": 1,
+          "Skb0XSwbQ": 1,
+          "HJGu4HDW7": -1,
+          "Syky4rDbQ": -1
+        },
+        "lives": 1,
+        "bh1": 3.3125,
+        "bh2": 21.0625,
+        "sb": 18,
+        "points_per_game": 1.5,
+        "corrected_points_per_game": 1.5,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "S1bxJNrP-X",
+        "type": "ParticipantMeta",
+        "_id": "S1bxJNrP-X",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Paddu",
+      "weight": 1,
+      "startIndex": 14,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "S1zgJVBwb7",
+      "type": "Player",
+      "_id": "S1zgJVBwb7",
+      "stats": {
+        "id": "BkXeJ4Hwb7",
+        "type": "TableStats",
+        "_id": "BkXeJ4Hwb7",
+        "games": 4,
+        "points": 6,
+        "won": 2,
+        "lost": 2,
+        "draws": 0,
+        "sets_won": 2,
+        "sets_lost": 2,
+        "sets_diff": 0,
+        "dis_won": 2,
+        "dis_lost": 2,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 21,
+        "goals_in": 20,
+        "w_l": 0,
+        "goal_diff": 1,
+        "opponents": {
+          "Sy7ZpXHwW7": 1,
+          "rkYCmBvZ7": 1,
+          "Skb0XSwbQ": 1,
+          "SyZxNrwbm": 1,
+          "BkVkVSPbX": -2,
+          "HyuaQrDb7": -1,
+          "H1k9tBPbm": -1
+        },
+        "lives": 1,
+        "bh1": 3.8125,
+        "bh2": 19.125,
+        "sb": 21,
+        "points_per_game": 1.5,
+        "corrected_points_per_game": 1.5,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "Sy4xk4rvbX",
+        "type": "ParticipantMeta",
+        "_id": "Sy4xk4rvbX",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Xavier",
+      "weight": 1,
+      "startIndex": 15,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "BkVkVSPbX",
+      "type": "Player",
+      "_id": "BkVkVSPbX",
+      "stats": {
+        "id": "HkeEJEHw-X",
+        "type": "TableStats",
+        "_id": "HkeEJEHw-X",
+        "games": 3,
+        "points": 9,
+        "won": 3,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "sets_diff": 3,
+        "dis_won": 3,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 3,
+        "goals": 21,
+        "goals_in": 12,
+        "w_l": 0,
+        "goal_diff": 9,
+        "opponents": {
+          "ryl5OBvWm": 1,
+          "H17CXHwWm": 1,
+          "H1k9tBPbm": 1,
+          "S1zgJVBwb7": 2,
+          "rJ4R7rPbX": 1
+        },
+        "lives": 3,
+        "bh1": 2.25,
+        "bh2": 26.25,
+        "sb": 24,
+        "points_per_game": 3,
+        "corrected_points_per_game": 3,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "Syb4k4SDWm",
+        "type": "ParticipantMeta",
+        "_id": "Syb4k4SDWm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Ray",
+      "weight": 1,
+      "startIndex": 16,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "H181Vrwbm",
+      "type": "Player",
+      "_id": "H181Vrwbm",
+      "stats": {
+        "id": "r1eIyNSDW7",
+        "type": "TableStats",
+        "_id": "r1eIyNSDW7",
+        "games": 4,
+        "points": 6,
+        "won": 2,
+        "lost": 2,
+        "draws": 0,
+        "sets_won": 2,
+        "sets_lost": 2,
+        "sets_diff": 0,
+        "dis_won": 2,
+        "dis_lost": 2,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 20,
+        "goals_in": 19,
+        "w_l": 0,
+        "goal_diff": 1,
+        "opponents": {
+          "Hy3pQSvb7": -1,
+          "HJ60Qrwbm": -2,
+          "r1ly4rv-X": -1,
+          "SJ_1NSwZX": 1,
+          "rJ4R7rPbX": 1,
+          "r19SjHPZQ": 1,
+          "rJZ04Bvb7": 1
+        },
+        "lives": 1,
+        "bh1": 3,
+        "bh2": 21.5,
+        "sb": 15,
+        "points_per_game": 1.5,
+        "corrected_points_per_game": 1.5,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "HJWUyNSDZ7",
+        "type": "ParticipantMeta",
+        "_id": "HJWUyNSDZ7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Jorge",
+      "weight": 1,
+      "startIndex": 17,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "SJ_1NSwZX",
+      "type": "Player",
+      "_id": "SJ_1NSwZX",
+      "stats": {
+        "id": "BkeuJNHvbQ",
+        "type": "TableStats",
+        "_id": "BkeuJNHvbQ",
+        "games": 4,
+        "points": 3,
+        "won": 1,
+        "lost": 3,
+        "draws": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "sets_diff": -2,
+        "dis_won": 1,
+        "dis_lost": 3,
+        "dis_draw": 0,
+        "dis_diff": -2,
+        "goals": 14,
+        "goals_in": 25,
+        "w_l": 0,
+        "goal_diff": -11,
+        "opponents": {
+          "SJA67rPWQ": 1,
+          "Syky4rDbQ": 1,
+          "HJGu4HDW7": -1,
+          "BJSAmHPbm": -2,
+          "H181Vrwbm": -1,
+          "Sy7ZpXHwW7": -1,
+          "Skb0XSwbQ": -1
+        },
+        "lives": 0,
+        "bh1": 2.9375,
+        "bh2": 21.5625,
+        "sb": 6,
+        "points_per_game": 0.75,
+        "corrected_points_per_game": 0.75,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "BJWOJ4rPbm",
+        "type": "ParticipantMeta",
+        "_id": "BJWOJ4rPbm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Chris",
+      "weight": 1,
+      "startIndex": 18,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "SyZxNrwbm",
+      "type": "Player",
+      "_id": "SyZxNrwbm",
+      "stats": {
+        "id": "HylZlErD-Q",
+        "type": "TableStats",
+        "_id": "HylZlErD-Q",
+        "games": 4,
+        "points": 9,
+        "won": 3,
+        "lost": 1,
+        "draws": 0,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "sets_diff": 2,
+        "dis_won": 3,
+        "dis_lost": 1,
+        "dis_draw": 0,
+        "dis_diff": 2,
+        "goals": 24,
+        "goals_in": 17,
+        "w_l": 0,
+        "goal_diff": 7,
+        "opponents": {
+          "BkgAmrwW7": 1,
+          "r1ly4rv-X": 1,
+          "ByOAmHv-X": -1,
+          "S1zgJVBwb7": -1,
+          "SJA67rPWQ": 2,
+          "r19SjHPZQ": 1,
+          "HJ60Qrwbm": 1
+        },
+        "lives": 2,
+        "bh1": 2.375,
+        "bh2": 23.5625,
+        "sb": 18,
+        "points_per_game": 2.25,
+        "corrected_points_per_game": 2.25,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "H1--xVSP-X",
+        "type": "ParticipantMeta",
+        "_id": "H1--xVSP-X",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Mo",
+      "weight": 1,
+      "startIndex": 19,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "HJGu4HDW7",
+      "type": "Player",
+      "_id": "HJGu4HDW7",
+      "stats": {
+        "id": "H1gMOErwZm",
+        "type": "TableStats",
+        "_id": "H1gMOErwZm",
+        "games": 3,
+        "points": 6,
+        "won": 2,
+        "lost": 1,
+        "draws": 0,
+        "sets_won": 2,
+        "sets_lost": 1,
+        "sets_diff": 1,
+        "dis_won": 2,
+        "dis_lost": 1,
+        "dis_draw": 0,
+        "dis_diff": 1,
+        "goals": 19,
+        "goals_in": 12,
+        "w_l": 0,
+        "goal_diff": 7,
+        "opponents": {
+          "H1k9tBPbm": 1,
+          "SJ_1NSwZX": 1,
+          "ryl5OBvWm": -1,
+          "Hy3pQSvb7": -1,
+          "H17CXHwWm": 1,
+          "r1ly4rv-X": 1
+        },
+        "lives": 2,
+        "bh1": 2.75,
+        "bh2": 21.916666666667,
+        "sb": 12,
+        "points_per_game": 2,
+        "corrected_points_per_game": 2,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "B1-M_EHDb7",
+        "type": "ParticipantMeta",
+        "_id": "B1-M_EHDb7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Rob M",
+      "weight": 1,
+      "startIndex": 0,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "rJZ04Bvb7",
+      "type": "Player",
+      "_id": "rJZ04Bvb7",
+      "stats": {
+        "id": "ByG04HDZ7",
+        "type": "TableStats",
+        "_id": "ByG04HDZ7",
+        "games": 3,
+        "points": 6,
+        "won": 2,
+        "lost": 1,
+        "draws": 0,
+        "sets_won": 2,
+        "sets_lost": 1,
+        "sets_diff": 1,
+        "dis_won": 2,
+        "dis_lost": 1,
+        "dis_draw": 0,
+        "dis_diff": 1,
+        "goals": 17,
+        "goals_in": 16,
+        "w_l": 0,
+        "goal_diff": 1,
+        "opponents": {
+          "Syky4rDbQ": 1,
+          "Sy7ZpXHwW7": 1,
+          "HJ60Qrwbm": 1,
+          "Skb0XSwbQ": 1,
+          "H181Vrwbm": -1,
+          "ByOAmHv-X": -1
+        },
+        "lives": 2,
+        "bh1": 3.25,
+        "bh2": 21.916666666667,
+        "sb": 21,
+        "points_per_game": 2,
+        "corrected_points_per_game": 2,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "SJefREHDZm",
+        "type": "ParticipantMeta",
+        "_id": "SJefREHDZm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Albert C",
+      "weight": 1,
+      "startIndex": 0,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "ryl5OBvWm",
+      "type": "Player",
+      "_id": "ryl5OBvWm",
+      "stats": {
+        "id": "Syel5OSvZ7",
+        "type": "TableStats",
+        "_id": "Syel5OSvZ7",
+        "games": 3,
+        "points": 6,
+        "won": 2,
+        "lost": 1,
+        "draws": 0,
+        "sets_won": 2,
+        "sets_lost": 1,
+        "sets_diff": 1,
+        "dis_won": 2,
+        "dis_lost": 1,
+        "dis_draw": 0,
+        "dis_diff": 1,
+        "goals": 19,
+        "goals_in": 16,
+        "w_l": 0,
+        "goal_diff": 3,
+        "opponents": {
+          "r19SjHPZQ": -1,
+          "BkVkVSPbX": -1,
+          "H17CXHwWm": 1,
+          "HJGu4HDW7": 1,
+          "BkgAmrwW7": 1,
+          "BJSAmHPbm": 1
+        },
+        "lives": 2,
+        "bh1": 3.0833333333333,
+        "bh2": 19.416666666667,
+        "sb": 18,
+        "points_per_game": 2,
+        "corrected_points_per_game": 2,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "S1Weq_SDb7",
+        "type": "ParticipantMeta",
+        "_id": "S1Weq_SDb7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Albert S",
+      "weight": 1,
+      "startIndex": 0,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "H1k9tBPbm",
+      "type": "Player",
+      "_id": "H1k9tBPbm",
+      "stats": {
+        "id": "SJxk9FrPZ7",
+        "type": "TableStats",
+        "_id": "SJxk9FrPZ7",
+        "games": 3,
+        "points": 3,
+        "won": 1,
+        "lost": 2,
+        "draws": 0,
+        "sets_won": 1,
+        "sets_lost": 2,
+        "sets_diff": -1,
+        "dis_won": 1,
+        "dis_lost": 2,
+        "dis_draw": 0,
+        "dis_diff": -1,
+        "goals": 12,
+        "goals_in": 16,
+        "w_l": 0,
+        "goal_diff": -4,
+        "opponents": {
+          "HJGu4HDW7": -1,
+          "BJSAmHPbm": -1,
+          "BkVkVSPbX": -1,
+          "HyuaQrDb7": -1,
+          "S1zgJVBwb7": 1,
+          "rJ4R7rPbX": 1
+        },
+        "lives": 1,
+        "bh1": 4.1666666666667,
+        "bh2": 20.5,
+        "sb": 9,
+        "points_per_game": 1,
+        "corrected_points_per_game": 1,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "r1by9YHvWX",
+        "type": "ParticipantMeta",
+        "_id": "r1by9YHvWX",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Hamdi",
+      "weight": 1,
+      "startIndex": 0,
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "r19SjHPZQ",
+      "type": "Player",
+      "_id": "r19SjHPZQ",
+      "stats": {
+        "id": "HkecBjSP-Q",
+        "type": "TableStats",
+        "_id": "HkecBjSP-Q",
+        "games": 3,
+        "points": 3,
+        "won": 1,
+        "lost": 2,
+        "draws": 0,
+        "sets_won": 1,
+        "sets_lost": 2,
+        "sets_diff": -1,
+        "dis_won": 1,
+        "dis_lost": 2,
+        "dis_draw": 0,
+        "dis_diff": -1,
+        "goals": 13,
+        "goals_in": 19,
+        "w_l": 0,
+        "goal_diff": -6,
+        "opponents": {
+          "ryl5OBvWm": 1,
+          "H17CXHwWm": 1,
+          "BkgAmrwW7": -1,
+          "SyZxNrwbm": -1,
+          "H181Vrwbm": -1,
+          "ByOAmHv-X": -1
+        },
+        "lives": 1,
+        "bh1": 3.25,
+        "bh2": 21.25,
+        "sb": 6,
+        "points_per_game": 1,
+        "corrected_points_per_game": 1,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "Sk-cHiSDbX",
+        "type": "ParticipantMeta",
+        "_id": "Sk-cHiSDbX",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "_name": "Corinne",
+      "weight": 1,
+      "startIndex": 0,
+      "removed": false,
+      "deactivated": false
+    }
+  ],
+  "teams": [
+    {
+      "id": "SyNgNQNSwWm",
+      "type": "Team",
+      "_id": "SyNgNQNSwWm",
+      "stats": {
+        "id": "SyBeNQNBDb7",
+        "type": "TableStats",
+        "_id": "SyBeNQNBDb7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "HJIeVQ4BPbQ",
+        "type": "ParticipantMeta",
+        "_id": "HJIeVQ4BPbQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "Sy7ZpXHwW7",
+          "type": "Player"
+        },
+        {
+          "id": "rkYCmBvZ7",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "BJweVm4SD-Q",
+      "type": "Team",
+      "_id": "BJweVm4SD-Q",
+      "stats": {
+        "id": "S1dxE74BPZm",
+        "type": "TableStats",
+        "_id": "S1dxE74BPZm",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "SkKg4mEHD-Q",
+        "type": "ParticipantMeta",
+        "_id": "SkKg4mEHD-Q",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "HyuaQrDb7",
+          "type": "Player"
+        },
+        {
+          "id": "SJiAQHvWm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "HJ5xV7Nrvbm",
+      "type": "Team",
+      "_id": "HJ5xV7Nrvbm",
+      "stats": {
+        "id": "r1jgNQNBPWm",
+        "type": "TableStats",
+        "_id": "r1jgNQNBPWm",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "rkhx4Q4Sw-Q",
+        "type": "ParticipantMeta",
+        "_id": "rkhx4Q4Sw-Q",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "Hy3pQSvb7",
+          "type": "Player"
+        },
+        {
+          "id": "HJ60Qrwbm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "BJag4X4Bv-X",
+      "type": "Team",
+      "_id": "BJag4X4Bv-X",
+      "stats": {
+        "id": "r10xEmVBvWm",
+        "type": "TableStats",
+        "_id": "r10xEmVBvWm",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "Sk1WVmVrvbQ",
+        "type": "ParticipantMeta",
+        "_id": "Sk1WVmVrvbQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "SJA67rPWQ",
+          "type": "Player"
+        },
+        {
+          "id": "Syky4rDbQ",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "HJlWE74BwZX",
+      "type": "Team",
+      "_id": "HJlWE74BwZX",
+      "stats": {
+        "id": "SJbbVmVrvWQ",
+        "type": "TableStats",
+        "_id": "SJbbVmVrvWQ",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "HyzbNm4rwbQ",
+        "type": "ParticipantMeta",
+        "_id": "HyzbNm4rwbQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "BkgAmrwW7",
+          "type": "Player"
+        },
+        {
+          "id": "r1ly4rv-X",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "SyXZEQ4BPZQ",
+      "type": "Team",
+      "_id": "SyXZEQ4BPZQ",
+      "stats": {
+        "id": "BkV-EQ4HDW7",
+        "type": "TableStats",
+        "_id": "BkV-EQ4HDW7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "H1HWVXVBvWQ",
+        "type": "ParticipantMeta",
+        "_id": "H1HWVXVBvWQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "Skb0XSwbQ",
+          "type": "Player"
+        },
+        {
+          "id": "S1zgJVBwb7",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "B1I-Vm4rvZX",
+      "type": "Team",
+      "_id": "B1I-Vm4rvZX",
+      "stats": {
+        "id": "SJPZNXVSPb7",
+        "type": "TableStats",
+        "_id": "SJPZNXVSPb7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "BydWNXNrvWQ",
+        "type": "ParticipantMeta",
+        "_id": "BydWNXNrvWQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "H17CXHwWm",
+          "type": "Player"
+        },
+        {
+          "id": "BkVkVSPbX",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "Byt-E74rvWm",
+      "type": "Team",
+      "_id": "Byt-E74rvWm",
+      "stats": {
+        "id": "ry9bN7VBvZX",
+        "type": "TableStats",
+        "_id": "ry9bN7VBvZX",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "B1i-V74Hwb7",
+        "type": "ParticipantMeta",
+        "_id": "B1i-V74Hwb7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "rJ4R7rPbX",
+          "type": "Player"
+        },
+        {
+          "id": "H181Vrwbm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "HJ2ZEmNSwWQ",
+      "type": "Team",
+      "_id": "HJ2ZEmNSwWQ",
+      "stats": {
+        "id": "B1TbNQEHPbX",
+        "type": "TableStats",
+        "_id": "B1TbNQEHPbX",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "SyAZNmNBw-7",
+        "type": "ParticipantMeta",
+        "_id": "SyAZNmNBw-7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "BJSAmHPbm",
+          "type": "Player"
+        },
+        {
+          "id": "SJ_1NSwZX",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "Sk1M4mEBvZX",
+      "type": "Team",
+      "_id": "Sk1M4mEBvZX",
+      "stats": {
+        "id": "HklMEQESPZ7",
+        "type": "TableStats",
+        "_id": "HklMEQESPZ7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "ByZGVQVSvbX",
+        "type": "ParticipantMeta",
+        "_id": "ByZGVQVSvbX",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "ByOAmHv-X",
+          "type": "Player"
+        },
+        {
+          "id": "SyZxNrwbm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "BJjehHwWX",
+      "type": "Team",
+      "_id": "BJjehHwWX",
+      "stats": {
+        "id": "Bkgsl3BD-m",
+        "type": "TableStats",
+        "_id": "Bkgsl3BD-m",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "r1-jxnrD-m",
+        "type": "ParticipantMeta",
+        "_id": "r1-jxnrD-m",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "r19SjHPZQ",
+          "type": "Player"
+        },
+        {
+          "id": "BkVkVSPbX",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "BJGixhrvZ7",
+      "type": "Team",
+      "_id": "BJGixhrvZ7",
+      "stats": {
+        "id": "H1mie3BPWX",
+        "type": "TableStats",
+        "_id": "H1mie3BPWX",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "BkNjgnSvZ7",
+        "type": "ParticipantMeta",
+        "_id": "BkNjgnSvZ7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "ryl5OBvWm",
+          "type": "Player"
+        },
+        {
+          "id": "H17CXHwWm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "ry8se2rPb7",
+      "type": "Team",
+      "_id": "ry8se2rPb7",
+      "stats": {
+        "id": "HyPie2Hv-7",
+        "type": "TableStats",
+        "_id": "HyPie2Hv-7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "ryOighSv-Q",
+        "type": "ParticipantMeta",
+        "_id": "ryOighSv-Q",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "H1k9tBPbm",
+          "type": "Player"
+        },
+        {
+          "id": "SJ_1NSwZX",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "rJFjl3rP-Q",
+      "type": "Team",
+      "_id": "rJFjl3rP-Q",
+      "stats": {
+        "id": "HycjxnHwZ7",
+        "type": "TableStats",
+        "_id": "HycjxnHwZ7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "r1oox3BPZQ",
+        "type": "ParticipantMeta",
+        "_id": "r1oox3BPZQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "HJGu4HDW7",
+          "type": "Player"
+        },
+        {
+          "id": "BJSAmHPbm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "Sy6ixnHvZ7",
+      "type": "Team",
+      "_id": "Sy6ixnHvZ7",
+      "stats": {
+        "id": "B1AsenSDb7",
+        "type": "TableStats",
+        "_id": "B1AsenSDb7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "H1keolhBw-7",
+        "type": "ParticipantMeta",
+        "_id": "H1keolhBw-7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "Hy3pQSvb7",
+          "type": "Player"
+        },
+        {
+          "id": "rJZ04Bvb7",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "Bygejx3HvZQ",
+      "type": "Team",
+      "_id": "Bygejx3HvZQ",
+      "stats": {
+        "id": "r1beilnHvZQ",
+        "type": "TableStats",
+        "_id": "r1beilnHvZQ",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "S1GxsgnSvbm",
+        "type": "ParticipantMeta",
+        "_id": "S1GxsgnSvbm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "Syky4rDbQ",
+          "type": "Player"
+        },
+        {
+          "id": "Sy7ZpXHwW7",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "B1EesghBD-Q",
+      "type": "Team",
+      "_id": "B1EesghBD-Q",
+      "stats": {
+        "id": "HySlienHDZm",
+        "type": "TableStats",
+        "_id": "HySlienHDZm",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "HyIeslnSwZ7",
+        "type": "ParticipantMeta",
+        "_id": "HyIeslnSwZ7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "Skb0XSwbQ",
+          "type": "Player"
+        },
+        {
+          "id": "SyZxNrwbm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "SJwxje3rDZm",
+      "type": "Team",
+      "_id": "SJwxje3rDZm",
+      "stats": {
+        "id": "Bkdxjx2rDbX",
+        "type": "TableStats",
+        "_id": "Bkdxjx2rDbX",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "B1teienrDWQ",
+        "type": "ParticipantMeta",
+        "_id": "B1teienrDWQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "ByOAmHv-X",
+          "type": "Player"
+        },
+        {
+          "id": "S1zgJVBwb7",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "HJjlix2HvZQ",
+      "type": "Team",
+      "_id": "HJjlix2HvZQ",
+      "stats": {
+        "id": "B1hxignBDbm",
+        "type": "TableStats",
+        "_id": "B1hxignBDbm",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "rk6gjx2SPbQ",
+        "type": "ParticipantMeta",
+        "_id": "rk6gjx2SPbQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "rkYCmBvZ7",
+          "type": "Player"
+        },
+        {
+          "id": "SJiAQHvWm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "ry0xsx3Sw-Q",
+      "type": "Team",
+      "_id": "ry0xsx3Sw-Q",
+      "stats": {
+        "id": "Syybjx3rwWm",
+        "type": "TableStats",
+        "_id": "Syybjx3rwWm",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "rkxbse3rPWm",
+        "type": "ParticipantMeta",
+        "_id": "rkxbse3rPWm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "HyuaQrDb7",
+          "type": "Player"
+        },
+        {
+          "id": "rJ4R7rPbX",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "Hkf-oxnHwZX",
+      "type": "Team",
+      "_id": "Hkf-oxnHwZX",
+      "stats": {
+        "id": "By7bie3rDZm",
+        "type": "TableStats",
+        "_id": "By7bie3rDZm",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "SJNWignrDbm",
+        "type": "ParticipantMeta",
+        "_id": "SJNWignrDbm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "SJA67rPWQ",
+          "type": "Player"
+        },
+        {
+          "id": "H181Vrwbm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "SkHWje3SPb7",
+      "type": "Team",
+      "_id": "SkHWje3SPb7",
+      "stats": {
+        "id": "B18ZsgnrPZ7",
+        "type": "TableStats",
+        "_id": "B18ZsgnrPZ7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "SkwZoxhSvbQ",
+        "type": "ParticipantMeta",
+        "_id": "SkwZoxhSvbQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "HJ60Qrwbm",
+          "type": "Player"
+        },
+        {
+          "id": "r1ly4rv-X",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "rJeWzUv-X",
+      "type": "Team",
+      "_id": "rJeWzUv-X",
+      "stats": {
+        "id": "H1elZf8v-Q",
+        "type": "TableStats",
+        "_id": "H1elZf8v-Q",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "H1Zl-MUPbQ",
+        "type": "ParticipantMeta",
+        "_id": "H1Zl-MUPbQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "BkgAmrwW7",
+          "type": "Player"
+        },
+        {
+          "id": "SyZxNrwbm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "HkGxWG8P-Q",
+      "type": "Team",
+      "_id": "HkGxWG8P-Q",
+      "stats": {
+        "id": "H1ml-zLDZ7",
+        "type": "TableStats",
+        "_id": "H1ml-zLDZ7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "S1ElbzIPWm",
+        "type": "ParticipantMeta",
+        "_id": "S1ElbzIPWm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "SJA67rPWQ",
+          "type": "Player"
+        },
+        {
+          "id": "r19SjHPZQ",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "HJUlWzLPW7",
+      "type": "Team",
+      "_id": "HJUlWzLPW7",
+      "stats": {
+        "id": "rkDxZzIvW7",
+        "type": "TableStats",
+        "_id": "rkDxZzIvW7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "H1Olbz8wZm",
+        "type": "ParticipantMeta",
+        "_id": "H1Olbz8wZm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "H17CXHwWm",
+          "type": "Player"
+        },
+        {
+          "id": "HJGu4HDW7",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "HJYgbGUP-m",
+      "type": "Team",
+      "_id": "HJYgbGUP-m",
+      "stats": {
+        "id": "rk5gWGLP-m",
+        "type": "TableStats",
+        "_id": "rk5gWGLP-m",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "BJsgbfUDZ7",
+        "type": "ParticipantMeta",
+        "_id": "BJsgbfUDZ7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "ryl5OBvWm",
+          "type": "Player"
+        },
+        {
+          "id": "Hy3pQSvb7",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "HyTe-MIDbX",
+      "type": "Team",
+      "_id": "HyTe-MIDbX",
+      "stats": {
+        "id": "SyRgZGLwbQ",
+        "type": "TableStats",
+        "_id": "SyRgZGLwbQ",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "rkJex-fUP-Q",
+        "type": "ParticipantMeta",
+        "_id": "rkJex-fUP-Q",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "BkVkVSPbX",
+          "type": "Player"
+        },
+        {
+          "id": "HyuaQrDb7",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "B1lexZzUv-m",
+      "type": "Team",
+      "_id": "B1lexZzUv-m",
+      "stats": {
+        "id": "HkZgeWMUPZX",
+        "type": "TableStats",
+        "_id": "HkZgeWMUPZX",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "HJfex-zLP-X",
+        "type": "ParticipantMeta",
+        "_id": "HJfex-zLP-X",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "H1k9tBPbm",
+          "type": "Player"
+        },
+        {
+          "id": "S1zgJVBwb7",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "Hk4leWMLwW7",
+      "type": "Team",
+      "_id": "Hk4leWMLwW7",
+      "stats": {
+        "id": "HJSxeZf8wZX",
+        "type": "TableStats",
+        "_id": "HJSxeZf8wZX",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "SJLge-GLDZQ",
+        "type": "ParticipantMeta",
+        "_id": "SJLge-GLDZQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "H181Vrwbm",
+          "type": "Player"
+        },
+        {
+          "id": "BJSAmHPbm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "BkvxgWfLDZ7",
+      "type": "Team",
+      "_id": "BkvxgWfLDZ7",
+      "stats": {
+        "id": "BJdxxbfIP-X",
+        "type": "TableStats",
+        "_id": "BJdxxbfIP-X",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "BytlgbzLvZm",
+        "type": "ParticipantMeta",
+        "_id": "BytlgbzLvZm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "SJ_1NSwZX",
+          "type": "Player"
+        },
+        {
+          "id": "rJ4R7rPbX",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "r1ixeWfIPWm",
+      "type": "Team",
+      "_id": "r1ixeWfIPWm",
+      "stats": {
+        "id": "r1hggWz8P-m",
+        "type": "TableStats",
+        "_id": "r1hggWz8P-m",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "r16lgWGLPb7",
+        "type": "ParticipantMeta",
+        "_id": "r16lgWGLPb7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "Syky4rDbQ",
+          "type": "Player"
+        },
+        {
+          "id": "rkYCmBvZ7",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "rJRlgWzIwWX",
+      "type": "Team",
+      "_id": "rJRlgWzIwWX",
+      "stats": {
+        "id": "BJ1-xWf8wbX",
+        "type": "TableStats",
+        "_id": "BJ1-xWf8wbX",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "rJlbxWf8PZ7",
+        "type": "ParticipantMeta",
+        "_id": "rJlbxWf8PZ7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "Sy7ZpXHwW7",
+          "type": "Player"
+        },
+        {
+          "id": "SJiAQHvWm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "BJzbx-fUwWX",
+      "type": "Team",
+      "_id": "BJzbx-fUwWX",
+      "stats": {
+        "id": "HyQWlZzUvWQ",
+        "type": "TableStats",
+        "_id": "HyQWlZzUvWQ",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "ByV-lWM8D-m",
+        "type": "ParticipantMeta",
+        "_id": "ByV-lWM8D-m",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "rJZ04Bvb7",
+          "type": "Player"
+        },
+        {
+          "id": "r1ly4rv-X",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "BkS-ebfUwWX",
+      "type": "Team",
+      "_id": "BkS-ebfUwWX",
+      "stats": {
+        "id": "rJIbebG8D-Q",
+        "type": "TableStats",
+        "_id": "rJIbebG8D-Q",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "Hkv-l-fLDZX",
+        "type": "ParticipantMeta",
+        "_id": "Hkv-l-fLDZX",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "HJ60Qrwbm",
+          "type": "Player"
+        },
+        {
+          "id": "Skb0XSwbQ",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "Byp4KIvb7",
+      "type": "Team",
+      "_id": "Byp4KIvb7",
+      "stats": {
+        "id": "HJlTEt8wZ7",
+        "type": "TableStats",
+        "_id": "HJlTEt8wZ7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "ryWa4tLPWX",
+        "type": "ParticipantMeta",
+        "_id": "ryWa4tLPWX",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "H181Vrwbm",
+          "type": "Player"
+        },
+        {
+          "id": "ByOAmHv-X",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "rkM6EY8vWQ",
+      "type": "Team",
+      "_id": "rkM6EY8vWQ",
+      "stats": {
+        "id": "HyX6EYIPWX",
+        "type": "TableStats",
+        "_id": "HyX6EYIPWX",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "ByNpNKIwbQ",
+        "type": "ParticipantMeta",
+        "_id": "ByNpNKIwbQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "r19SjHPZQ",
+          "type": "Player"
+        },
+        {
+          "id": "rJZ04Bvb7",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "H18TEtUv-7",
+      "type": "Team",
+      "_id": "H18TEtUv-7",
+      "stats": {
+        "id": "B1wpVKUvZ7",
+        "type": "TableStats",
+        "_id": "B1wpVKUvZ7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "r1_aEKIvZQ",
+        "type": "ParticipantMeta",
+        "_id": "r1_aEKIvZQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "HyuaQrDb7",
+          "type": "Player"
+        },
+        {
+          "id": "ryl5OBvWm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "BJKaVYUvZm",
+      "type": "Team",
+      "_id": "BJKaVYUvZm",
+      "stats": {
+        "id": "Hyqp4YUDbX",
+        "type": "TableStats",
+        "_id": "Hyqp4YUDbX",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "HysaVFIPWX",
+        "type": "ParticipantMeta",
+        "_id": "HysaVFIPWX",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "BkgAmrwW7",
+          "type": "Player"
+        },
+        {
+          "id": "BJSAmHPbm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "BJ6pVFIPbQ",
+      "type": "Team",
+      "_id": "BJ6pVFIPbQ",
+      "stats": {
+        "id": "Hy064tUDZQ",
+        "type": "TableStats",
+        "_id": "Hy064tUDZQ",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "Sk1ga4KUvWm",
+        "type": "ParticipantMeta",
+        "_id": "Sk1ga4KUvWm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "SyZxNrwbm",
+          "type": "Player"
+        },
+        {
+          "id": "SJiAQHvWm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "SyxxaVY8DZ7",
+      "type": "Team",
+      "_id": "SyxxaVY8DZ7",
+      "stats": {
+        "id": "rkblaVYIwWm",
+        "type": "TableStats",
+        "_id": "rkblaVYIwWm",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "Byfe6Vt8PWQ",
+        "type": "ParticipantMeta",
+        "_id": "Byfe6Vt8PWQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "SJA67rPWQ",
+          "type": "Player"
+        },
+        {
+          "id": "HJ60Qrwbm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "SkNl6NK8vZX",
+      "type": "Team",
+      "_id": "SkNl6NK8vZX",
+      "stats": {
+        "id": "S1HeaEFUDb7",
+        "type": "TableStats",
+        "_id": "S1HeaEFUDb7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "BkLg6EFLvWQ",
+        "type": "ParticipantMeta",
+        "_id": "BkLg6EFLvWQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "HJGu4HDW7",
+          "type": "Player"
+        },
+        {
+          "id": "Syky4rDbQ",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "rJPxp4KIP-7",
+      "type": "Team",
+      "_id": "rJPxp4KIP-7",
+      "stats": {
+        "id": "rJOea4YUDWX",
+        "type": "TableStats",
+        "_id": "rJOea4YUDWX",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "rkKlpEKLDZ7",
+        "type": "ParticipantMeta",
+        "_id": "rkKlpEKLDZ7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "H17CXHwWm",
+          "type": "Player"
+        },
+        {
+          "id": "r1ly4rv-X",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "S1jgTEYLw-Q",
+      "type": "Team",
+      "_id": "S1jgTEYLw-Q",
+      "stats": {
+        "id": "H12gaVF8wZ7",
+        "type": "TableStats",
+        "_id": "H12gaVF8wZ7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "rkpla4FLvZX",
+        "type": "ParticipantMeta",
+        "_id": "rkpla4FLvZX",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "H1k9tBPbm",
+          "type": "Player"
+        },
+        {
+          "id": "BkVkVSPbX",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "B1Cx6EY8P-m",
+      "type": "Team",
+      "_id": "B1Cx6EY8P-m",
+      "stats": {
+        "id": "S1J-6VYLv-X",
+        "type": "TableStats",
+        "_id": "S1J-6VYLv-X",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "r1l-aVK8P-X",
+        "type": "ParticipantMeta",
+        "_id": "r1l-aVK8P-X",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "S1zgJVBwb7",
+          "type": "Player"
+        },
+        {
+          "id": "rJ4R7rPbX",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "BkMb6VKUPb7",
+      "type": "Team",
+      "_id": "BkMb6VKUPb7",
+      "stats": {
+        "id": "HkQWTVtIDbQ",
+        "type": "TableStats",
+        "_id": "HkQWTVtIDbQ",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "BJEbaEKIwb7",
+        "type": "ParticipantMeta",
+        "_id": "BJEbaEKIwb7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "rkYCmBvZ7",
+          "type": "Player"
+        },
+        {
+          "id": "SJ_1NSwZX",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "S1rZaEtIDZm",
+      "type": "Team",
+      "_id": "S1rZaEtIDZm",
+      "stats": {
+        "id": "SJIbTEtIDZ7",
+        "type": "TableStats",
+        "_id": "SJIbTEtIDZ7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "SkPZ64tLD-X",
+        "type": "ParticipantMeta",
+        "_id": "SkPZ64tLD-X",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "Sy7ZpXHwW7",
+          "type": "Player"
+        },
+        {
+          "id": "Skb0XSwbQ",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "SJbmbDDWm",
+      "type": "Team",
+      "_id": "SJbmbDDWm",
+      "stats": {
+        "id": "ByebXWPPZ7",
+        "type": "TableStats",
+        "_id": "ByebXWPPZ7",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "SJZW7bwwWm",
+        "type": "ParticipantMeta",
+        "_id": "SJZW7bwwWm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "ByOAmHv-X",
+          "type": "Player"
+        },
+        {
+          "id": "HJGu4HDW7",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "rJG-Qbwv-Q",
+      "type": "Team",
+      "_id": "rJG-Qbwv-Q",
+      "stats": {
+        "id": "rkm-QWwwbm",
+        "type": "TableStats",
+        "_id": "rkm-QWwwbm",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "SyN-Xbww-7",
+        "type": "ParticipantMeta",
+        "_id": "SyN-Xbww-7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "HyuaQrDb7",
+          "type": "Player"
+        },
+        {
+          "id": "S1zgJVBwb7",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "H1BWQ-wv-Q",
+      "type": "Team",
+      "_id": "H1BWQ-wv-Q",
+      "stats": {
+        "id": "S1IbmbvD-Q",
+        "type": "TableStats",
+        "_id": "S1IbmbvD-Q",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "BJDbXbvwb7",
+        "type": "ParticipantMeta",
+        "_id": "BJDbXbvwb7",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "BkVkVSPbX",
+          "type": "Player"
+        },
+        {
+          "id": "r1ly4rv-X",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "SydZXZvvbm",
+      "type": "Team",
+      "_id": "SydZXZvvbm",
+      "stats": {
+        "id": "B1F-XbDw-X",
+        "type": "TableStats",
+        "_id": "B1F-XbDw-X",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "HkqW7bDPbm",
+        "type": "ParticipantMeta",
+        "_id": "HkqW7bDPbm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "Hy3pQSvb7",
+          "type": "Player"
+        },
+        {
+          "id": "H181Vrwbm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "S1sW7ZwvZ7",
+      "type": "Team",
+      "_id": "S1sW7ZwvZ7",
+      "stats": {
+        "id": "rJnWX-wD-Q",
+        "type": "TableStats",
+        "_id": "rJnWX-wD-Q",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "rJTZX-DPbQ",
+        "type": "ParticipantMeta",
+        "_id": "rJTZX-DPbQ",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "BJSAmHPbm",
+          "type": "Player"
+        },
+        {
+          "id": "Syky4rDbQ",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "ryRbmWwwZQ",
+      "type": "Team",
+      "_id": "ryRbmWwwZQ",
+      "stats": {
+        "id": "Hy1ebXWvPbm",
+        "type": "TableStats",
+        "_id": "Hy1ebXWvPbm",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "rkxxZ7-vP-X",
+        "type": "ParticipantMeta",
+        "_id": "rkxxZ7-vP-X",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "SyZxNrwbm",
+          "type": "Player"
+        },
+        {
+          "id": "Skb0XSwbQ",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "BJbg-m-DDbX",
+      "type": "Team",
+      "_id": "BJbg-m-DDbX",
+      "stats": {
+        "id": "B1zx-XZwwZX",
+        "type": "TableStats",
+        "_id": "B1zx-XZwwZX",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "SJ7l-7WvDWm",
+        "type": "ParticipantMeta",
+        "_id": "SJ7l-7WvDWm",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "rJZ04Bvb7",
+          "type": "Player"
+        },
+        {
+          "id": "HJ60Qrwbm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    },
+    {
+      "id": "HJVx-7WPDZm",
+      "type": "Team",
+      "_id": "HJVx-7WPDZm",
+      "stats": {
+        "id": "HJSgbm-DD-X",
+        "type": "TableStats",
+        "_id": "HJSgbm-DD-X",
+        "games": 0,
+        "points": 0,
+        "won": 0,
+        "lost": 0,
+        "draws": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "sets_diff": 0,
+        "dis_won": 0,
+        "dis_lost": 0,
+        "dis_draw": 0,
+        "dis_diff": 0,
+        "goals": 0,
+        "goals_in": 0,
+        "w_l": 0,
+        "goal_diff": 0,
+        "opponents": {
+          
+        },
+        "lives": 0,
+        "bh1": 0,
+        "bh2": 0,
+        "sb": 0,
+        "points_per_game": 0,
+        "corrected_points_per_game": 0,
+        "place": 0,
+        "result_losts": 0,
+        "result_wins": 0,
+        "placeChangeIndicator": 0,
+        "hidden": false
+      },
+      "meta": {
+        "id": "ryLxWQbwvZX",
+        "type": "ParticipantMeta",
+        "_id": "ryLxWQbwvZX",
+        "_addedLater": false,
+        "hadBye": false,
+        "tableIndex": 0
+      },
+      "startIndex": 0,
+      "players": [
+        {
+          "id": "ryl5OBvWm",
+          "type": "Player"
+        },
+        {
+          "id": "H1k9tBPbm",
+          "type": "Player"
+        }
+      ],
+      "removed": false,
+      "deactivated": false
+    }
+  ],
+  "rounds": [
+    {
+      "id": "H1vf4Q4Swbm",
+      "type": "Round",
+      "_id": "H1vf4Q4Swbm",
+      "name": "1",
+      "plays": [
+        {
+          "id": "SkfGVXNSv-X",
+          "type": "Play",
+          "_id": "SkfGVXNSv-X",
+          "valid": true,
+          "team1": {
+            "id": "SyNgNQNSwWm",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "SyXZEQ4BPZQ",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "rkx_qYSPbQ",
+              "type": "Discipline",
+              "_id": "rkx_qYSPbQ",
+              "sets": [
+                {
+                  "id": "rkZdqtSPW7",
+                  "type": "Result",
+                  "_id": "rkZdqtSPW7",
+                  "team1": 3,
+                  "team2": 7
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "SkfGVXNSv-X"
+            }
+          ],
+          "timeStart": 1529463836195,
+          "timeEnd": 1529465237893,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "H1vf4Q4Swbm"
+        },
+        {
+          "id": "BkQMNmVHDbX",
+          "type": "Play",
+          "_id": "BkQMNmVHDbX",
+          "valid": false,
+          "team1": {
+            "id": "BJweVm4SD-Q",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "B1I-Vm4rvZX",
+            "type": "Team"
+          },
+          "disciplines": [
+            
+          ],
+          "deactivated": true,
+          "skipped": false,
+          "roundId": "H1vf4Q4Swbm"
+        },
+        {
+          "id": "H14GEm4HDbX",
+          "type": "Play",
+          "_id": "H14GEm4HDbX",
+          "valid": true,
+          "team1": {
+            "id": "HJ5xV7Nrvbm",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "Byt-E74rvWm",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "SkgQ2FrvZX",
+              "type": "Discipline",
+              "_id": "SkgQ2FrvZX",
+              "sets": [
+                {
+                  "id": "HkZm3FHPZQ",
+                  "type": "Result",
+                  "_id": "HkZm3FHPZQ",
+                  "team1": 7,
+                  "team2": 2
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "H14GEm4HDbX"
+            }
+          ],
+          "timeStart": 1529463836196,
+          "timeEnd": 1529465264486,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "H1vf4Q4Swbm"
+        },
+        {
+          "id": "HkHfV7VBD-m",
+          "type": "Play",
+          "_id": "HkHfV7VBD-m",
+          "valid": true,
+          "team1": {
+            "id": "BJag4X4Bv-X",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "HJ2ZEmNSwWQ",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "r1lP1qHDWQ",
+              "type": "Discipline",
+              "_id": "r1lP1qHDWQ",
+              "sets": [
+                {
+                  "id": "H1bvycSD-m",
+                  "type": "Result",
+                  "_id": "H1bvycSD-m",
+                  "team1": 4,
+                  "team2": 7
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "HkHfV7VBD-m"
+            }
+          ],
+          "timeStart": 1529463836196,
+          "timeEnd": 1529465314288,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "H1vf4Q4Swbm"
+        },
+        {
+          "id": "SJUMVXEHDbQ",
+          "type": "Play",
+          "_id": "SJUMVXEHDbQ",
+          "valid": true,
+          "team1": {
+            "id": "HJlWE74BwZX",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "Sk1M4mEBvZX",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "S1lJehSPZm",
+              "type": "Discipline",
+              "_id": "S1lJehSPZm",
+              "sets": [
+                {
+                  "id": "B1b1e3HDW7",
+                  "type": "Result",
+                  "_id": "B1b1e3HDW7",
+                  "team1": 3,
+                  "team2": 7
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "SJUMVXEHDbQ"
+            }
+          ],
+          "timeStart": 1529465238212,
+          "timeEnd": 1529465835347,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "H1vf4Q4Swbm"
+        }
+      ]
+    },
+    {
+      "id": "rytZjxhHDWm",
+      "type": "Round",
+      "_id": "rytZjxhHDWm",
+      "name": "2",
+      "plays": [
+        {
+          "id": "BkBse2rDbQ",
+          "type": "Play",
+          "_id": "BkBse2rDbQ",
+          "valid": true,
+          "team1": {
+            "id": "BJjehHwWX",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "BJGixhrvZ7",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "ByeaR-8w-Q",
+              "type": "Discipline",
+              "_id": "ByeaR-8w-Q",
+              "sets": [
+                {
+                  "id": "SJWTC-UDWm",
+                  "type": "Result",
+                  "_id": "SJWTC-UDWm",
+                  "team1": 7,
+                  "team2": 5
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "BkBse2rDbQ"
+            }
+          ],
+          "timeStart": 1529466491056,
+          "timeEnd": 1529467355889,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "rytZjxhHDWm"
+        },
+        {
+          "id": "Hk3og3SvZ7",
+          "type": "Play",
+          "_id": "Hk3og3SvZ7",
+          "valid": true,
+          "team1": {
+            "id": "ry8se2rPb7",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "rJFjl3rP-Q",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "Hyl_CAHw-7",
+              "type": "Discipline",
+              "_id": "Hyl_CAHw-7",
+              "sets": [
+                {
+                  "id": "B1buCASvb7",
+                  "type": "Result",
+                  "_id": "B1buCASvb7",
+                  "team1": 0,
+                  "team2": 7
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "Hk3og3SvZ7"
+            }
+          ],
+          "timeStart": 1529465843545,
+          "timeEnd": 1529466582108,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "rytZjxhHDWm"
+        },
+        {
+          "id": "HyXxighHwb7",
+          "type": "Play",
+          "_id": "HyXxighHwb7",
+          "valid": true,
+          "team1": {
+            "id": "Sy6ixnHvZ7",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "Bygejx3HvZQ",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "ByxhUlUP-X",
+              "type": "Discipline",
+              "_id": "ByxhUlUP-X",
+              "sets": [
+                {
+                  "id": "r1W2IeUwbm",
+                  "type": "Result",
+                  "_id": "r1W2IeUwbm",
+                  "team1": 7,
+                  "team2": 4
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "HyXxighHwb7"
+            }
+          ],
+          "timeStart": 1529465843545,
+          "timeEnd": 1529466972011,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "rytZjxhHDWm"
+        },
+        {
+          "id": "Sk5eixhrD-X",
+          "type": "Play",
+          "_id": "Sk5eixhrD-X",
+          "valid": true,
+          "team1": {
+            "id": "B1EesghBD-Q",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "SJwxje3rDZm",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "SyeJF0SwbQ",
+              "type": "Discipline",
+              "_id": "SyeJF0SwbQ",
+              "sets": [
+                {
+                  "id": "BkZJYAHv-7",
+                  "type": "Result",
+                  "_id": "BkZJYAHv-7",
+                  "team1": 3,
+                  "team2": 7
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "Sk5eixhrD-X"
+            }
+          ],
+          "timeStart": 1529465843546,
+          "timeEnd": 1529466490734,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "rytZjxhHDWm"
+        },
+        {
+          "id": "HkZZsx2HwZm",
+          "type": "Play",
+          "_id": "HkZZsx2HwZm",
+          "valid": true,
+          "team1": {
+            "id": "HJjlix2HvZQ",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "ry0xsx3Sw-Q",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "HJe-HWLvZQ",
+              "type": "Discipline",
+              "_id": "HJe-HWLvZQ",
+              "sets": [
+                {
+                  "id": "Byb-Hb8v-7",
+                  "type": "Result",
+                  "_id": "Byb-Hb8v-7",
+                  "team1": 1,
+                  "team2": 7
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "HkZZsx2HwZm"
+            }
+          ],
+          "timeStart": 1529466582430,
+          "timeEnd": 1529467198100,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "rytZjxhHDWm"
+        },
+        {
+          "id": "Byu-ixnrDZX",
+          "type": "Play",
+          "_id": "Byu-ixnrDZX",
+          "valid": true,
+          "team1": {
+            "id": "Hkf-oxnHwZX",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "SkHWje3SPb7",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "HkeNKg8PZX",
+              "type": "Discipline",
+              "_id": "HkeNKg8PZX",
+              "sets": [
+                {
+                  "id": "HkWVtxIPWQ",
+                  "type": "Result",
+                  "_id": "HkWVtxIPWQ",
+                  "team1": 4,
+                  "team2": 7
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "Byu-ixnrDZX"
+            }
+          ],
+          "timeStart": 1529465993014,
+          "timeEnd": 1529467012655,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "rytZjxhHDWm"
+        }
+      ]
+    },
+    {
+      "id": "HyYZgbfLw-7",
+      "type": "Round",
+      "_id": "HyYZgbfLw-7",
+      "name": "3",
+      "plays": [
+        {
+          "id": "HkrebGLDWm",
+          "type": "Play",
+          "_id": "HkrebGLDWm",
+          "valid": true,
+          "team1": {
+            "id": "rJeWzUv-X",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "HkGxWG8P-Q",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "SkxotSLDZ7",
+              "type": "Discipline",
+              "_id": "SkxotSLDZ7",
+              "sets": [
+                {
+                  "id": "ry-sKHUP-Q",
+                  "type": "Result",
+                  "_id": "ry-sKHUP-Q",
+                  "team1": 7,
+                  "team2": 3
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "HkrebGLDWm"
+            }
+          ],
+          "timeStart": 1529467383929,
+          "timeEnd": 1529468298420,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "HyYZgbfLw-7"
+        },
+        {
+          "id": "BJ2lbGLwZX",
+          "type": "Play",
+          "_id": "BJ2lbGLwZX",
+          "valid": true,
+          "team1": {
+            "id": "HJUlWzLPW7",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "HJYgbGUP-m",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "H1lT9HIwZm",
+              "type": "Discipline",
+              "_id": "H1lT9HIwZm",
+              "sets": [
+                {
+                  "id": "rk-65r8PWm",
+                  "type": "Result",
+                  "_id": "rk-65r8PWm",
+                  "team1": 5,
+                  "team2": 7
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "BJ2lbGLwZX"
+            }
+          ],
+          "timeStart": 1529467383930,
+          "timeEnd": 1529468318301,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "HyYZgbfLw-7"
+        },
+        {
+          "id": "rkXlg-fIPWQ",
+          "type": "Play",
+          "_id": "rkXlg-fIPWQ",
+          "valid": true,
+          "team1": {
+            "id": "HyTe-MIDbX",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "B1lexZzUv-m",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "HkxK7HUwWQ",
+              "type": "Discipline",
+              "_id": "HkxK7HUwWQ",
+              "sets": [
+                {
+                  "id": "SybK7S8DZQ",
+                  "type": "Result",
+                  "_id": "SybK7S8DZQ",
+                  "team1": 7,
+                  "team2": 5
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "rkXlg-fIPWQ"
+            }
+          ],
+          "timeStart": 1529467383930,
+          "timeEnd": 1529468196694,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "HyYZgbfLw-7"
+        },
+        {
+          "id": "B1qleZzIwb7",
+          "type": "Play",
+          "_id": "B1qleZzIwb7",
+          "valid": true,
+          "team1": {
+            "id": "Hk4leWMLwW7",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "BkvxgWfLDZ7",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "ByedWYLvbQ",
+              "type": "Discipline",
+              "_id": "ByedWYLvbQ",
+              "sets": [
+                {
+                  "id": "B1bu-t8D-m",
+                  "type": "Result",
+                  "_id": "B1bu-t8D-m",
+                  "team1": 7,
+                  "team2": 2
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "B1qleZzIwb7"
+            }
+          ],
+          "timeStart": 1529468196999,
+          "timeEnd": 1529469187759,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "HyYZgbfLw-7"
+        },
+        {
+          "id": "H1--l-M8v-m",
+          "type": "Play",
+          "_id": "H1--l-M8v-m",
+          "valid": true,
+          "team1": {
+            "id": "r1ixeWfIPWm",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "rJRlgWzIwWX",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "rkgQ6vUvZ7",
+              "type": "Discipline",
+              "_id": "rkgQ6vUvZ7",
+              "sets": [
+                {
+                  "id": "HJ-Q6DUP-m",
+                  "type": "Result",
+                  "_id": "HJ-Q6DUP-m",
+                  "team1": 7,
+                  "team2": 4
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "H1--l-M8v-m"
+            }
+          ],
+          "timeStart": 1529467551485,
+          "timeEnd": 1529468863097,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "HyYZgbfLw-7"
+        },
+        {
+          "id": "HJ_-eWf8DZX",
+          "type": "Play",
+          "_id": "HJ_-eWf8DZX",
+          "valid": true,
+          "team1": {
+            "id": "BJzbx-fUwWX",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "BkS-ebfUwWX",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "S1lEXFLDZ7",
+              "type": "Discipline",
+              "_id": "S1lEXFLDZ7",
+              "sets": [
+                {
+                  "id": "BJWEXFUPWX",
+                  "type": "Result",
+                  "_id": "BJWEXFUPWX",
+                  "team1": 7,
+                  "team2": 5
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "HJ_-eWf8DZX"
+            }
+          ],
+          "timeStart": 1529468298732,
+          "timeEnd": 1529469214996,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "HyYZgbfLw-7"
+        }
+      ]
+    },
+    {
+      "id": "BJYZ6EFUv-m",
+      "type": "Round",
+      "_id": "BJYZ6EFUv-m",
+      "name": "4",
+      "plays": [
+        {
+          "id": "HJBpEY8wWX",
+          "type": "Play",
+          "_id": "HJBpEY8wWX",
+          "valid": true,
+          "team1": {
+            "id": "Byp4KIvb7",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "rkM6EY8vWQ",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "H1ltkZDP-7",
+              "type": "Discipline",
+              "_id": "H1ltkZDP-7",
+              "sets": [
+                {
+                  "id": "rJWY1bwD-X",
+                  "type": "Result",
+                  "_id": "rJWY1bwD-X",
+                  "team1": 7,
+                  "team2": 3
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "HJBpEY8wWX"
+            }
+          ],
+          "timeStart": 1529469236952,
+          "timeEnd": 1529471203420,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "BJYZ6EFUv-m"
+        },
+        {
+          "id": "H126EKUvW7",
+          "type": "Play",
+          "_id": "H126EKUvW7",
+          "valid": true,
+          "team1": {
+            "id": "H18TEtUv-7",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "BJKaVYUvZm",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "HylgTaUwbm",
+              "type": "Discipline",
+              "_id": "HylgTaUwbm",
+              "sets": [
+                {
+                  "id": "rJZgpT8vb7",
+                  "type": "Result",
+                  "_id": "rJZgpT8vb7",
+                  "team1": 7,
+                  "team2": 4
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "H126EKUvW7"
+            }
+          ],
+          "timeStart": 1529469236953,
+          "timeEnd": 1529470397153,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "BJYZ6EFUv-m"
+        },
+        {
+          "id": "HyQl6EtIPbX",
+          "type": "Play",
+          "_id": "HyQl6EtIPbX",
+          "valid": true,
+          "team1": {
+            "id": "BJ6pVFIPbQ",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "SyxxaVY8DZ7",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "Hye0e1PD-7",
+              "type": "Discipline",
+              "_id": "Hye0e1PD-7",
+              "sets": [
+                {
+                  "id": "S1bCxJDvbQ",
+                  "type": "Result",
+                  "_id": "S1bCxJDvbQ",
+                  "team1": 7,
+                  "team2": 4
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "HyQl6EtIPbX"
+            }
+          ],
+          "timeStart": 1529469897975,
+          "timeEnd": 1529470714056,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "BJYZ6EFUv-m"
+        },
+        {
+          "id": "Hy9eT4K8wbm",
+          "type": "Play",
+          "_id": "Hy9eT4K8wbm",
+          "valid": true,
+          "team1": {
+            "id": "SkNl6NK8vZX",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "rJPxp4KIP-7",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "S1lCSh8PW7",
+              "type": "Discipline",
+              "_id": "S1lCSh8PW7",
+              "sets": [
+                {
+                  "id": "HkbRHn8wZX",
+                  "type": "Result",
+                  "_id": "HkbRHn8wZX",
+                  "team1": 7,
+                  "team2": 5
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "Hy9eT4K8wbm"
+            }
+          ],
+          "timeStart": 1529469236953,
+          "timeEnd": 1529470027915,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "BJYZ6EFUv-m"
+        },
+        {
+          "id": "SkW-TVFLDWX",
+          "type": "Play",
+          "_id": "SkW-TVFLDWX",
+          "valid": true,
+          "team1": {
+            "id": "S1jgTEYLw-Q",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "B1Cx6EY8P-m",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "Hygj6s8wZm",
+              "type": "Discipline",
+              "_id": "Hygj6s8wZm",
+              "sets": [
+                {
+                  "id": "r1ZsajUPWm",
+                  "type": "Result",
+                  "_id": "r1ZsajUPWm",
+                  "team1": 7,
+                  "team2": 2
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "SkW-TVFLDWX"
+            }
+          ],
+          "timeStart": 1529469277272,
+          "timeEnd": 1529469897609,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "BJYZ6EFUv-m"
+        },
+        {
+          "id": "HkOWT4FIwbm",
+          "type": "Play",
+          "_id": "HkOWT4FIwbm",
+          "valid": true,
+          "team1": {
+            "id": "BkMb6VKUPb7",
+            "type": "Team"
+          },
+          "team2": {
+            "id": "S1rZaEtIDZm",
+            "type": "Team"
+          },
+          "disciplines": [
+            {
+              "id": "BkezggvvWQ",
+              "type": "Discipline",
+              "_id": "BkezggvvWQ",
+              "sets": [
+                {
+                  "id": "HyWMxeDDZX",
+                  "type": "Result",
+                  "_id": "HyWMxeDDZX",
+                  "team1": 5,
+                  "team2": 7
+                }
+              ],
+              "team1Confirmed": false,
+              "team2Confirmed": false,
+              "playId": "HkOWT4FIwbm"
+            }
+          ],
+          "timeStart": 1529470028283,
+          "timeEnd": 1529470964242,
+          "deactivated": false,
+          "skipped": false,
+          "roundId": "BJYZ6EFUv-m"
+        }
+      ]
+    }
+  ],
+  "ko": [
+    {
+      "id": "SJDlWm-wwWm",
+      "type": "KO",
+      "_id": "SJDlWm-wwWm",
+      "levels": [
+        {
+          "id": "S1olZQbDDbX",
+          "type": "Level",
+          "_id": "S1olZQbDDbX",
+          "plays": [
+            {
+              "id": "By3gZ7WPwWQ",
+              "type": "Play",
+              "_id": "By3gZ7WPwWQ",
+              "valid": true,
+              "team1": {
+                "id": "SJbmbDDWm",
+                "type": "Team"
+              },
+              "team2": {
+                "id": "HJVx-7WPDZm",
+                "type": "Team"
+              },
+              "disciplines": [
+                {
+                  "id": "BylKMIPP-X",
+                  "type": "Discipline",
+                  "_id": "BylKMIPP-X",
+                  "sets": [
+                    {
+                      "id": "rkZtMIDPWm",
+                      "type": "Result",
+                      "_id": "rkZtMIDPWm",
+                      "team1": 5,
+                      "team2": 0
+                    },
+                    {
+                      "id": "S1MYGIDvZm",
+                      "type": "Result",
+                      "_id": "S1MYGIDvZm",
+                      "team1": 5,
+                      "team2": 0
+                    }
+                  ],
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "playId": "By3gZ7WPwWQ"
+                }
+              ],
+              "timeStart": 1529471257606,
+              "timeEnd": 1529472533890,
+              "deactivated": false,
+              "winner": 1,
+              "team1Result": 2,
+              "team2Result": 0,
+              "skipped": false,
+              "koId": "SJDlWm-wwWm",
+              "levelId": "S1olZQbDDbX"
+            },
+            {
+              "id": "SykWbmZDvWQ",
+              "type": "Play",
+              "_id": "SykWbmZDvWQ",
+              "valid": true,
+              "team1": {
+                "id": "SydZXZvvbm",
+                "type": "Team"
+              },
+              "team2": {
+                "id": "S1sW7ZwvZ7",
+                "type": "Team"
+              },
+              "disciplines": [
+                {
+                  "id": "SyexnIvD-Q",
+                  "type": "Discipline",
+                  "_id": "SyexnIvD-Q",
+                  "sets": [
+                    {
+                      "id": "SkZx3UPwbm",
+                      "type": "Result",
+                      "_id": "SkZx3UPwbm",
+                      "team1": 0,
+                      "team2": 5
+                    },
+                    {
+                      "id": "HyzghUPvWQ",
+                      "type": "Result",
+                      "_id": "HyzghUPvWQ",
+                      "team1": 0,
+                      "team2": 5
+                    }
+                  ],
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "playId": "SykWbmZDvWQ"
+                }
+              ],
+              "timeStart": 1529471257607,
+              "timeEnd": 1529472684397,
+              "deactivated": false,
+              "winner": 2,
+              "team1Result": 0,
+              "team2Result": 2,
+              "skipped": false,
+              "koId": "SJDlWm-wwWm",
+              "levelId": "S1olZQbDDbX"
+            },
+            {
+              "id": "rJaxZ7ZDv-Q",
+              "type": "Play",
+              "_id": "rJaxZ7ZDv-Q",
+              "valid": true,
+              "team1": {
+                "id": "rJG-Qbwv-Q",
+                "type": "Team"
+              },
+              "team2": {
+                "id": "BJbg-m-DDbX",
+                "type": "Team"
+              },
+              "disciplines": [
+                {
+                  "id": "rJx6BBDwb7",
+                  "type": "Discipline",
+                  "_id": "rJx6BBDwb7",
+                  "sets": [
+                    {
+                      "id": "SJb6SSwDZm",
+                      "type": "Result",
+                      "_id": "SJb6SSwDZm",
+                      "team1": 5,
+                      "team2": 4
+                    },
+                    {
+                      "id": "S1f6rHPwbm",
+                      "type": "Result",
+                      "_id": "S1f6rHPwbm",
+                      "team1": 5,
+                      "team2": 1
+                    }
+                  ],
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "playId": "rJaxZ7ZDv-Q"
+                }
+              ],
+              "timeStart": 1529471257607,
+              "timeEnd": 1529472329605,
+              "deactivated": false,
+              "winner": 1,
+              "team1Result": 2,
+              "team2Result": 0,
+              "skipped": false,
+              "koId": "SJDlWm-wwWm",
+              "levelId": "S1olZQbDDbX"
+            },
+            {
+              "id": "rk0lb7ZvP-m",
+              "type": "Play",
+              "_id": "rk0lb7ZvP-m",
+              "valid": true,
+              "team1": {
+                "id": "H1BWQ-wv-Q",
+                "type": "Team"
+              },
+              "team2": {
+                "id": "ryRbmWwwZQ",
+                "type": "Team"
+              },
+              "disciplines": [
+                {
+                  "id": "BkeTfrDP-Q",
+                  "type": "Discipline",
+                  "_id": "BkeTfrDP-Q",
+                  "sets": [
+                    {
+                      "id": "H1-afHPv-X",
+                      "type": "Result",
+                      "_id": "H1-afHPv-X",
+                      "team1": 5,
+                      "team2": 4
+                    },
+                    {
+                      "id": "S1GTMHDD-X",
+                      "type": "Result",
+                      "_id": "S1GTMHDD-X",
+                      "team1": 5,
+                      "team2": 2
+                    }
+                  ],
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "playId": "rk0lb7ZvP-m"
+                }
+              ],
+              "timeStart": 1529471257608,
+              "timeEnd": 1529472295741,
+              "deactivated": false,
+              "winner": 1,
+              "team1Result": 2,
+              "team2Result": 0,
+              "skipped": false,
+              "koId": "SJDlWm-wwWm",
+              "levelId": "S1olZQbDDbX"
+            }
+          ],
+          "name": "1\/4"
+        },
+        {
+          "id": "S1ebb7WPPZX",
+          "type": "Level",
+          "_id": "S1ebb7WPPZX",
+          "plays": [
+            {
+              "id": "rkWW-QbvDWX",
+              "type": "Play",
+              "_id": "rkWW-QbvDWX",
+              "valid": true,
+              "team1": {
+                "id": "SJbmbDDWm",
+                "type": "Team"
+              },
+              "team2": {
+                "id": "S1sW7ZwvZ7",
+                "type": "Team"
+              },
+              "disciplines": [
+                {
+                  "id": "Hyl24TPPZQ",
+                  "type": "Discipline",
+                  "_id": "Hyl24TPPZQ",
+                  "sets": [
+                    {
+                      "id": "S1Wh4pDwZm",
+                      "type": "Result",
+                      "_id": "S1Wh4pDwZm",
+                      "team1": 5,
+                      "team2": 0
+                    },
+                    {
+                      "id": "ryMnEpDvZm",
+                      "type": "Result",
+                      "_id": "ryMnEpDvZm",
+                      "team1": 5,
+                      "team2": 0
+                    }
+                  ],
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "playId": "rkWW-QbvDWX"
+                }
+              ],
+              "timeStart": 1529472684437,
+              "timeEnd": 1529474361827,
+              "deactivated": false,
+              "team1bye": false,
+              "team2bye": false,
+              "winner": 1,
+              "team1Result": 2,
+              "team2Result": 0,
+              "skipped": false,
+              "koId": "SJDlWm-wwWm",
+              "levelId": "S1ebb7WPPZX"
+            },
+            {
+              "id": "ryzZb7ZPvbX",
+              "type": "Play",
+              "_id": "ryzZb7ZPvbX",
+              "valid": true,
+              "team1": {
+                "id": "rJG-Qbwv-Q",
+                "type": "Team"
+              },
+              "team2": {
+                "id": "H1BWQ-wv-Q",
+                "type": "Team"
+              },
+              "disciplines": [
+                {
+                  "id": "Hyxzl3vPWX",
+                  "type": "Discipline",
+                  "_id": "Hyxzl3vPWX",
+                  "sets": [
+                    {
+                      "id": "r1bMe2DDZX",
+                      "type": "Result",
+                      "_id": "r1bMe2DDZX",
+                      "team1": 5,
+                      "team2": 0
+                    },
+                    {
+                      "id": "ByMGe3PvWX",
+                      "type": "Result",
+                      "_id": "ByMGe3PvWX",
+                      "team1": 5,
+                      "team2": 0
+                    }
+                  ],
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "playId": "ryzZb7ZPvbX"
+                }
+              ],
+              "timeStart": 1529472329620,
+              "timeEnd": 1529474037696,
+              "deactivated": false,
+              "team1bye": false,
+              "team2bye": false,
+              "winner": 1,
+              "team1Result": 2,
+              "team2Result": 0,
+              "skipped": false,
+              "koId": "SJDlWm-wwWm",
+              "levelId": "S1ebb7WPPZX"
+            }
+          ],
+          "name": "1\/2"
+        },
+        {
+          "id": "rym-W7bwDW7",
+          "type": "Level",
+          "_id": "rym-W7bwDW7",
+          "plays": [
+            {
+              "id": "r1Nb-7ZwvZX",
+              "type": "Play",
+              "_id": "r1Nb-7ZwvZX",
+              "valid": true,
+              "team1": {
+                "id": "SJbmbDDWm",
+                "type": "Team"
+              },
+              "team2": {
+                "id": "rJG-Qbwv-Q",
+                "type": "Team"
+              },
+              "disciplines": [
+                {
+                  "id": "SJgtPXdwWQ",
+                  "type": "Discipline",
+                  "_id": "SJgtPXdwWQ",
+                  "sets": [
+                    {
+                      "id": "Hk-YvQ_Db7",
+                      "type": "Result",
+                      "_id": "Hk-YvQ_Db7",
+                      "team1": 0,
+                      "team2": 5
+                    },
+                    {
+                      "id": "HyGFwXuwbm",
+                      "type": "Result",
+                      "_id": "HyGFwXuwbm",
+                      "team1": 0,
+                      "team2": 5
+                    }
+                  ],
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "playId": "r1Nb-7ZwvZX"
+                }
+              ],
+              "timeStart": 1529474361843,
+              "timeEnd": 1529475943357,
+              "deactivated": false,
+              "team1bye": false,
+              "team2bye": false,
+              "winner": 2,
+              "team1Result": 0,
+              "team2Result": 2,
+              "skipped": false,
+              "koId": "SJDlWm-wwWm",
+              "levelId": "rym-W7bwDW7"
+            }
+          ],
+          "name": "1\/1"
+        }
+      ],
+      "leftLevels": [
+        
+      ],
+      "third": {
+        "id": "BJ_ebQbvDZm",
+        "type": "Level",
+        "_id": "BJ_ebQbvDZm",
+        "plays": [
+          {
+            "id": "HJHbZ7bvw-X",
+            "type": "Play",
+            "_id": "HJHbZ7bvw-X",
+            "valid": true,
+            "team1": {
+              "id": "S1sW7ZwvZ7",
+              "type": "Team"
+            },
+            "team2": {
+              "id": "H1BWQ-wv-Q",
+              "type": "Team"
+            },
+            "disciplines": [
+              {
+                "id": "S1go9buDZQ",
+                "type": "Discipline",
+                "_id": "S1go9buDZQ",
+                "sets": [
+                  {
+                    "id": "Hkbi9ZOwWm",
+                    "type": "Result",
+                    "_id": "Hkbi9ZOwWm",
+                    "team1": 3,
+                    "team2": 5
+                  },
+                  {
+                    "id": "SJMo5buPbm",
+                    "type": "Result",
+                    "_id": "SJMo5buPbm",
+                    "team1": 2,
+                    "team2": 5
+                  }
+                ],
+                "team1Confirmed": false,
+                "team2Confirmed": false,
+                "playId": "HJHbZ7bvw-X"
+              }
+            ],
+            "timeStart": 1529474361843,
+            "timeEnd": 1529475485646,
+            "deactivated": false,
+            "winner": 2,
+            "team1Result": 0,
+            "team2Result": 2,
+            "skipped": false,
+            "koId": "SJDlWm-wwWm",
+            "levelId": "BJ_ebQbvDZm"
+          }
+        ],
+        "name": "THIRD"
+      },
+      "size": 8,
+      "thirdPlace": true,
+      "double": false,
+      "teamUp": true,
+      "options": {
+        "id": "SJKx3lbPDbX",
+        "type": "TournamentOptions",
+        "_id": "SJKx3lbPDbX",
+        "name": "Tree 1",
+        "numPoints": 5,
+        "numSets": 2,
+        "twoAhead": true,
+        "fastInput": false,
+        "pointsWin": 2,
+        "pointsDraw": 1,
+        "fairShuffle": true,
+        "disciplines": [
+          {
+            "id": "HJneng-Pv-m",
+            "type": "DisciplineOptions",
+            "_id": "HJneng-Pv-m",
+            "numPoints": 5,
+            "numSets": 2,
+            "twoAhead": true,
+            "fastInput": false
+          }
+        ],
+        "tables": [
+          
+        ],
+        "tablesPerPlay": 1,
+        "hasDisciplines": false,
+        "maxLostGames": 3,
+        "draw": false,
+        "byeRating": false,
+        "tableMeta": [
+          
+        ],
+        "multiTableTournament": false,
+        "useCloseGameRating": false,
+        "closeGameDifference": 1,
+        "closeGamePointsWin": 2,
+        "closeGamePointsLoose": 1
+      }
+    }
+  ],
+  "mode": 2,
+  "numRounds": 4,
+  "options": {
+    "id": "HJg1sXBPbm",
+    "type": "TournamentOptions",
+    "_id": "HJg1sXBPbm",
+    "numPoints": 7,
+    "numSets": 1,
+    "twoAhead": true,
+    "fastInput": false,
+    "pointsWin": 3,
+    "pointsDraw": 1,
+    "fairShuffle": true,
+    "disciplines": [
+      {
+        "id": "B1-Za7SDZX",
+        "type": "DisciplineOptions",
+        "_id": "B1-Za7SDZX",
+        "numPoints": 7,
+        "numSets": 1,
+        "twoAhead": true,
+        "fastInput": false
+      }
+    ],
+    "tables": [
+      {
+        "id": "rJ7O3XHDbX",
+        "type": "Table",
+        "_id": "rJ7O3XHDbX",
+        "name": "1",
+        "deactivated": false
+      },
+      {
+        "id": "rJp3mSvWm",
+        "type": "Table",
+        "_id": "rJp3mSvWm",
+        "name": "2",
+        "deactivated": false
+      },
+      {
+        "id": "H1g63Qrw-Q",
+        "type": "Table",
+        "_id": "H1g63Qrw-Q",
+        "name": "3",
+        "deactivated": false
+      },
+      {
+        "id": "HJ-T2XSD-Q",
+        "type": "Table",
+        "_id": "HJ-T2XSD-Q",
+        "name": "4",
+        "deactivated": false
+      }
+    ],
+    "tablesPerPlay": 1,
+    "hasDisciplines": false,
+    "maxLostGames": 3,
+    "draw": false,
+    "byeRating": false,
+    "tableMeta": [
+      {
+        "id": "21",
+        "type": "TableMeta",
+        "_id": "21",
+        "header": "Leben",
+        "property": "lives",
+        "visible": true,
+        "ignoreSort": false,
+        "hidden": true,
+        "reverse": false,
+        "renderer": "lms-lives",
+        "listed": true
+      },
+      {
+        "id": "20",
+        "type": "TableMeta",
+        "_id": "20",
+        "header": "\u00d8P*",
+        "property": "corrected_points_per_game",
+        "visible": true,
+        "ignoreSort": false,
+        "hidden": false,
+        "reverse": false,
+        "renderer": "corrected",
+        "listed": true
+      },
+      {
+        "id": "19",
+        "type": "TableMeta",
+        "_id": "19",
+        "header": "\u00d8P",
+        "property": "points_per_game",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": false,
+        "reverse": false,
+        "renderer": "float",
+        "listed": false
+      },
+      {
+        "id": "18",
+        "type": "TableMeta",
+        "_id": "18",
+        "header": "Pkt",
+        "property": "points",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": false,
+        "reverse": false,
+        "listed": false
+      },
+      {
+        "id": "17",
+        "type": "TableMeta",
+        "_id": "17",
+        "header": "BH\u2081",
+        "property": "bh1",
+        "visible": true,
+        "ignoreSort": false,
+        "hidden": false,
+        "reverse": false,
+        "renderer": "float",
+        "listed": true
+      },
+      {
+        "id": "16",
+        "type": "TableMeta",
+        "_id": "16",
+        "header": "BH\u2082",
+        "property": "bh2",
+        "visible": false,
+        "ignoreSort": false,
+        "hidden": false,
+        "reverse": false,
+        "renderer": "float",
+        "listed": true
+      },
+      {
+        "id": "15",
+        "type": "TableMeta",
+        "_id": "15",
+        "header": "SB",
+        "property": "sb",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": false,
+        "reverse": false,
+        "listed": false
+      },
+      {
+        "id": "14",
+        "type": "TableMeta",
+        "_id": "14",
+        "header": "Lost",
+        "property": "lost",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": false,
+        "reverse": false,
+        "listed": false
+      },
+      {
+        "id": "13",
+        "type": "TableMeta",
+        "_id": "13",
+        "header": "Won",
+        "property": "won",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": false,
+        "reverse": false,
+        "listed": false
+      },
+      {
+        "id": "12",
+        "type": "TableMeta",
+        "_id": "12",
+        "header": "D\u00b1",
+        "property": "dis_diff",
+        "visible": true,
+        "ignoreSort": false,
+        "hidden": true,
+        "reverse": false,
+        "listed": true
+      },
+      {
+        "id": "11",
+        "type": "TableMeta",
+        "_id": "11",
+        "header": "D+",
+        "property": "dis_won",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": true,
+        "reverse": false,
+        "listed": false
+      },
+      {
+        "id": "10",
+        "type": "TableMeta",
+        "_id": "10",
+        "header": "D-",
+        "property": "dis_lost",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": true,
+        "reverse": false,
+        "listed": false
+      },
+      {
+        "id": "9",
+        "type": "TableMeta",
+        "_id": "9",
+        "header": "S\u00b1",
+        "property": "sets_diff",
+        "visible": true,
+        "ignoreSort": false,
+        "hidden": true,
+        "reverse": false,
+        "listed": true
+      },
+      {
+        "id": "8",
+        "type": "TableMeta",
+        "_id": "8",
+        "header": "S+",
+        "property": "sets_won",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": true,
+        "reverse": false,
+        "listed": false
+      },
+      {
+        "id": "7",
+        "type": "TableMeta",
+        "_id": "7",
+        "header": "S-",
+        "property": "sets_lost",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": true,
+        "reverse": false,
+        "listed": false
+      },
+      {
+        "id": "6",
+        "type": "TableMeta",
+        "_id": "6",
+        "header": "T\u00b1",
+        "property": "goal_diff",
+        "visible": true,
+        "ignoreSort": false,
+        "hidden": false,
+        "reverse": false,
+        "listed": true
+      },
+      {
+        "id": "5",
+        "type": "TableMeta",
+        "_id": "5",
+        "header": "T-",
+        "property": "goals_in",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": false,
+        "reverse": false,
+        "listed": false
+      },
+      {
+        "id": "4",
+        "type": "TableMeta",
+        "_id": "4",
+        "header": "T+",
+        "property": "goals",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": false,
+        "reverse": false,
+        "listed": false
+      },
+      {
+        "id": "3",
+        "type": "TableMeta",
+        "_id": "3",
+        "header": "Sp.",
+        "property": "games",
+        "visible": true,
+        "ignoreSort": true,
+        "hidden": false,
+        "reverse": false,
+        "listed": true
+      },
+      {
+        "id": "2",
+        "type": "TableMeta",
+        "_id": "2",
+        "header": "Team",
+        "property": "name",
+        "visible": true,
+        "ignoreSort": true,
+        "hidden": true,
+        "reverse": false,
+        "renderer": "name",
+        "listed": true
+      },
+      {
+        "id": "1",
+        "type": "TableMeta",
+        "_id": "1",
+        "header": "Spieler",
+        "property": "name",
+        "visible": true,
+        "ignoreSort": true,
+        "hidden": false,
+        "reverse": false,
+        "renderer": "name",
+        "listed": true
+      }
+    ],
+    "multiTableTournament": false,
+    "useCloseGameRating": false,
+    "closeGameDifference": 1,
+    "closeGamePointsWin": 2,
+    "closeGamePointsLoose": 1
+  },
+  "nameType": 0,
+  "version": "2.2",
+  "started": false,
+  "_id": "BkyjmrvWX",
+  "_rev": "32-f2feab04a096e368c220a12fa81547b2"
+}

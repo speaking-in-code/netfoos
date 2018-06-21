@@ -3,6 +3,7 @@ package net.speakingincode.foos.scrape;
 import com.google.auto.value.AutoValue;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.SerializedName;
 
 @AutoValue
 public abstract class KToolPlayer {
@@ -11,6 +12,7 @@ public abstract class KToolPlayer {
     }
 
     public abstract String id();
+    @SerializedName(value="name", alternate={"_name"})
     public abstract String name();
 
     public static Builder builder() {

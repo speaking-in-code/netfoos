@@ -9,8 +9,10 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 public class GsonUtil {
+
     private static final Gson gson = new GsonBuilder()
         .registerTypeAdapterFactory(MyAdapterFactory.create())
+        .registerTypeAdapter(KToolResults.knockOutWrapperType, new KToolResults.KnockOutWrapperAdapter())
         .create();
 
     public static Gson gson() {
