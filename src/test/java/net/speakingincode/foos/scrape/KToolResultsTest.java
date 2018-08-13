@@ -51,4 +51,13 @@ public class KToolResultsTest {
             assertThat(result.ko().third().plays().get(0).team1().id(), equalTo("S1sW7ZwvZ7"));
         }
     }
+
+    @Test
+    public void playoffBye() throws Exception {
+        try (InputStream testInput = getClass().getResourceAsStream("/playoff-bye.ktool")) {
+            String json = CharStreams.toString(new InputStreamReader(testInput, Charsets.UTF_8));
+            KToolResults result = KToolResults.fromJson(json);
+            assertThat(result.players().get(0).name(), equalTo("Naveen/Bharath"));
+        }
+    }
 }

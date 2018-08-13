@@ -104,4 +104,22 @@ public class ResultsParserTest {
             ));
         }
     }
+
+    @Test
+    public void byeInPlayoffs() throws Exception {
+        try (InputStream ktool = getClass().getResourceAsStream("/playoff-bye.ktool");
+             InputStream metadata = getClass().getResourceAsStream("/location.json")) {
+            ResultsParserConfig config = ResultsParserConfig.builder()
+                .ktool(ktool)
+                .metadata(metadata)
+                .build();
+            MonsterResult result = ResultsParser.load(config);
+            assertThat(result.finishes(), Matchers.contains(
+                finish(0, "Lih", "Eric"),
+                finish(1, "Kevin", "Haoran"),
+                finish(2, "Naveen", "Bharath"),
+                finish(3, "Min", "John")
+            ));
+        }
+    }
 }

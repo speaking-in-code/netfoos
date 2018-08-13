@@ -86,7 +86,7 @@ public class ResultsParser {
                     for (KToolResults.Level level : results.ko().levels()) {
                         if (level.name().equals("1/1")) {
                             KToolPlay play = level.plays().get(0);
-                            if (play.valid()) {
+                            if (play.matchWasPlayed()) {
                                 SingleMatchEvent result = makeMatch(level.plays().get(0));
                                 finishes.set(0, makeFinish(0, result.winnerPlayerOne(), result.winnerPlayerTwo()));
                                 finishes.set(1, makeFinish(1, result.loserPlayerOne(), result.loserPlayerTwo()));
@@ -119,7 +119,7 @@ public class ResultsParser {
 
         private void addPlays(List<KToolPlay> plays, ImmutableList.Builder<SingleMatchEvent> matches) {
             for (KToolPlay play : plays) {
-                if (!play.valid()) {
+                if (!play.matchWasPlayed()) {
                     continue;
                 }
                 SingleMatchEvent match = makeMatch(play);

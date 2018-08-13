@@ -9,10 +9,14 @@ import java.util.List;
 
 @AutoValue
 public abstract class KToolPlay {
-    public abstract boolean valid();
+    abstract boolean valid();
     public abstract Team team1();
-    public abstract Team team2();
+    public abstract @Nullable Team team2();
     public abstract @Nullable List<Match> disciplines();
+
+    public boolean matchWasPlayed() {
+        return valid() && team2() != null;
+    }
 
     public static KToolPlay create(boolean valid, Team t1, Team t2, List<Match> disciplines) {
         return new AutoValue_KToolPlay(valid, t1, t2, disciplines);
