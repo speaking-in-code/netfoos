@@ -1,13 +1,12 @@
 package net.speakingincode.foos.scrape;
 
-import java.util.List;
-
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.ImmutableList;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 
-import com.google.common.collect.ImmutableList;
+import java.util.List;
 
 /**
  * Additional selectors for WebDriver.
@@ -19,14 +18,14 @@ public class MoreBy {
   public static By submitValue(String value) {
     return new BySubmitValue(value);
   }
-  
+
   private static class BySubmitValue extends By {
     private final String value;
-    
+
     public BySubmitValue(String value) {
       this.value = value;
     }
-    
+
     @Override
     public List<WebElement> findElements(SearchContext context) {
       List<WebElement> list = context.findElements(By.name("Submit"));
@@ -39,18 +38,18 @@ public class MoreBy {
       return out.build();
     }
   }
-  
+
   /**
    * Matches links with the specified text and CGI arg.
    */
   public static By linkTextAndArg(String text, String arg) {
     return new ByLinkTextAndArg(text, arg);
   }
-  
+
   private static class ByLinkTextAndArg extends By {
     private final String text;
     private final String arg;
-    
+
     public ByLinkTextAndArg(String text, String arg) {
       this.text = text;
       this.arg = arg;
@@ -68,23 +67,24 @@ public class MoreBy {
       return out.build();
     }
   }
-  
+
   /**
    * Matches links with the specified text and CGI arg.
    */
   public static By linkPlayerName(String name) {
     return new ByLinkPlayerName(name);
   }
-  
+
   private static class ByLinkPlayerName extends By {
     private final String toFind;
+
     public ByLinkPlayerName(String toFind) {
       this.toFind = toFind;
     }
 
     @Override
     public List<WebElement> findElements(SearchContext context) {
-      List<WebElement> list = context.findElements(By.partialLinkText(toFind));
+      List<WebElement> list = context.findElements(By.tagName("a"));
       ImmutableList.Builder<WebElement> out = ImmutableList.builder();
       for (WebElement item : list) {
         String name = item.getText();
@@ -93,7 +93,7 @@ public class MoreBy {
         // or like this for people without:
         //    Eaton, Brian
         String noNickName = removeNickName(name);
-        if (toFind.equals(noNickName)) {
+        if (toFind.equalsIgnoreCase(noNickName)) {
           out.add(item);
         }
       }

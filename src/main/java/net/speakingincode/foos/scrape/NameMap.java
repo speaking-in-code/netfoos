@@ -18,27 +18,32 @@ import java.util.Map;
  * .netfoosrc.
  */
 public class NameMap {
-    private static final Gson gson = new GsonBuilder().create();
-    private static final Type mapType = new TypeToken<Map<String, String>>(){}.getType();
+  private static final Gson gson = new GsonBuilder().create();
+  private static final Type mapType = new TypeToken<Map<String, String>>() {
+  }.getType();
 
-    public static NameMap load() {
-        try (BufferedReader reader = Files.newBufferedReader(
-            Paths.get(PreferenceFiles.getNameMapPath()), StandardCharsets.UTF_8)) {
-            Map<String, String> names = gson.fromJson(reader, mapType);
-            return new NameMap(names);
-        } catch (IOException e) {
-            throw new RuntimeException("Error loading credentials", e);
-        }
+  public static NameMap load() {
+    try (BufferedReader reader = Files.newBufferedReader(
+        Paths.get(PreferenceFiles.getNameMapPath()), StandardCharsets.UTF_8)) {
+      Map<String, String> names = gson.fromJson(reader, mapType);
+      return new NameMap(names);
+    } catch (IOException e) {
+      throw new RuntimeException("Error loading credentials", e);
     }
+  }
 
-    private final ImmutableMap<String, String> map;
+  private final ImmutableMap<String, String> map;
 
-    private NameMap(Map<String, String> in) {
-        map = ImmutableMap.copyOf(in);
+  private NameMap(Map<String, String> in) {
+    ImmutableMap.Builder<String, String> b = ImmutableMap.builder();
+    for (Map.Entry<String, String> item : in.entrySet()) {
+      b.put(item.getKey().toLowerCase(), item.getValue());
     }
+    map = b.build();
+  }
 
-    public String fullName(String name) {
-        String fullName = map.get(name);
-        return fullName != null ? fullName : name;
-    }
+  public String fullName(String name) {
+    String fullName = map.get(name.toLowerCase());
+    return fullName != null ? fullName : name;
+  }
 }
