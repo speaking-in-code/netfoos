@@ -1,0 +1,1112 @@
+{
+  "id": "7986ec74-c5e1-4484-cd05-f817a97443c6",
+  "name": "09\/27\/18",
+  "created": "2018-09-28T03:36:24.913Z",
+  "players": [
+    {
+      "id": "8634d1b5-cb59-40ea-dc81-54529f53c3b1",
+      "weight": 1,
+      "name": "Lih",
+      "removed": false,
+      "addedLater": false,
+      "maxLives": 0,
+      "lastGameIndex": 0
+    },
+    {
+      "id": "b799be90-e129-4db1-b13b-b52db790c2a3",
+      "weight": 1,
+      "name": "Jorge",
+      "removed": false,
+      "addedLater": false,
+      "maxLives": 0,
+      "lastGameIndex": 0
+    },
+    {
+      "id": "9e98e55c-a317-4af7-97dc-2592193033c7",
+      "weight": 1,
+      "name": "Bharath",
+      "removed": false,
+      "addedLater": false,
+      "maxLives": 0,
+      "lastGameIndex": 0
+    },
+    {
+      "id": "8d8b1083-4455-492a-e166-abfb56bc2acb",
+      "weight": 1,
+      "name": "Kevin",
+      "removed": false,
+      "addedLater": false,
+      "maxLives": 0,
+      "lastGameIndex": 0
+    },
+    {
+      "id": "b843f740-c77b-47c7-ecdc-633a2f25daf1",
+      "weight": 1,
+      "name": "Bing",
+      "removed": false,
+      "addedLater": false,
+      "maxLives": 0,
+      "lastGameIndex": 0
+    },
+    {
+      "id": "b7bd7ce6-22a6-4c2e-85b1-8fc696e1cefd",
+      "weight": 1,
+      "name": "Nick",
+      "removed": false,
+      "addedLater": false,
+      "maxLives": 0,
+      "lastGameIndex": 0
+    },
+    {
+      "id": "a578d14c-a080-422c-cbd9-2023b6f31141",
+      "weight": 1,
+      "name": "Mike tubbs",
+      "removed": false,
+      "addedLater": false,
+      "maxLives": 0,
+      "lastGameIndex": 0
+    },
+    {
+      "id": "6c81aa27-4fd1-43b0-871b-e8e3604331a5",
+      "weight": 1,
+      "name": "Charlie olson",
+      "removed": false,
+      "addedLater": false,
+      "maxLives": 0,
+      "lastGameIndex": 0
+    }
+  ],
+  "teams": [
+    {
+      "id": "5dce19e6-b035-4ce7-a1e0-64ba93b4b458",
+      "name": "",
+      "players": [
+        {
+          "id": "b7bd7ce6-22a6-4c2e-85b1-8fc696e1cefd"
+        },
+        {
+          "id": "8d8b1083-4455-492a-e166-abfb56bc2acb"
+        }
+      ]
+    },
+    {
+      "id": "dbcfa9d4-ba5e-4d89-a763-36d2a79a2be0",
+      "name": "",
+      "players": [
+        {
+          "id": "a578d14c-a080-422c-cbd9-2023b6f31141"
+        },
+        {
+          "id": "9e98e55c-a317-4af7-97dc-2592193033c7"
+        }
+      ]
+    },
+    {
+      "id": "0fc9851d-fdb0-439c-9d29-929ae5eaff2f",
+      "name": "",
+      "players": [
+        {
+          "id": "b843f740-c77b-47c7-ecdc-633a2f25daf1"
+        },
+        {
+          "id": "b7bd7ce6-22a6-4c2e-85b1-8fc696e1cefd"
+        }
+      ]
+    },
+    {
+      "id": "188b4615-c7e6-45f6-dc17-5b73a37aa573",
+      "name": "",
+      "players": [
+        {
+          "id": "6c81aa27-4fd1-43b0-871b-e8e3604331a5"
+        },
+        {
+          "id": "8d8b1083-4455-492a-e166-abfb56bc2acb"
+        }
+      ]
+    },
+    {
+      "id": "95c1066c-7948-4220-87fa-48774b1c1967",
+      "name": "",
+      "players": [
+        {
+          "id": "8634d1b5-cb59-40ea-dc81-54529f53c3b1"
+        },
+        {
+          "id": "a578d14c-a080-422c-cbd9-2023b6f31141"
+        }
+      ]
+    },
+    {
+      "id": "c3d95d7d-869f-405e-85a3-b6c0adf1c300",
+      "name": "",
+      "players": [
+        {
+          "id": "b799be90-e129-4db1-b13b-b52db790c2a3"
+        },
+        {
+          "id": "9e98e55c-a317-4af7-97dc-2592193033c7"
+        }
+      ]
+    },
+    {
+      "id": "92163bbf-42e2-436e-e4a6-11db8842858d",
+      "name": "",
+      "players": [
+        {
+          "id": "b7bd7ce6-22a6-4c2e-85b1-8fc696e1cefd"
+        },
+        {
+          "id": "b799be90-e129-4db1-b13b-b52db790c2a3"
+        }
+      ]
+    },
+    {
+      "id": "ccc4e3eb-b211-477c-db9b-eae14298d901",
+      "name": "",
+      "players": [
+        {
+          "id": "b843f740-c77b-47c7-ecdc-633a2f25daf1"
+        },
+        {
+          "id": "9e98e55c-a317-4af7-97dc-2592193033c7"
+        }
+      ]
+    },
+    {
+      "id": "a9e36cfa-584f-472e-89ea-0d4b104447bd",
+      "name": "",
+      "players": [
+        {
+          "id": "6c81aa27-4fd1-43b0-871b-e8e3604331a5"
+        },
+        {
+          "id": "8634d1b5-cb59-40ea-dc81-54529f53c3b1"
+        }
+      ]
+    },
+    {
+      "id": "3d72e957-df40-4779-f559-f4a68cfd2673",
+      "name": "",
+      "players": [
+        {
+          "id": "8d8b1083-4455-492a-e166-abfb56bc2acb"
+        },
+        {
+          "id": "a578d14c-a080-422c-cbd9-2023b6f31141"
+        }
+      ]
+    },
+    {
+      "id": "1438ecaf-6a85-4c41-f543-eab3c58a1d70",
+      "name": "",
+      "players": [
+        {
+          "id": "a578d14c-a080-422c-cbd9-2023b6f31141"
+        },
+        {
+          "id": "b843f740-c77b-47c7-ecdc-633a2f25daf1"
+        }
+      ]
+    },
+    {
+      "id": "292a9f95-6ef1-4e3a-a119-61734185e79e",
+      "name": "",
+      "players": [
+        {
+          "id": "8634d1b5-cb59-40ea-dc81-54529f53c3b1"
+        },
+        {
+          "id": "b7bd7ce6-22a6-4c2e-85b1-8fc696e1cefd"
+        }
+      ]
+    },
+    {
+      "id": "9e26b74f-cf33-4871-d21f-f5a1e7d1e353",
+      "name": "",
+      "players": [
+        {
+          "id": "6c81aa27-4fd1-43b0-871b-e8e3604331a5"
+        },
+        {
+          "id": "b799be90-e129-4db1-b13b-b52db790c2a3"
+        }
+      ]
+    },
+    {
+      "id": "a44c44cb-52dd-4523-846b-b5f387d421de",
+      "name": "",
+      "players": [
+        {
+          "id": "8d8b1083-4455-492a-e166-abfb56bc2acb"
+        },
+        {
+          "id": "9e98e55c-a317-4af7-97dc-2592193033c7"
+        }
+      ]
+    },
+    {
+      "id": "b81f3f04-2896-4bef-d830-c572d6c332bf",
+      "name": "",
+      "players": [
+        {
+          "id": "b843f740-c77b-47c7-ecdc-633a2f25daf1"
+        },
+        {
+          "id": "b799be90-e129-4db1-b13b-b52db790c2a3"
+        }
+      ]
+    },
+    {
+      "id": "2831abf6-2604-4f62-a144-6bec4838ecb9",
+      "name": "",
+      "players": [
+        {
+          "id": "a578d14c-a080-422c-cbd9-2023b6f31141"
+        },
+        {
+          "id": "6c81aa27-4fd1-43b0-871b-e8e3604331a5"
+        }
+      ]
+    },
+    {
+      "id": "99911d54-86f2-4ead-ba38-2e8ef9be8945",
+      "name": "",
+      "players": [
+        {
+          "id": "b7bd7ce6-22a6-4c2e-85b1-8fc696e1cefd"
+        },
+        {
+          "id": "9e98e55c-a317-4af7-97dc-2592193033c7"
+        }
+      ]
+    },
+    {
+      "id": "f83cfc2a-38a9-44be-c41c-2d831b7a74f0",
+      "name": "",
+      "players": [
+        {
+          "id": "8634d1b5-cb59-40ea-dc81-54529f53c3b1"
+        },
+        {
+          "id": "8d8b1083-4455-492a-e166-abfb56bc2acb"
+        }
+      ]
+    },
+    {
+      "id": "111ae207-9a3f-49e5-8aac-d66596cade9d",
+      "name": "",
+      "players": [
+        {
+          "id": "8d8b1083-4455-492a-e166-abfb56bc2acb"
+        },
+        {
+          "id": "b799be90-e129-4db1-b13b-b52db790c2a3"
+        }
+      ]
+    },
+    {
+      "id": "e652ff51-5328-49c8-b899-5926aaacdf2c",
+      "name": "",
+      "players": [
+        {
+          "id": "6c81aa27-4fd1-43b0-871b-e8e3604331a5"
+        },
+        {
+          "id": "9e98e55c-a317-4af7-97dc-2592193033c7"
+        }
+      ]
+    },
+    {
+      "id": "b10750c4-b031-4323-c0ac-a76d6468e6db",
+      "name": "",
+      "players": [
+        {
+          "id": "8634d1b5-cb59-40ea-dc81-54529f53c3b1"
+        },
+        {
+          "id": "a578d14c-a080-422c-cbd9-2023b6f31141"
+        }
+      ]
+    },
+    {
+      "id": "cd471985-3948-42a5-dd00-ccf4e86e2fb4",
+      "name": "",
+      "players": [
+        {
+          "id": "b7bd7ce6-22a6-4c2e-85b1-8fc696e1cefd"
+        },
+        {
+          "id": "b843f740-c77b-47c7-ecdc-633a2f25daf1"
+        }
+      ]
+    }
+  ],
+  "plays": [
+    {
+      "id": "9277440b-66f3-428e-ffac-7b72210d1cef",
+      "round": 1,
+      "valid": true,
+      "firstOfRound": true,
+      "team1": {
+        "id": "5dce19e6-b035-4ce7-a1e0-64ba93b4b458"
+      },
+      "team2": {
+        "id": "dbcfa9d4-ba5e-4d89-a763-36d2a79a2be0"
+      },
+      "disciplines": [
+        {
+          "id": "28de0e2d-64cf-4481-d184-06551409e427",
+          "sets": [
+            {
+              "id": "ed247e5e-5448-4aa2-9605-374d70d2975a",
+              "round": 0,
+              "team1": 7,
+              "team2": 2
+            }
+          ]
+        }
+      ],
+      "timeStart": 1538105868945,
+      "timeEnd": 1538106858458,
+      "deactivated": false
+    },
+    {
+      "id": "f85efa4f-4f23-48c0-bca7-6d9b918170d7",
+      "round": 2,
+      "valid": true,
+      "firstOfRound": true,
+      "team1": {
+        "id": "0fc9851d-fdb0-439c-9d29-929ae5eaff2f"
+      },
+      "team2": {
+        "id": "188b4615-c7e6-45f6-dc17-5b73a37aa573"
+      },
+      "disciplines": [
+        {
+          "id": "a0a9acc5-a07b-4d8f-a554-3254cf5c2363",
+          "sets": [
+            {
+              "id": "0a334abf-74df-4457-c756-ea809d4fdf0a",
+              "round": 0,
+              "team1": 5,
+              "team2": 7
+            }
+          ]
+        }
+      ],
+      "timeStart": 1538107115293,
+      "timeEnd": 1538108283030,
+      "deactivated": false
+    },
+    {
+      "id": "8ab5eb96-aa84-4964-8721-8cef772ca3ce",
+      "round": 2,
+      "valid": true,
+      "firstOfRound": false,
+      "team1": {
+        "id": "95c1066c-7948-4220-87fa-48774b1c1967"
+      },
+      "team2": {
+        "id": "c3d95d7d-869f-405e-85a3-b6c0adf1c300"
+      },
+      "disciplines": [
+        {
+          "id": "ea68a920-f0a2-485a-d216-03457e73a6a7",
+          "sets": [
+            {
+              "id": "4c9bafef-1bef-485c-cee2-af90587c0290",
+              "round": 0,
+              "team1": 6,
+              "team2": 7
+            }
+          ]
+        }
+      ],
+      "timeEnd": 1538108268928,
+      "deactivated": false
+    },
+    {
+      "id": "c2bc49c8-3ab8-40fa-a96f-7ce98797b5a4",
+      "round": 3,
+      "valid": true,
+      "firstOfRound": true,
+      "team1": {
+        "id": "92163bbf-42e2-436e-e4a6-11db8842858d"
+      },
+      "team2": {
+        "id": "ccc4e3eb-b211-477c-db9b-eae14298d901"
+      },
+      "disciplines": [
+        {
+          "id": "57649109-fc93-4e61-9d3f-26810fd33d4f",
+          "sets": [
+            {
+              "id": "3b7b035a-873c-46fb-cdd9-fd67f32f8594",
+              "round": 0,
+              "team1": 7,
+              "team2": 3
+            }
+          ]
+        }
+      ],
+      "timeStart": 1538108283031,
+      "timeEnd": 1538109494302,
+      "deactivated": false
+    },
+    {
+      "id": "7dd04fd0-63f4-462b-ec97-bffd1bf8390f",
+      "round": 3,
+      "valid": true,
+      "firstOfRound": false,
+      "team1": {
+        "id": "a9e36cfa-584f-472e-89ea-0d4b104447bd"
+      },
+      "team2": {
+        "id": "3d72e957-df40-4779-f559-f4a68cfd2673"
+      },
+      "disciplines": [
+        {
+          "id": "a5892690-47a7-449c-a840-4d2b7f87a4e9",
+          "sets": [
+            {
+              "id": "c5d74101-e2f8-4f71-a9be-a6c2928f1c42",
+              "round": 0,
+              "team1": 7,
+              "team2": 2
+            }
+          ]
+        }
+      ],
+      "timeEnd": 1538109209800,
+      "deactivated": false
+    },
+    {
+      "id": "db7b5097-9431-4dfa-ac03-64bf10185386",
+      "round": 4,
+      "valid": true,
+      "firstOfRound": true,
+      "team1": {
+        "id": "1438ecaf-6a85-4c41-f543-eab3c58a1d70"
+      },
+      "team2": {
+        "id": "292a9f95-6ef1-4e3a-a119-61734185e79e"
+      },
+      "disciplines": [
+        {
+          "id": "dbb87927-ecf6-406e-c346-7076d152222f",
+          "sets": [
+            {
+              "id": "d63c2738-04f2-4299-b39a-d08f5002d638",
+              "round": 0,
+              "team1": 6,
+              "team2": 7
+            }
+          ]
+        }
+      ],
+      "timeStart": 1538109495694,
+      "timeEnd": 1538111886031,
+      "deactivated": false
+    },
+    {
+      "id": "0da00e35-70c9-46fc-b87e-98f5123e1fd6",
+      "round": 4,
+      "valid": true,
+      "firstOfRound": false,
+      "team1": {
+        "id": "9e26b74f-cf33-4871-d21f-f5a1e7d1e353"
+      },
+      "team2": {
+        "id": "a44c44cb-52dd-4523-846b-b5f387d421de"
+      },
+      "disciplines": [
+        {
+          "id": "5acdea8d-c53e-4aa9-d5ca-fee182c6b05f",
+          "sets": [
+            {
+              "id": "b25be610-ba0b-4638-ea18-0286afb823e3",
+              "round": 0,
+              "team1": 4,
+              "team2": 7
+            }
+          ]
+        }
+      ],
+      "timeEnd": 1538110482047,
+      "deactivated": false
+    },
+    {
+      "id": "c98fd142-a508-41ea-95da-39d8624e3046",
+      "round": 5,
+      "valid": true,
+      "firstOfRound": true,
+      "team1": {
+        "id": "b81f3f04-2896-4bef-d830-c572d6c332bf"
+      },
+      "team2": {
+        "id": "2831abf6-2604-4f62-a144-6bec4838ecb9"
+      },
+      "disciplines": [
+        {
+          "id": "7bd2b74c-a29a-4b00-ad36-181f5e2f64ac",
+          "sets": [
+            {
+              "id": "291e2992-207c-486d-9dec-96c28273386f",
+              "round": 0,
+              "team1": 3,
+              "team2": 7
+            }
+          ]
+        }
+      ],
+      "timeStart": 1538110596773,
+      "timeEnd": 1538111721974,
+      "deactivated": false
+    },
+    {
+      "id": "5be075eb-4011-4d96-c105-25a8fdb9fdb2",
+      "round": 5,
+      "valid": true,
+      "firstOfRound": false,
+      "team1": {
+        "id": "99911d54-86f2-4ead-ba38-2e8ef9be8945"
+      },
+      "team2": {
+        "id": "f83cfc2a-38a9-44be-c41c-2d831b7a74f0"
+      },
+      "disciplines": [
+        {
+          "id": "3965a8b9-35a0-4ec2-c536-ed4fa5724fc8",
+          "sets": [
+            {
+              "id": "2aa6db89-8443-4315-97a8-b99db1630835",
+              "round": 0,
+              "team1": 5,
+              "team2": 7
+            }
+          ]
+        }
+      ],
+      "timeEnd": 1538111665007,
+      "deactivated": false
+    }
+  ],
+  "ko": {
+    "id": "763e7299-74a6-4013-c5e0-4998a9da3649",
+    "levels": [
+      {
+        "id": "d9ac969d-189e-4b01-e03f-82cb374556e7",
+        "plays": [
+          {
+            "id": "139b7ca3-3584-44a2-a0b8-eeed5f3582ce",
+            "round": 0,
+            "valid": true,
+            "firstOfRound": false,
+            "team1": {
+              "id": "111ae207-9a3f-49e5-8aac-d66596cade9d"
+            },
+            "team2": {
+              "id": "cd471985-3948-42a5-dd00-ccf4e86e2fb4"
+            },
+            "disciplines": [
+              {
+                "id": "8762cbdd-d86b-499c-e82f-c86b458bbc13",
+                "sets": [
+                  {
+                    "id": "4f272ca5-160c-4dbe-b149-49bb9cd7506e",
+                    "round": 0,
+                    "team1": 5,
+                    "team2": 2
+                  },
+                  {
+                    "id": "4b62610a-a1af-4958-f069-724cf38c9a14",
+                    "round": 0,
+                    "team1": 5,
+                    "team2": 0
+                  }
+                ]
+              }
+            ],
+            "timeStart": 1538112051892,
+            "deactivated": false
+          },
+          {
+            "id": "b5d17ae3-12ad-433c-c460-9cb46590f69b",
+            "round": 0,
+            "valid": true,
+            "firstOfRound": false,
+            "team1": {
+              "id": "e652ff51-5328-49c8-b899-5926aaacdf2c"
+            },
+            "team2": {
+              "id": "b10750c4-b031-4323-c0ac-a76d6468e6db"
+            },
+            "disciplines": [
+              {
+                "id": "bf4d5188-9da8-421b-cea3-fcf992ba89fd",
+                "sets": [
+                  {
+                    "id": "0de1b20b-b319-4d9f-e7e3-1d47c0e1194c",
+                    "round": 0,
+                    "team1": 5,
+                    "team2": 3
+                  },
+                  {
+                    "id": "25629f8d-b563-492d-9834-acbee1d0cea1",
+                    "round": 0,
+                    "team1": 5,
+                    "team2": 4
+                  }
+                ]
+              }
+            ],
+            "timeStart": 1538112051893,
+            "deactivated": false
+          }
+        ],
+        "name": "1\/2"
+      },
+      {
+        "id": "dded6e0c-2ad3-46a7-f0bd-fb19146a855a",
+        "plays": [
+          {
+            "id": "7a19e291-b184-443b-b82d-14072b88f106",
+            "round": 0,
+            "valid": true,
+            "firstOfRound": false,
+            "team1": {
+              "id": "111ae207-9a3f-49e5-8aac-d66596cade9d"
+            },
+            "team2": {
+              "id": "e652ff51-5328-49c8-b899-5926aaacdf2c"
+            },
+            "disciplines": [
+              {
+                "id": "49f7e938-76f4-4f7f-c2c3-e592c8fb5ce2",
+                "sets": [
+                  {
+                    "id": "a2a35ebf-3a49-4730-ec3b-9f89d09e5491",
+                    "round": 0,
+                    "team1": 5,
+                    "team2": 4
+                  },
+                  {
+                    "id": "f80ad796-6018-462a-c8ba-56044c300f08",
+                    "round": 0,
+                    "team1": 5,
+                    "team2": 4
+                  }
+                ]
+              }
+            ],
+            "timeStart": 1538113620652,
+            "deactivated": false
+          }
+        ],
+        "name": "1\/1"
+      }
+    ],
+    "third": {
+      "id": "18d45619-2f54-497b-fa7a-bc7ad92d56a4",
+      "plays": [
+        {
+          "id": "f806a1f1-73d3-47bf-c93e-e16d806874e7",
+          "round": 0,
+          "valid": false,
+          "firstOfRound": false,
+          "deactivated": false
+        }
+      ],
+      "name": "THIRD"
+    },
+    "size": 4,
+    "thirdPlace": false,
+    "double": false,
+    "singlePlayer": false,
+    "options": {
+      "id": "5f3117e6-ae78-4693-90c4-031f1dd4bed6",
+      "pointsWin": 1,
+      "pointsDraw": 1,
+      "numTables": 1,
+      "twoAhead": true,
+      "fairShuffle": true,
+      "disciplines": [
+        {
+          "id": "09904877-49dc-413a-e176-cf516c705b25",
+          "name": "Disziplin 1",
+          "numPoints": 5,
+          "numSets": 2,
+          "twoAhead": true
+        }
+      ],
+      "tables": [
+        {
+          "id": "07f89900-42e7-4b17-8ab6-4dde21b670ea",
+          "name": "1"
+        }
+      ],
+      "hasDisciplines": false,
+      "maxLostGames": 3,
+      "numPoints": 7,
+      "numSets": 1,
+      "tableMeta": [
+        {
+          "id": 21,
+          "header": "Leben",
+          "property": "lives",
+          "visible": true,
+          "hidden": true,
+          "renderer": "lms-lives"
+        },
+        {
+          "id": 20,
+          "header": "\u00d8P*",
+          "property": "corrected_points_per_game",
+          "visible": true,
+          "hidden": false,
+          "renderer": "corrected"
+        },
+        {
+          "id": 19,
+          "header": "\u00d8P",
+          "property": "points_per_game",
+          "visible": false,
+          "ignoreSort": true,
+          "renderer": "float"
+        },
+        {
+          "id": 18,
+          "header": "Pkt",
+          "property": "points",
+          "visible": false,
+          "ignoreSort": true
+        },
+        {
+          "id": 17,
+          "header": "BH\u2081",
+          "property": "bh1",
+          "visible": true,
+          "ignoreSort": false,
+          "renderer": "float"
+        },
+        {
+          "id": 16,
+          "header": "BH\u2082",
+          "property": "bh2",
+          "visible": false,
+          "ignoreSort": false,
+          "renderer": "float"
+        },
+        {
+          "id": 15,
+          "header": "SB",
+          "property": "sb",
+          "visible": false,
+          "ignoreSort": true
+        },
+        {
+          "id": 14,
+          "header": "Lost",
+          "property": "losts",
+          "visible": false,
+          "ignoreSort": true
+        },
+        {
+          "id": 13,
+          "header": "Won",
+          "property": "wins",
+          "visible": false,
+          "ignoreSort": true
+        },
+        {
+          "id": 12,
+          "header": "D\u00b1",
+          "property": "dis_diff",
+          "visible": true,
+          "hidden": true
+        },
+        {
+          "id": 11,
+          "header": "D+",
+          "property": "dis_won",
+          "visible": false,
+          "ignoreSort": true,
+          "hidden": true
+        },
+        {
+          "id": 10,
+          "header": "D-",
+          "property": "dis_lost",
+          "visible": false,
+          "ignoreSort": true,
+          "hidden": true
+        },
+        {
+          "id": 9,
+          "header": "S\u00b1",
+          "property": "set_diff",
+          "visible": true,
+          "hidden": true
+        },
+        {
+          "id": 8,
+          "header": "S+",
+          "property": "sets_won",
+          "visible": false,
+          "ignoreSort": true,
+          "hidden": true
+        },
+        {
+          "id": 7,
+          "header": "S-",
+          "property": "sets_lost",
+          "visible": false,
+          "ignoreSort": true,
+          "hidden": true
+        },
+        {
+          "id": 6,
+          "header": "T\u00b1",
+          "property": "goal_diff",
+          "visible": true
+        },
+        {
+          "id": 5,
+          "header": "T-",
+          "property": "goals_in",
+          "visible": false,
+          "ignoreSort": true
+        },
+        {
+          "id": 4,
+          "header": "T+",
+          "property": "goals",
+          "visible": false,
+          "ignoreSort": true
+        },
+        {
+          "id": 3,
+          "header": "Sp.",
+          "property": "games",
+          "visible": true,
+          "ignoreSort": true
+        },
+        {
+          "id": 2,
+          "header": "Team",
+          "property": "getName",
+          "visible": true,
+          "renderer": "name",
+          "ignoreSort": true,
+          "hidden": true
+        },
+        {
+          "id": 1,
+          "header": "Spieler",
+          "property": "name",
+          "visible": true,
+          "renderer": "name",
+          "ignoreSort": true,
+          "hidden": false
+        }
+      ]
+    }
+  },
+  "mode": {
+    "id": 2
+  },
+  "numRounds": 5,
+  "options": {
+    "id": "21dec712-fbf6-41d2-d50f-ba923d2cda4e",
+    "pointsWin": 1,
+    "pointsDraw": 1,
+    "numTables": 1,
+    "twoAhead": true,
+    "fairShuffle": true,
+    "disciplines": [
+      {
+        "id": "d550c343-cddf-4d3c-85bb-b95e75387694",
+        "name": "Disziplin 1",
+        "numPoints": 7,
+        "numSets": 1,
+        "twoAhead": true
+      }
+    ],
+    "tables": [
+      {
+        "id": "6d12ae48-4754-4fb5-d193-eb9f07124124",
+        "name": "1"
+      }
+    ],
+    "hasDisciplines": false,
+    "maxLostGames": 3,
+    "numPoints": 7,
+    "numSets": 1,
+    "tableMeta": [
+      {
+        "id": 21,
+        "header": "Leben",
+        "property": "lives",
+        "visible": true,
+        "hidden": true,
+        "renderer": "lms-lives"
+      },
+      {
+        "id": 20,
+        "header": "\u00d8P*",
+        "property": "corrected_points_per_game",
+        "visible": true,
+        "hidden": false,
+        "renderer": "corrected"
+      },
+      {
+        "id": 19,
+        "header": "\u00d8P",
+        "property": "points_per_game",
+        "visible": false,
+        "ignoreSort": true,
+        "renderer": "float"
+      },
+      {
+        "id": 18,
+        "header": "Pkt",
+        "property": "points",
+        "visible": false,
+        "ignoreSort": true
+      },
+      {
+        "id": 17,
+        "header": "BH\u2081",
+        "property": "bh1",
+        "visible": true,
+        "ignoreSort": false,
+        "renderer": "float"
+      },
+      {
+        "id": 16,
+        "header": "BH\u2082",
+        "property": "bh2",
+        "visible": false,
+        "ignoreSort": false,
+        "renderer": "float"
+      },
+      {
+        "id": 15,
+        "header": "SB",
+        "property": "sb",
+        "visible": false,
+        "ignoreSort": true
+      },
+      {
+        "id": 14,
+        "header": "Lost",
+        "property": "losts",
+        "visible": false,
+        "ignoreSort": true
+      },
+      {
+        "id": 13,
+        "header": "Won",
+        "property": "wins",
+        "visible": false,
+        "ignoreSort": true
+      },
+      {
+        "id": 12,
+        "header": "D\u00b1",
+        "property": "dis_diff",
+        "visible": true,
+        "hidden": true
+      },
+      {
+        "id": 11,
+        "header": "D+",
+        "property": "dis_won",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": true
+      },
+      {
+        "id": 10,
+        "header": "D-",
+        "property": "dis_lost",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": true
+      },
+      {
+        "id": 9,
+        "header": "S\u00b1",
+        "property": "set_diff",
+        "visible": true,
+        "hidden": true
+      },
+      {
+        "id": 8,
+        "header": "S+",
+        "property": "sets_won",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": true
+      },
+      {
+        "id": 7,
+        "header": "S-",
+        "property": "sets_lost",
+        "visible": false,
+        "ignoreSort": true,
+        "hidden": true
+      },
+      {
+        "id": 6,
+        "header": "T\u00b1",
+        "property": "goal_diff",
+        "visible": true
+      },
+      {
+        "id": 5,
+        "header": "T-",
+        "property": "goals_in",
+        "visible": false,
+        "ignoreSort": true
+      },
+      {
+        "id": 4,
+        "header": "T+",
+        "property": "goals",
+        "visible": false,
+        "ignoreSort": true
+      },
+      {
+        "id": 3,
+        "header": "Sp.",
+        "property": "games",
+        "visible": true,
+        "ignoreSort": true
+      },
+      {
+        "id": 2,
+        "header": "Team",
+        "property": "getName",
+        "visible": true,
+        "renderer": "name",
+        "ignoreSort": true,
+        "hidden": true
+      },
+      {
+        "id": 1,
+        "header": "Spieler",
+        "property": "name",
+        "visible": true,
+        "renderer": "name",
+        "ignoreSort": true,
+        "hidden": false
+      }
+    ]
+  },
+  "nameType": "player",
+  "user": "",
+  "container": "",
+  "version": "1.0"
+}
