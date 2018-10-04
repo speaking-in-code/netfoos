@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
+import javax.annotation.Nullable;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -42,7 +43,10 @@ public class NameMap {
     map = b.build();
   }
 
-  public String fullName(String name) {
+  public String fullName(@Nullable String name) {
+    if (name == null) {
+      return null;
+    }
     String fullName = map.get(name.toLowerCase());
     return fullName != null ? fullName : name;
   }
