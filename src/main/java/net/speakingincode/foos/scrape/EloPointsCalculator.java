@@ -19,10 +19,12 @@ public class EloPointsCalculator {
   private static final Logger logger = Logger.getLogger(EloPointsCalculator.class.getName());
   private static final ImmutableList<String> LINKS = ImmutableList.of(
       "/images/blue_box.gif", "/images_admin/10spacer.gif");
+
+  private final PointsParser parser;
   private final WebDriver driver;
-  private final PointsParser parser = new PointsParser();
-  
-  public EloPointsCalculator(WebDriver driver) {
+
+  public EloPointsCalculator(PointsBook pointsBook, WebDriver driver) {
+    this.parser = new PointsParser(pointsBook);
     this.driver = driver;
   }
   

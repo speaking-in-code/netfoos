@@ -1,32 +1,33 @@
 package net.speakingincode.foos.scrape;
 
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
+import com.google.common.collect.ImmutableList;
+import org.junit.Test;
 
 import java.io.IOException;
 
-import org.junit.Test;
-
-import com.google.common.collect.ImmutableList;
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
 
 public class PointsBookTest {
   @Test
   public void readFromString() throws IOException {
     PointsBook book = PointsBook.loadFromString("{\"players\":["
-        + "{\"name\":\"Spredeman, Tony\",\"points\":6740,\"local\":0}]}");
+        + "{\"name\":\"Spredeman, Tony\",\"points\":6740,\"local\":0,\"ifpActive\":1}]}");
     PointsBookPlayer expected = PointsBookPlayer.builder()
         .setName("Spredeman, Tony")
         .setPoints(6740)
         .setLocal(0)
+        .setIfpActive(1)
         .build();
     assertThat(book.getPointsBook().values(), contains(expected));
     assertThat(book.getPointsBook().get("Spredeman, Tony"), equalTo(expected));
   }
-  
+
   @Test
   public void updatesLocal() throws IOException {
     PointsBook book = PointsBook.loadFromString("{\"players\":["
-        + "{\"name\":\"Spredeman, Tony\",\"points\":6740,\"local\":0}]}");
+        + "{\"name\":\"Spredeman, Tony\",\"points\":6740,\"local\":0,\"ifpActive\":1}]}");
     Player tony = Player.builder()
         .name("Spredeman, Tony")
         .oldPoints(6740)
@@ -39,15 +40,16 @@ public class PointsBookTest {
         .setName("Spredeman, Tony")
         .setPoints(7000)
         .setLocal(0)
+        .setIfpActive(1)
         .build();
     assertThat(data.getPlayers(), contains(expected));
   }
-  
+
   @Test
   public void updatesOrder() throws IOException {
     PointsBook book = PointsBook.loadFromString("{\"players\":["
-        + "{\"name\":\"Spredeman, Tony\",\"points\":6740,\"local\":0},"
-        + "{\"name\":\"Loffredo, Todd\",\"points\":5000,\"local\":0}"
+        + "{\"name\":\"Spredeman, Tony\",\"points\":6740,\"local\":0,\"ifpActive\":1},"
+        + "{\"name\":\"Loffredo, Todd\",\"points\":5000,\"local\":0,\"ifpActive\":1}"
         + "]}");
     Player todd = Player.builder()
         .name("Loffredo, Todd")
@@ -68,13 +70,14 @@ public class PointsBookTest {
         .setName("Spredeman, Tony")
         .setPoints(6740)
         .setLocal(0)
+        .setIfpActive(1)
         .build();
     PointsBookPlayer expectedTodd = PointsBookPlayer.builder()
         .setName("Loffredo, Todd")
         .setPoints(7000)
         .setLocal(0)
+        .setIfpActive(1)
         .build();
     assertThat(data.getPlayers(), contains(expectedTodd, expectedTony));
-
   }
 }

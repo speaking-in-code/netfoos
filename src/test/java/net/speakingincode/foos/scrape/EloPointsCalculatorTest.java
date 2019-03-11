@@ -23,7 +23,7 @@ public class EloPointsCalculatorTest {
   public void before() throws Exception {
     ChromeDriverManager.getInstance().setup();
     driver = new ChromeDriver();
-    calculator = new EloPointsCalculator(driver);
+    calculator = new EloPointsCalculator(PointsBookFixture.emptyPointsBook(), driver);
     NetfoosLogin login = new NetfoosLogin(credentials, driver);
     login.login();
   }

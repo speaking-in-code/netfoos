@@ -22,7 +22,8 @@ public class PointsScraperTest {
     try {
       Credentials credentials = Credentials.load();
       new NetfoosLogin(credentials, driver).login();
-      ImmutableList<Player> players = new EloPointsCalculator(driver).getPoints();
+      PointsBook pointsBook = PointsBookFixture.emptyPointsBook();
+      ImmutableList<Player> players = new EloPointsCalculator(pointsBook, driver).getPoints();
       MatcherAssert.assertThat(players.size(), Matchers.greaterThan(100));
     } finally {
       driver.close();

@@ -12,6 +12,7 @@ public abstract class PointsBookPlayer {
   public abstract @Nullable Integer points();
   public abstract @Nullable Integer local();
   public abstract @Nullable String ifpId();
+  public abstract @Nullable Integer ifpActive();
   public abstract Builder toBuilder();
 
   static Builder builder() {
@@ -24,6 +25,7 @@ public abstract class PointsBookPlayer {
     public abstract Builder setPoints(Integer points);
     public abstract Builder setLocal(Integer localPoints);
     public abstract Builder setIfpId(String ifpId);
+    public abstract Builder setIfpActive(Integer ifpActive);
     public abstract PointsBookPlayer build();
   }
   

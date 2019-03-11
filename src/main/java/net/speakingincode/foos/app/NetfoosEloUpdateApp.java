@@ -29,14 +29,14 @@ public class NetfoosEloUpdateApp {
   private static Credentials credentials;
   
   public static void main(String[] args) throws IOException {
+    PointsBook oldPoints = PointsBook.load();
     credentials = Credentials.load();
-    ImmutableList<Player> netfoosPlayers = recalculatePlayerPoints();
+    ImmutableList<Player> netfoosPlayers = recalculatePlayerPoints(oldPoints);
 
     logger.info("Updating netfoos.");
     new NetfoosUpdater(credentials, Mode.LOCAL).runUpdates(netfoosPlayers);
     
     logger.info("Publishing to Google Sheets.");
-    PointsBook oldPoints = PointsBook.load();
     PointsBook newPoints = oldPoints.updateAllPlayers(netfoosPlayers);
 
     // Get the player update summary.
@@ -53,14 +53,15 @@ public class NetfoosEloUpdateApp {
     logger.info(out.toString());
   }
   
-  private static ImmutableList<Player> recalculatePlayerPoints() throws IOException {
+  private static ImmutableList<Player> recalculatePlayerPoints(PointsBook pointsBook)
+      throws IOException {
     ChromeDriverManager.getInstance().setup();
     WebDriver driver = null;
     try {
       driver = new ChromeDriver();
       NetfoosLogin login = new NetfoosLogin(credentials, driver);
       login.login();
-      return new EloPointsCalculator(driver).getPoints();
+      return new EloPointsCalculator(pointsBook, driver).getPoints();
     } finally {
       driver.close();
     }

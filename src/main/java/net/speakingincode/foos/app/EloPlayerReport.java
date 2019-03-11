@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.Logger;
 
+import net.speakingincode.foos.scrape.PointsBook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -26,6 +27,7 @@ public class EloPlayerReport {
   public static void main(String[] args) throws IOException {
     credentials = Credentials.load();
     ChromeDriverManager.getInstance().setup();
+    PointsBook pointsBook = PointsBook.load();
     try {
       driver = new ChromeDriver();
       NetfoosLogin login = new NetfoosLogin(credentials, driver);
@@ -33,7 +35,7 @@ public class EloPlayerReport {
       for (String netfoosName : args) {
         logger.info("Generating report for " + netfoosName);
         try {
-          writeReport(netfoosName);
+          writeReport(pointsBook, netfoosName);
         } catch (IOException e) {
           logger.warning("Failed to generate reort for " + netfoosName);
         }
@@ -43,8 +45,8 @@ public class EloPlayerReport {
     }
   }
   
-  private static void writeReport(String netfoosName) throws IOException {
-    String html = new EloPointsCalculator(driver).getPointsReport(netfoosName);
+  private static void writeReport(PointsBook pointsBook, String netfoosName) throws IOException {
+    String html = new EloPointsCalculator(pointsBook, driver).getPointsReport(netfoosName);
     String path = getChangeSummaryDirectory() + "/" + netfoosName + ".html";
     Files.write(html, new File(path), Charsets.UTF_8);
   }

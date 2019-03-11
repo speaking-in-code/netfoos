@@ -49,7 +49,7 @@ public class NetfoosBaseUpdateApp {
       NetfoosLogin login = new NetfoosLogin(credentials, driver);
       login.login();
       
-      ImmutableList<Player> oldBase = new EloPointsCalculator(driver).getPoints();
+      ImmutableList<Player> oldBase = new EloPointsCalculator(pointsBook, driver).getPoints();
       Map<String, Player> localNameToPlayer = Maps.newHashMap();
       for (Player player : oldBase) {
         localNameToPlayer.put(player.name(), player);

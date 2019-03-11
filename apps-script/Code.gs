@@ -1,6 +1,6 @@
 var kPointsBookUrl = "https://docs.google.com/spreadsheets/d/1LUAH8ZzsfN7VQwS27pLzS-0ksiAoxfgWXTlRS30j9pQ/edit";
 var kSheetName = "PointsBook";
-var kPlayerRange = "A2:E1000";
+var kPlayerRange = "A2:F1000";
 
 function doGet(req) {
   var pointsBook = SpreadsheetApp.openByUrl(kPointsBookUrl);
@@ -16,7 +16,8 @@ function doGet(req) {
       "name": range[row][1],
       "points": emptyToZero(range[row][2]),
       "local": emptyToZero(range[row][3]),
-      "ifpId": range[row][4]
+      "ifpId": range[row][4],
+      "ifpActive": emptyToZero(range[row][5])
     });
   }
   return ContentService.createTextOutput(JSON.stringify(resp));
@@ -33,13 +34,14 @@ function doPost(req) {
     var data = [];
     for (var i = 0; i < inputPoints.players.length; ++i) {
       var player = inputPoints.players[i];
-      data.push([ i + 1, player.name, player.points, player.local, player.ifpId ]);
+      data.push([ i + 1, player.name, player.points, player.local, player.ifpId, player.ifpActive ]);
     }
     var pointsBook = SpreadsheetApp.openByUrl(kPointsBookUrl);
     var sheet = pointsBook.getSheetByName(kSheetName);
     sheet.getRange(kPlayerRange).clearContent();
     Logger.log("New data is " + data);
-    var range = sheet.getRange(/* startRow */ 2, /* startCol */ 1, /* numRows */ data.length, /* numColumns */ 5);
+    var range = sheet.getRange(/* startRow */ 2, /* startCol */ 1, /* numRows */ data.length,
+                               /* numColumns */ data[0].length);
     range.setValues(data);
     return ContentService.createTextOutput("Completed response");
   } catch (e) {
@@ -60,18 +62,21 @@ function testDoPost() {
         "points": 7500,
         "local": 0,
         "ifpId": "TODD LOFFREDO (CA)",
+        "ifpActive": 1
       },
       {
         "name": "Spredeman, Tony",
         "points": 7000,
         "local": 1,
-        "ifpId": "Tony SPREDEMAN (FL)"
+        "ifpId": "Tony SPREDEMAN (FL)",
+        "ifpActive": 1
       },
       {
         "name": "Player, Test",
         "points": 700,
         "local": 1,
-        "ifpId": null
+        "ifpId": null,
+        "ifpActive": 0
       }
      ]
   };
