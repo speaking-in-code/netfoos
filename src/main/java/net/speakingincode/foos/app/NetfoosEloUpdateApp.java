@@ -63,7 +63,9 @@ public class NetfoosEloUpdateApp {
       login.login();
       return new EloPointsCalculator(pointsBook, driver).getPoints();
     } finally {
-      driver.close();
+      if (driver != null) {
+        driver.close();
+      }
     }
   }
   
