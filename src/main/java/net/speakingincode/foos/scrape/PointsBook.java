@@ -106,6 +106,14 @@ public class PointsBook {
   }
 
   /**
+   * Create a new points book, but don't update online for real.
+   */
+  public PointsBook dryRunUpdateAllPlayers(ImmutableList<Player> all) throws IOException {
+    PointsBookData newData = getUpdate(all);
+    return loadFromData(newData);
+  }
+
+  /**
    * Get the set of all of the players in the database.
    */
   public ImmutableCollection<PointsBookPlayer> getPlayers() {
