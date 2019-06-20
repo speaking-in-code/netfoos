@@ -122,4 +122,22 @@ public class ResultsParserTest {
             ));
         }
     }
+
+    @Test
+    public void may2019beta() throws Exception {
+        try (InputStream ktool = getClass().getResourceAsStream("/may-2019-beta.ktool");
+             InputStream metadata = getClass().getResourceAsStream("/location.json")) {
+            ResultsParserConfig config = ResultsParserConfig.builder()
+                .ktool(ktool)
+                .metadata(metadata)
+                .build();
+            MonsterResult result = ResultsParser.load(config);
+            assertThat(result.finishes(), Matchers.contains(
+                finish(0, "Naveen", null),
+                finish(1, "Brian", null),
+                finish(2, "Mo", null),
+                finish(3, "Jorge", null)
+            ));
+        }
+    }
 }
