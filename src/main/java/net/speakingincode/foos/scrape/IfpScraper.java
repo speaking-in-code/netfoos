@@ -143,9 +143,9 @@ public class IfpScraper implements Worker<String, Integer> {
    */
   private WebElement waitForDropDownToStabilize(String fullMatch)
       throws AmbiguousPlayerNameException, NoPlayerMatchException {
-    wait.until(new Predicate<WebDriver>() {
+    wait.until(new Function<WebDriver, Boolean>() {
       @Override
-      public boolean apply(WebDriver input) {
+      public Boolean apply(WebDriver input) {
         WebElement dropDown = input.findElement(DROP_DOWN);
         if (dropDown == null) {
           return false;
