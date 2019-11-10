@@ -1,0 +1,7 @@
+.classpath
+.factorypath
+.idea/
+.project
+.settings/
+netfoos.iml
+target/
