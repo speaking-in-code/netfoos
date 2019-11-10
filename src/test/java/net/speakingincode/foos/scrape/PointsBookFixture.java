@@ -13,7 +13,7 @@ public class PointsBookFixture {
     try {
       return PointsBook.loadFromString("{\"players\":[]}");
     } catch (IOException e) {
-      throw Throwables.propagate(e);
+      throw new RuntimeException(e);
     }
   }
 

@@ -1,12 +1,10 @@
 package net.speakingincode.foos.scrape;
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
-import java.util.regex.MatchResult;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Function;
+import com.google.common.base.Splitter;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -14,43 +12,43 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
-import com.google.common.base.Splitter;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
+import java.time.Duration;
+import java.util.List;
+import java.util.logging.Logger;
+import java.util.regex.MatchResult;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class IfpScraper implements Worker<String, Integer> {
   private static final String POINTS_URL =
       "http://ifp.everguide.com/commander/tour/public/PlayerProfile.aspx";
-  private static final int INIT_LOAD_DELAY_SECONDS = 10;
-  private static final int LOAD_FINISH_MILLIS = 2000;
-  private static final int POLL_MILLIS = 100;
+  private static final Duration LOAD_FINISH = Duration.ofSeconds(2);
+  private static final Duration POLL = Duration.ofMillis(100);
   private static final Logger logger = Logger.getLogger(IfpScraper.class.getName());
   private static final Splitter lineSplitter = Splitter.on('\n').trimResults();
   private static final Pattern pointsPattern =
       Pattern.compile("\\d+/(\\d+) Singles/Doubles Points");
   private static final By DROP_DOWN = By.id("R_DropDown");
   private static Factory factory = new Factory();
-  
+
   // Matches stuff like this:
   //   Paul Richards
   //   Paul Richards (CA)
   // If the longer version is there, only the first part is returned.
   private static final Pattern WITHOUT_STATE = Pattern.compile("([^(]*)( \\(.*\\))?");
-  
+
   private static class Factory implements Worker.Factory<String, Integer> {
     @Override
     public Worker<String, Integer> newWorker() {
       return new IfpScraper();
     }
-    
+
   }
+
   public static Worker.Factory<String, Integer> factory() {
     return factory;
   }
-  
+
   private WebDriver driver;
   private final FluentWait<WebDriver> wait;
 
@@ -61,7 +59,7 @@ public class IfpScraper implements Worker<String, Integer> {
       driver = null;
     }
   }
-  
+
   public IfpScraper() {
     driver = new ChromeDriver();
     // Try to avoid leaking a chrome process.
@@ -72,16 +70,16 @@ public class IfpScraper implements Worker<String, Integer> {
       }
     });
     wait = new FluentWait<WebDriver>(driver)
-        .withTimeout(INIT_LOAD_DELAY_SECONDS, TimeUnit.SECONDS)
-        .pollingEvery(POLL_MILLIS, TimeUnit.MILLISECONDS)
+        .withTimeout(LOAD_FINISH)
+        .pollingEvery(POLL)
         .ignoring(NoSuchElementException.class);
   }
-  
+
   @Override
   public Integer convert(String playerName) {
     return scrapePoints(playerName);
   }
-  
+
   @VisibleForTesting
   static MatchResult matchFullText(String fullText) {
     Matcher m = WITHOUT_STATE.matcher(fullText);
@@ -90,7 +88,7 @@ public class IfpScraper implements Worker<String, Integer> {
     }
     return m.toMatchResult();
   }
-  
+
   public int scrapePoints(String fullText) {
     String playerName = fullText;
     logger.info("Scraping: " + playerName);
@@ -124,7 +122,7 @@ public class IfpScraper implements Worker<String, Integer> {
       return 0;
     }
   }
-  
+
   private WebElement waitForLoad(final By toFind) {
     return wait.until(new Function<WebDriver, WebElement>() {
       public WebElement apply(WebDriver driver) {
@@ -132,14 +130,14 @@ public class IfpScraper implements Worker<String, Integer> {
       }
     });
   }
-  
+
   /**
    * The drop down menu refreshes dynamically as more data arrives. We wait for the first
    * item to appear, then wait for there to be no second item, then return the first item
    * in the list.
-   * 
-   * @throws AmbiguousPlayerNameException 
-   * @throws NoPlayerMatchException 
+   *
+   * @throws AmbiguousPlayerNameException
+   * @throws NoPlayerMatchException
    */
   private WebElement waitForDropDownToStabilize(String fullMatch)
       throws AmbiguousPlayerNameException, NoPlayerMatchException {
@@ -151,12 +149,12 @@ public class IfpScraper implements Worker<String, Integer> {
           return false;
         }
         return !dropDown.getText().equals("Loading...");
-      }   
+      }
     });
     // No idea what the page is doing, but a delay here is required. Otherwise the player
     // element vanishes and then gets regenerated.
-    waitForMillis(LOAD_FINISH_MILLIS);
-    
+    waitForDuration(LOAD_FINISH);
+
     // Players that match are listed as R_c0, R_c1, ...
     List<WebElement> candidates = Lists.newArrayList();
     for (int index = 0; ; ++index) {
@@ -183,22 +181,22 @@ public class IfpScraper implements Worker<String, Integer> {
     // Nothing matched full text. Make a decent error message, at least.
     throw new AmbiguousPlayerNameException(possible.build());
   }
-  
-  private void waitForMillis(long millis) {
+
+  private void waitForDuration(Duration d) {
     try {
-      Thread.sleep(millis);
+      Thread.sleep(d.toMillis());
     } catch (InterruptedException e) {
     }
   }
-  
+
   /**
    * Format is like this for men:
-   * 
+   * <p>
    * 6656/6716 Singles/Doubles Points
    * MASTER
-   * 
+   * <p>
    * and like this for women:
-   * 
+   * <p>
    * 1300/1500 Singles/Doubles Points
    * 3430/3654 Women's Singles/Doubles Points
    * PRO

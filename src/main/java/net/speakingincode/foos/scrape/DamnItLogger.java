@@ -1,13 +1,11 @@
 package net.speakingincode.foos.scrape;
 
+import com.google.common.io.Files;
+import org.openqa.selenium.WebDriver;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Logger;
-
-import org.apache.commons.io.Charsets;
-import org.openqa.selenium.WebDriver;
-
-import com.google.common.io.Files;
 
 /**
  * Logs HTML page to /tmp/dammit.html when something goes wrong.
@@ -15,11 +13,11 @@ import com.google.common.io.Files;
 public class DamnItLogger {
   private static final Logger log = Logger.getLogger(DamnItLogger.class.getName());
   private static File dammit = new File("/tmp/dammit.html");
-  
+
   public static void log(WebDriver driver) {
     log.warning("Writing error " + dammit.getPath());
     try {
-      Files.write(driver.getPageSource(), dammit, Charsets.UTF_8);
+      Files.asCharSink(dammit, com.google.common.base.Charsets.UTF_8).write(driver.getPageSource());
     } catch (IOException e) {
       log.warning("Failed to write error to " + dammit.getPath() + ": " + e);
     }

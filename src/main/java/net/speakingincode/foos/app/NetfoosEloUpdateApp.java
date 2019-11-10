@@ -43,7 +43,7 @@ public class NetfoosEloUpdateApp {
     ChangeSummarizer changes = new ChangeSummarizer(oldPoints.getPlayers(), newPoints.getPlayers());
     String summary = changes.getChangedPlayerSummary();
     logger.info("Writing change summary to : " + getChangeSummaryPath());
-    Files.write(summary, new File(getChangeSummaryPath()), Charsets.UTF_8);
+    Files.asCharSink(new File(getChangeSummaryPath()), Charsets.UTF_8).write(summary);
 
     // Write update to console.
     StringBuilder out = new StringBuilder();
@@ -55,7 +55,7 @@ public class NetfoosEloUpdateApp {
 
   private static ImmutableList<Player> recalculatePlayerPoints(PointsBook pointsBook)
       throws IOException {
-    ChromeDriverManager.getInstance().setup();
+    ChromeDriverManager.chromedriver().setup();
     WebDriver driver = null;
     try {
       driver = new ChromeDriver();

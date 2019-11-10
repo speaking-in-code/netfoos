@@ -1,18 +1,8 @@
 package net.speakingincode.foos.app;
 
-import java.io.IOException;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.logging.Logger;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import net.speakingincode.foos.scrape.Credentials;
 import net.speakingincode.foos.scrape.EloPointsCalculator;
@@ -24,18 +14,26 @@ import net.speakingincode.foos.scrape.PointsBook;
 import net.speakingincode.foos.scrape.PointsBookPlayer;
 import net.speakingincode.foos.scrape.PointsUpdater.Mode;
 import net.speakingincode.foos.scrape.WorkerPool;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.io.IOException;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.logging.Logger;
 
 public class NetfoosBaseUpdateApp {
   private static final Logger logger = Logger.getLogger(NetfoosBaseUpdateApp.class.getName());
   private static final int PARALLEL_THREADS = 10;
 
   public static void main(String[] args) throws IOException {
-    ChromeDriverManager.getInstance().setup();
+    ChromeDriverManager.chromedriver().setup();
     PointsBook oldPoints = PointsBook.load();
     Map<String, Integer> ifpTable = getCurrentIfpPoints(oldPoints);
     updateNetfoosBasePoints(oldPoints, ifpTable);
   }
-  
+
   /**
    * PointsBook: has both local name and IFP name.
    * oldBase/newBase: only has local name
@@ -48,13 +46,13 @@ public class NetfoosBaseUpdateApp {
       Credentials credentials = Credentials.load();
       NetfoosLogin login = new NetfoosLogin(credentials, driver);
       login.login();
-      
+
       ImmutableList<Player> oldBase = new EloPointsCalculator(pointsBook, driver).getPoints();
       Map<String, Player> localNameToPlayer = Maps.newHashMap();
       for (Player player : oldBase) {
         localNameToPlayer.put(player.name(), player);
       }
-      
+
       ImmutableList.Builder<Player> updates = ImmutableList.builder();
       for (PointsBookPlayer bookPlayer : pointsBook.getPlayers()) {
         Player currentLocal = localNameToPlayer.get(bookPlayer.name());
@@ -70,7 +68,7 @@ public class NetfoosBaseUpdateApp {
       driver.close();
     }
   }
-  
+
   private static Map<String, Integer> getCurrentIfpPoints(PointsBook oldPoints) throws IOException {
     Set<String> toScrape = Sets.newHashSet();
     for (PointsBookPlayer player : oldPoints.getPlayers()) {

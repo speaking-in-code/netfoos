@@ -10,11 +10,20 @@ public class PointsBookPlayerTest {
   public void defaultBehavior() {
     PointsBookPlayer p = PointsBookPlayer.builder().setName("name").build();
     assertEquals("name", p.name());
-    assertEquals(null, p.ifpId());
+    assertEquals("", p.ifpId());
     assertEquals(null, p.local());
     assertEquals(null, p.points());
   }
-  
+
+  @Test
+  public void defaultBehaviorFromJson() {
+    PointsBookPlayer p = GsonUtil.gson().fromJson("{ name: \"name\"}", PointsBookPlayer.class);
+    assertEquals("name", p.name());
+    assertEquals("", p.ifpId());
+    assertEquals(null, p.local());
+    assertEquals(null, p.points());
+  }
+
   @Test
   public void allFields() {
     PointsBookPlayer p = PointsBookPlayer.builder()
