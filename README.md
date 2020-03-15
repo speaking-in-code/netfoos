@@ -30,7 +30,7 @@ To use the software to get tournament results:
 ### Warning ###
 
 Netfoos doesn't have an API, so this software uses HTML scraping (in some cases
-with a running Chrome browser) to pull results.
+with a running Chrome browser) to pull results. It is fragile.
 
 Many of the tests are running against the real netfoos.com web site. When
 you're modifying the code and tests, check carefully that you're not sending
