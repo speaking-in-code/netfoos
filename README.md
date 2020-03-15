@@ -4,7 +4,7 @@
 
 These tools automate some tournament director tasks, such as
 
-1. Getting a table fo results for the most recent tournament.
+1. Getting a table of results for the most recent tournament.
 1. Updating local points based on recent results.
 1. Updating local base points based on IFP changes.
 
