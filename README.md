@@ -23,6 +23,10 @@ Compile, test, and install the software:
 
         mvn install
 
+Compile, and install the software, no tests:
+
+        mvn install -Dmaven.test.skip=true
+
 To use the software to get tournament results:
 
         ./netfoos-localpoints
@@ -30,7 +34,7 @@ To use the software to get tournament results:
 ### Warning ###
 
 Netfoos doesn't have an API, so this software uses HTML scraping (in some cases
-with a running Chrome browser) to pull results. It is fragile.
+with a running Chrome browser) to pull results.
 
 Many of the tests are running against the real netfoos.com web site. When
 you're modifying the code and tests, check carefully that you're not sending
