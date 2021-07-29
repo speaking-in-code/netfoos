@@ -1,10 +1,9 @@
 package net.speakingincode.foos.scrape;
 
-import static org.junit.Assert.*;
-
+import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 
-import com.google.common.collect.ImmutableList;
+import static org.junit.Assert.*;
 
 public class ChangeSummarizerTest {
   private PointsBookPlayer player(String name, int points) {
