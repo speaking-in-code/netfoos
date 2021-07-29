@@ -32,16 +32,6 @@ public class MonsterRackCount {
     double racks = 0;
     for (KToolPlay play : results.plays()) {
       racks += estimateRacks(play);
-      if (!play.matchWasPlayed()) {
-        continue;
-      }
-      for (KToolPlay.Match match : play.disciplines()) {
-        if (match.sets().size() == 1) {
-          racks += RACE_TO_SEVEN;
-        } else {
-          racks += TWO_OUT_OF_THREE;
-        }
-      }
     }
     if (results.ko() != null) {
       for (KToolResults.Level ko : results.ko().levels()) {
