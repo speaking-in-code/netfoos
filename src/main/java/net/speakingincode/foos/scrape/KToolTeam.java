@@ -5,12 +5,14 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.SerializedName;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
 @AutoValue
 public abstract class KToolTeam {
+    @SerializedName(value="id", alternate={"_id"})
     public abstract String id();
     public abstract @Nullable String name();
     public abstract List<Player> players();
@@ -48,6 +50,7 @@ public abstract class KToolTeam {
 
     @AutoValue
     public abstract static class Player {
+        @SerializedName(value="id", alternate={"_id"})
         public abstract String id();
 
         public static Player create(String id) {

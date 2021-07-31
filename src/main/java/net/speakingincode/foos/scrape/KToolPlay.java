@@ -3,6 +3,7 @@ package net.speakingincode.foos.scrape;
 import com.google.auto.value.AutoValue;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.SerializedName;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -34,6 +35,7 @@ public abstract class KToolPlay {
 
   @AutoValue
   public abstract static class Team {
+    @SerializedName(value="id", alternate={"_id"})
     public abstract String id();
 
     public static Team create(String id) {

@@ -53,6 +53,18 @@ public class KToolResultsTest {
   }
 
   @Test
+  public void v3format() throws Exception {
+    try (InputStream testInput = getClass().getResourceAsStream("/v3-format.ktool")) {
+      String json = CharStreams.toString(new InputStreamReader(testInput, Charsets.UTF_8));
+      KToolResults result = KToolResults.fromJson(json);
+      assertThat(result.players().get(0).name(), equalTo("Brian"));
+      assertThat(result.plays().get(0).team1().id(), equalTo("ejmiGkef1Ho"));
+      assertThat(result.ko().third().plays().get(0).team1().id(), equalTo("uspN2eUO4Z"));
+    }
+  }
+
+
+  @Test
   public void playoffBye() throws Exception {
     try (InputStream testInput = getClass().getResourceAsStream("/playoff-bye.ktool")) {
       String json = CharStreams.toString(new InputStreamReader(testInput, Charsets.UTF_8));

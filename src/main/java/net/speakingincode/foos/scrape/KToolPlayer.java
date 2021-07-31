@@ -1,6 +1,7 @@
 package net.speakingincode.foos.scrape;
 
 import com.google.auto.value.AutoValue;
+import com.google.auto.value.extension.memoized.Memoized;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -11,9 +12,17 @@ public abstract class KToolPlayer {
         return GsonUtil.gson().fromJson(text, KToolPlayer.class);
     }
 
+    @SerializedName(value="id", alternate={"_id"})
     public abstract String id();
+
+    @Memoized
+    public String name() {
+        return nameInternal().trim();
+    }
+
     @SerializedName(value="name", alternate={"_name"})
-    public abstract String name();
+    abstract String nameInternal();
+
 
     public static Builder builder() {
         return new AutoValue_KToolPlayer.Builder();
@@ -22,7 +31,7 @@ public abstract class KToolPlayer {
     @AutoValue.Builder
     abstract static class Builder {
         public abstract Builder id(String s);
-        public abstract Builder name(String s);
+        public abstract Builder nameInternal(String s);
         public abstract KToolPlayer build();
     }
 
