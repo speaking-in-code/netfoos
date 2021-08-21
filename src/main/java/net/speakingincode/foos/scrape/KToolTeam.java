@@ -1,6 +1,7 @@
 package net.speakingincode.foos.scrape;
 
 import com.google.auto.value.AutoValue;
+import com.google.auto.value.extension.memoized.Memoized;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.gson.Gson;
@@ -15,7 +16,22 @@ public abstract class KToolTeam {
     @SerializedName(value="id", alternate={"_id"})
     public abstract String id();
     public abstract @Nullable String name();
-    public abstract List<Player> players();
+    abstract @Nullable String type();
+    @SerializedName(value="players")
+    abstract @Nullable List<Player> teamPlayers();
+
+    // v3 of the format uses a singles team format like this:
+    // "team1": {
+    //   "_id": "Sy4nvyGjm",
+    //   "type": "Player"
+    // },
+    @Memoized
+    public @Nullable List<Player> players() {
+        if ("Player".equals(type())) {
+            return ImmutableList.of(Player.create(id()));
+        }
+        return teamPlayers();
+    }
 
     public List<String> teamPlayerNames() {
         Preconditions.checkState(players().isEmpty(), "Use players list instead");
@@ -44,7 +60,8 @@ public abstract class KToolTeam {
     abstract static class Builder {
         public abstract Builder id(String s);
         public abstract Builder name(String s);
-        public abstract Builder players(List<Player> l);
+        abstract Builder type(String s);
+        abstract Builder teamPlayers(List<Player> l);
         public abstract KToolTeam build();
     }
 

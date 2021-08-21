@@ -2,6 +2,7 @@ package net.speakingincode.foos.scrape;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.CharStreams;
+import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import java.io.InputStream;
@@ -63,6 +64,24 @@ public class KToolResultsTest {
     }
   }
 
+  @Test
+  public void v3NoPlayoffs() throws Exception {
+    try (InputStream testInput = getClass().getResourceAsStream("/v3-no-playoffs.ktool")) {
+      String json = CharStreams.toString(new InputStreamReader(testInput, Charsets.UTF_8));
+      KToolResults result = KToolResults.fromJson(json);
+      assertThat(result.players().get(0).name(), equalTo("Min"));
+      assertThat(result.ko(), Matchers.nullValue());
+    }
+  }
+
+  @Test
+  public void v3SinglesPlayoffs() throws Exception {
+    try (InputStream testInput = getClass().getResourceAsStream("/v3-singles-playoffs.ktool")) {
+      String json = CharStreams.toString(new InputStreamReader(testInput, Charsets.UTF_8));
+      KToolResults result = KToolResults.fromJson(json);
+      assertThat(result.players().get(0).name(), equalTo("Brian"));
+    }
+  }
 
   @Test
   public void playoffBye() throws Exception {

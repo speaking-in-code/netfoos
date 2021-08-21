@@ -136,7 +136,7 @@ public class ResultsParser {
       }
       return KToolTeam.builder()
           .id(team.id())
-          .players(ImmutableList.of(KToolTeam.Player.create(team.id())))
+          .teamPlayers(ImmutableList.of(KToolTeam.Player.create(team.id())))
           .build();
     }
 

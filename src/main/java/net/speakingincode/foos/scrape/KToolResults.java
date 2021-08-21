@@ -5,6 +5,7 @@ import com.google.auto.value.extension.memoized.Memoized;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
@@ -111,8 +112,11 @@ public abstract class KToolResults {
         public KnockOutWrapper deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext ctx) {
             KnockOut ko = null;
             if (json.isJsonArray()) {
-                JsonElement first = json.getAsJsonArray().get(0);
-                ko = ctx.deserialize(first, KnockOut.class);
+                JsonArray array = json.getAsJsonArray();
+                if (array.size() > 0) {
+                    JsonElement first = json.getAsJsonArray().get(0);
+                    ko = ctx.deserialize(first, KnockOut.class);
+                }
             } else if (json.isJsonObject()) {
                 ko = ctx.deserialize(json, KnockOut.class);
             } else {
