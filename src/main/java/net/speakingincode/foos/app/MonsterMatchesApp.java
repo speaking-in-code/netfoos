@@ -36,6 +36,8 @@ public class MonsterMatchesApp {
     for (KToolPlayer player : results.players()) {
       playerNames.put(player.id(), player.name());
     }
+    System.out.println("Players");
+    playerNames.values().stream().sorted().forEach((name) -> System.out.println("  " + name));
     for (KToolTeam team : results.teams()) {
       String teamName = playerName(team.players().get(0).id());
       if (team.players().size() > 1) {
@@ -58,7 +60,9 @@ public class MonsterMatchesApp {
     if (results.ko().third() != null) {
       System.out.println(roundName(results.ko().third().name()));
       for (KToolPlay play : results.ko().third().plays()) {
-        System.out.println("  " + match(play));
+        if (play.matchWasPlayed()) {
+          System.out.println("  " + match(play));
+        }
       }
     }
   }

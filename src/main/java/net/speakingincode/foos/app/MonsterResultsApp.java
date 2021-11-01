@@ -108,6 +108,8 @@ public class MonsterResultsApp {
 
   private static void summarizeResults(MonsterResult monsterResult) {
     final Map<String, Record> records = Maps.newHashMap();
+    System.out.println("Output Format: " + monsterResult.tournament().outputFormat());
+    System.out.println("Total matches: " + monsterResult.matches().size());
     for (SingleMatchEvent match : monsterResult.matches()) {
       String w1;
       String w2;

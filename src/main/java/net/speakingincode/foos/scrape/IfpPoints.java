@@ -11,6 +11,8 @@ import java.io.InputStreamReader;
 import java.util.Map;
 
 public class IfpPoints {
+  private static final int INACTIVE_POINTS = 1200;
+
   public static IfpPoints load() throws IOException {
     try (InputStream testInput = IfpPoints.class.getResourceAsStream("/points.json")) {
       String json = CharStreams.toString(new InputStreamReader(testInput, Charsets.UTF_8));
@@ -21,18 +23,27 @@ public class IfpPoints {
     }
   }
 
-  private final ImmutableMap<String, Integer> players;
+  private final ImmutableMap<String, IfpPlayer> players;
 
   public IfpPoints(IfpPlayer[] playerList) {
-    Map<String, Integer> b = Maps.newHashMap();
-    for (IfpPlayer player: playerList) {
-      b.put(player.name().toLowerCase(), player.doubles());
+    // There are dupe player names, from different states. Should probably use IFP unique id as key, or
+    // maybe player + state.
+    Map<String, IfpPlayer> b = Maps.newHashMap();
+    for (IfpPlayer player : playerList) {
+      b.put(player.name().toLowerCase(), player);
     }
     players = ImmutableMap.copyOf(b);
   }
 
   public Integer getPoints(String name) {
-    return players.get(name.toLowerCase());
+    IfpPlayer player = players.get(name.toLowerCase());
+    if (player == null) {
+      return null;
+    }
+    if (!player.isActive()) {
+      return INACTIVE_POINTS;
+    }
+    return player.doubles();
   }
 }
 

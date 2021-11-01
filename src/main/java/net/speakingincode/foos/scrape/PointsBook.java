@@ -33,6 +33,7 @@ public class PointsBook {
   private PointsBook(PointsBookData pointsBook) {
     ImmutableMap.Builder<String, PointsBookPlayer> nameToPlayer = ImmutableMap.builder();
     for (PointsBookPlayer player : pointsBook.getPlayers()) {
+      // System.out.println("Found spreadsheet player " + player.name());
       nameToPlayer.put(player.name(), player);
     }
     this.nameToPlayer = nameToPlayer.build();

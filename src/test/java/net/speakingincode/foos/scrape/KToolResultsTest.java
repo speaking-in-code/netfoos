@@ -9,8 +9,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.equalTo;
 
 public class KToolResultsTest {
@@ -79,6 +81,17 @@ public class KToolResultsTest {
     try (InputStream testInput = getClass().getResourceAsStream("/v3-singles-playoffs.ktool")) {
       String json = CharStreams.toString(new InputStreamReader(testInput, Charsets.UTF_8));
       KToolResults result = KToolResults.fromJson(json);
+      assertThat(result.players().get(0).name(), equalTo("Brian"));
+    }
+  }
+
+  @Test
+  public void v3wtf() throws Exception {
+    try (InputStream testInput = getClass().getResourceAsStream("/v3-wtf.ktool")) {
+      String json = CharStreams.toString(new InputStreamReader(testInput, Charsets.UTF_8));
+      KToolResults result = KToolResults.fromJson(json);
+      List<KToolPlay> plays = result.plays();
+      assertThat(plays.size(), equalTo(0));
       assertThat(result.players().get(0).name(), equalTo("Brian"));
     }
   }

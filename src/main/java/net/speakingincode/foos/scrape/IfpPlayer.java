@@ -9,6 +9,7 @@ import com.google.gson.TypeAdapter;
 public abstract class IfpPlayer {
   public abstract String name();
   public abstract int doubles();
+  public abstract boolean isActive();
 
   public static TypeAdapter<IfpPlayer> typeAdapter(Gson gson) {
     return new AutoValue_IfpPlayer.GsonTypeAdapter(gson);
