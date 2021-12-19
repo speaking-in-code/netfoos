@@ -15,6 +15,7 @@ import java.util.List;
 public abstract class KToolTeam {
     @SerializedName(value="id", alternate={"_id"})
     public abstract String id();
+    @SerializedName(value="name", alternate={"_name"})
     public abstract @Nullable String name();
     abstract @Nullable String type();
     @SerializedName(value="players")
