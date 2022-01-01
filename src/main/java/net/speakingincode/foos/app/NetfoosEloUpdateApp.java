@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.io.Files;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import net.speakingincode.foos.scrape.ChangeSummarizer;
+import net.speakingincode.foos.scrape.CloseableWebDriver;
 import net.speakingincode.foos.scrape.Credentials;
 import net.speakingincode.foos.scrape.DamnItLogger;
 import net.speakingincode.foos.scrape.EloPointsCalculator;
@@ -14,6 +15,7 @@ import net.speakingincode.foos.scrape.Player;
 import net.speakingincode.foos.scrape.PointsBook;
 import net.speakingincode.foos.scrape.PointsUpdater.Mode;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
@@ -56,18 +58,14 @@ public class NetfoosEloUpdateApp {
   private static ImmutableList<Player> recalculatePlayerPoints(PointsBook pointsBook)
       throws IOException {
     ChromeDriverManager.chromedriver().setup();
-    WebDriver driver = null;
-    try {
-      driver = new ChromeDriver();
-      NetfoosLogin login = new NetfoosLogin(credentials, driver);
-      login.login();
-      return new EloPointsCalculator(pointsBook, driver).getPoints();
-    } catch (IOException e) {
-      DamnItLogger.log(driver);
-      throw e;
-    } finally {
-      if (driver != null) {
-        driver.close();
+    try (CloseableWebDriver driver = new CloseableWebDriver((new ChromeDriver()))) {
+      try {
+        NetfoosLogin login = new NetfoosLogin(credentials, driver.getDriver());
+        login.login();
+        return new EloPointsCalculator(pointsBook, driver.getDriver()).getPoints();
+      } catch (WebDriverException | IOException e) {
+        DamnItLogger.log(driver.getDriver());
+        throw e;
       }
     }
   }
