@@ -1,23 +1,21 @@
 package net.speakingincode.foos.scrape;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Splitter;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
+import net.speakingincode.foos.scrape.TournamentResults.EventResults;
+import net.speakingincode.foos.scrape.TournamentResults.Finish;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Splitter;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
-
-import net.speakingincode.foos.scrape.TournamentResults.EventResults;
-import net.speakingincode.foos.scrape.TournamentResults.Finish;
+import java.io.IOException;
+import java.util.List;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TournamentScraper {
   private static final Logger log = Logger.getLogger(TournamentScraper.class.getName());
@@ -32,21 +30,43 @@ public class TournamentScraper {
     this.driver = driver;
     this.credentials = credentials;
   }
-  
-  public TournamentResults getRecentResults() throws IOException {
+
+  public ImmutableList<NetfoosToFileMetadata> getEventList() throws IOException {
+    login();
+    ImmutableList.Builder<NetfoosToFileMetadata> metadata = ImmutableList.builder();
+    for (String name : getAllNames()) {
+      metadata.add(NetfoosToFileMetadata.builder().tournamentName(name).build());
+    }
+    return metadata.build();
+  }
+
+  private void login() throws IOException {
     new NetfoosLogin(credentials, driver).login();
+  }
+
+  private ImmutableList<String> getAllNames() throws IOException {
     driver.findElement(By.linkText("Admin Modules")).click();
     checkPageContains("Admin Modules", "NetFoos Admin Modules");
     driver.findElement(By.linkText("ITSF_Results_Export_1_0")).click();
     checkPageContains("Results Export Tournament List", "ITSF Results Export 1.0");
 
     Select tournamentList = new Select(driver.findElement(By.name("nfts_mod_1")));
-    String mostRecent = tournamentList.getOptions().get(0).getText();
+    ImmutableList.Builder<String> names = ImmutableList.builder();
+    for (WebElement element : tournamentList.getOptions()) {
+      names.add(element.getText());
+    }
+    return names.build();
+  }
+
+  public TournamentResults getRecentResults() throws IOException {
+    login();
+    ImmutableList<String> names = getAllNames();
+    String mostRecent = names.get(0);
     return getOneResult(mostRecent);
   }
-  
+
   public TournamentResults getOneResult(String name) throws IOException {
-    new NetfoosLogin(credentials, driver).login();
+    login();
     Matcher m = nameDatePattern.matcher(name);
     if (!m.matches()) {
       throw new IOException(
@@ -71,36 +91,35 @@ public class TournamentScraper {
     }
     TournamentResults.Builder tournament = TournamentResults.builder();
     tournament.tournamentId(url.getQueryArgs().get("nfts_mod_1").iterator().next());
+    tournament.tournamentName(m.group(1));
+    List<EventResults> eventResults = Lists.newArrayList();
     for (String resultLink : resultLinks) {
       driver.get(resultLink);
-      EventResults eventResults = parseResults(resultLink, driver.getPageSource());
-      tournament.addEvent(eventResults);
+      eventResults.add(parseResults(resultLink, driver.getPageSource()));
     }
-    return tournament.build();
+    return tournament.events(eventResults).build();
   }
-  
-  public ImmutableList<TournamentResults> getAllResults() throws IOException {
-    new NetfoosLogin(credentials, driver).login();
-    driver.findElement(By.linkText("Admin Modules")).click();
-    checkPageContains("Admin Modules", "NetFoos Admin Modules");
-    driver.findElement(By.linkText("ITSF_Results_Export_1_0")).click();
-    checkPageContains("Results Export Tournament List", "ITSF Results Export 1.0");
 
-    Select tournamentList = new Select(driver.findElement(By.name("nfts_mod_1")));
-    List<String> names = Lists.newArrayList();
-    for (WebElement element : tournamentList.getOptions()) {
-      names.add(element.getText());
-    }
+  public ImmutableList<TournamentResults> getAllResults() throws IOException {
+    return getNResults(-1);
+  }
+
+  public ImmutableList<TournamentResults> getNResults(int maxCount) throws IOException {
+    login();
+    ImmutableList<String> names = getAllNames();
     ImmutableList.Builder<TournamentResults> results = ImmutableList.builder();
     int count = 0;
     for (String name : names) {
+      if (maxCount != -1 && count >= maxCount) {
+        break;
+      }
       ++count;
       log.info(String.format("Scraping %d/%d", count, names.size()));
       results.add(getOneResult(name));
     }
     return results.build();
   }
-  
+
   @VisibleForTesting
   static EventResults parseResults(String resultLink, String results) throws IOException {
     ParsedUrl url = ParsedUrl.parse(resultLink);
@@ -116,36 +135,37 @@ public class TournamentScraper {
     if (!lines.get(3).startsWith("Finish\tLast Name")) {
       throw new IOException("Couldn't parse results: " + results);
     }
+    List<Finish> finishes = Lists.newArrayList();
     for (int i = 4; i < lines.size(); ++i) {
       List<String> fields = tabSplitter.splitToList(lines.get(i));
       int rank = Integer.parseInt(fields.get(0));
       String playerOne = getPlayerOne(fields);
       String playerTwo = getPlayerTwo(fields);
 
-      event.addFinish(Finish.builder()
+      finishes.add(Finish.builder()
           .finish(rank)
           .playerOne(playerOne)
           .playerTwo(playerTwo)
           .build());
     }
-    return event.build();
+    return event.finishesInternal(finishes).build();
   }
-  
+
   private static String getPlayerOne(List<String> fields) {
     return formatName(fields.get(2), fields.get(1));
   }
-  
+
   private static String getPlayerTwo(List<String> fields) {
-    if (fields.size() > 4) {
+    if (fields.size() > 5) {
       return formatName(fields.get(5), fields.get(4));
     }
     return null;
   }
-  
+
   private static String formatName(String first, String last) {
-    return first + " " + last.charAt(0);
+    return first + " " + last;
   }
-  
+
   private void checkPageContains(String name, String contents) throws IOException {
     if (!driver.getPageSource().contains(contents)) {
       throw new IOException("Could not load " + name + ": " + driver.getPageSource());

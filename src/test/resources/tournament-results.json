@@ -1,0 +1,43 @@
+{
+  "tournamentId": "63735",
+  "tournamentName": "Monster DYP",
+  "events": [
+    {
+      "tournamentName": "Monster DYP",
+      "date": "2021-12-21",
+      "eventName": "Tournament Match 1",
+      "chartUrl": "http://www.netfoos.com/display/119/charts/1/63736.html",
+      "finishes": [
+        {
+          "finish": 1,
+          "playerOne": "Greg Mendel",
+          "playerTwo": "Andrey Trok"
+        },
+        {
+          "finish": 2,
+          "playerOne": "Brijesh Patel",
+          "playerTwo": "Gemma Mio"
+        }
+      ]
+    },
+    {
+      "tournamentName": "Monster DYP",
+      "date": "2021-12-21",
+      "eventName": "Tournament Match 2",
+      "chartUrl": "http://www.netfoos.com/display/119/charts/1/63737.html",
+      "finishes": [
+        {
+          "finish": 1,
+          "playerOne": "Brian Eaton",
+          "playerTwo": "Alex Hong"
+        },
+        {
+          "finish": 2,
+          "playerOne": "Bing Yep",
+          "playerTwo": "Mate Kovacs"
+        }
+      ]
+    }
+  ]
+}
+

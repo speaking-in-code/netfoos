@@ -13,6 +13,7 @@ public class GsonUtil {
     private static final Gson gson = new GsonBuilder()
         .registerTypeAdapterFactory(MyAdapterFactory.create())
         .registerTypeAdapter(KToolResults.knockOutWrapperType, new KToolResults.KnockOutWrapperAdapter())
+        .setPrettyPrinting()
         .create();
 
     public static Gson gson() {
