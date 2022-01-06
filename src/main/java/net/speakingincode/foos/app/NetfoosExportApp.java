@@ -44,7 +44,7 @@ public class NetfoosExportApp {
       cache = initCache();
     }
     copyEverything(cache);
-    convertToAirTable();
+    convertToTSV();
   }
 
   private static NetfoosToFileCache loadCache() throws IOException {
@@ -93,7 +93,7 @@ public class NetfoosExportApp {
     }
   }
 
-  private static void convertToAirTable() throws IOException {
+  private static void convertToTSV() throws IOException {
     NetfoosToFileCache cache = loadCache();
     writeResults(cache.events().stream().map(NetfoosToFileMetadata::results));
   }
@@ -107,13 +107,13 @@ public class NetfoosExportApp {
     public abstract String date();
 
     public static UniqueRecord create(String name, String players, String date) {
-      return new AutoValue_AirtableExportApp_UniqueRecord(name, players, date);
+      return new AutoValue_NetfoosExportApp_UniqueRecord(name, players, date);
     }
   }
 
   private static void writeResults(Stream<TournamentResults> results) {
-    File out = new File("airtable.tsv");
-    logger.info("Writing airtable data to " + out.getPath());
+    File out = new File("netfoos.tsv");
+    logger.info("Writing netfoos data to " + out.getPath());
     TsvWriter writer = new TsvWriter(out, StandardCharsets.UTF_8, new TsvWriterSettings());
     writer.writeHeaders("Name", "Location", "Players", "Date");
     ConcurrentHashMap.KeySetView<UniqueRecord, Boolean> written = ConcurrentHashMap.newKeySet();

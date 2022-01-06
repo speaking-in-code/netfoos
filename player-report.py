@@ -12,7 +12,7 @@ def init_db():
   cur.execute('''CREATE TABLE events (name text, location text, player text, date text)''')
 
   input_rows = []
-  with open('airtable.tsv') as tsv_file:
+  with open('netfoos.tsv') as tsv_file:
     read_tsv = csv.reader(tsv_file, delimiter='\t')
     for row in read_tsv:
       name, location, players, date = row
