@@ -2,6 +2,8 @@ package net.speakingincode.foos.app;
 
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Joiner;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.gson.Gson;
@@ -40,11 +42,13 @@ public class NetfoosExportApp {
     NetfoosToFileCache cache = null;
     try {
       cache = loadCache();
+      cache = updateCache(cache);
     } catch (IOException e) {
       cache = initCache();
     }
     copyEverything(cache);
     convertToTSV();
+    System.exit(0);
   }
 
   private static NetfoosToFileCache loadCache() throws IOException {
@@ -60,6 +64,29 @@ public class NetfoosExportApp {
     TournamentScraper scraper = new TournamentScraper(new HtmlUnitDriver(), Credentials.load());
     NetfoosToFileCache cache = NetfoosToFileCache.create(scraper.getEventList());
     writeCache(cache);
+    return loadCache();
+  }
+
+  private static NetfoosToFileCache updateCache(NetfoosToFileCache oldCache) throws IOException {
+    logger.info("Updating cache");
+    Set<String> alreadyLoaded = Sets.newHashSet();
+    for (NetfoosToFileMetadata event : oldCache.events()) {
+      if (event.tournamentName() != null) {
+        alreadyLoaded.add(event.tournamentName());
+      }
+    }
+    ImmutableList.Builder<NetfoosToFileMetadata> refresh = ImmutableList.builder();
+    refresh.addAll(oldCache.events());
+    TournamentScraper scraper = new TournamentScraper(new HtmlUnitDriver(), Credentials.load());
+    for (NetfoosToFileMetadata newEvent : scraper.getEventList()) {
+      if (alreadyLoaded.contains(newEvent.tournamentName())) {
+        continue;
+      }
+      logger.info("New event: " + newEvent.tournamentName());
+      refresh.add(newEvent);
+    }
+    NetfoosToFileCache updated = NetfoosToFileCache.create(refresh.build());
+    writeCache(updated);
     return loadCache();
   }
 

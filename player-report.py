@@ -194,11 +194,22 @@ def player_engagement():
 
 
 def player_history():
+  min_max_query = '''
+       SELECT
+          MIN(strftime('%Y', date)),
+          MAX(strftime('%Y', date))
+       FROM events;
+  '''
+  min_year = None
+  max_year = None
+  for row in con.cursor().execute(min_max_query):
+    min_year = int(row[0])
+    max_year = int(row[1])
   with open('/tmp/player_history.tsv', 'w') as out_file:
     writer = csv.writer(out_file, delimiter='\t')
     headers = ['Player']
     year_queries = []
-    for year in range(2012, 2022):
+    for year in range(min_year, max_year + 1):
       headers.append(year)
       #year_queries.append(f'SUM(entries) FILTER (WHERE year = "{year}")')
       year_queries.append(f'SUM(CASE WHEN year = "{year}" THEN entries ELSE 0 END)')
