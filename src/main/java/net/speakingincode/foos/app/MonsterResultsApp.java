@@ -59,6 +59,10 @@ public class MonsterResultsApp {
     shortNames = ResultsParser.load(config.build());
 
     MonsterResult fullNames = transformToFullNames(shortNames);
+    if (fullNames.players().isEmpty()) {
+      log.warning("No players found in file.");
+      System.exit(1);
+    }
     ImmutableSet<String> missing =
         new PlayerListChecker(credentials, driver).findMissingPlayers(fullNames.players());
     if (!missing.isEmpty()) {
@@ -66,6 +70,8 @@ public class MonsterResultsApp {
           Joiner.on("\n").join(missing));
       System.exit(1);
     }
+    log.warning("All player names\n" + Joiner.on('\n').join(fullNames.players()));
+    System.exit(1);
 
     summarizeResults(shortNames);
     TournamentEditor editor = new TournamentEditor(credentials, driver);

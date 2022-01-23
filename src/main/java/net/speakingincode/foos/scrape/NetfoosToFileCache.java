@@ -11,10 +11,10 @@ public abstract class NetfoosToFileCache {
   public abstract List<NetfoosToFileMetadata> events();
 
   public static NetfoosToFileCache create(List<NetfoosToFileMetadata> events) {
-    return new AutoValue_NetfoosToAirtableCache(events);
+    return new AutoValue_NetfoosToFileCache(events);
   }
 
   public static TypeAdapter<NetfoosToFileCache> typeAdapter(Gson gson) {
-    return new AutoValue_NetfoosToAirtableCache.GsonTypeAdapter(gson);
+    return new AutoValue_NetfoosToFileCache.GsonTypeAdapter(gson);
   }
 }

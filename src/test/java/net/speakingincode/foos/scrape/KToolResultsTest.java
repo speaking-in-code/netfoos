@@ -116,4 +116,16 @@ public class KToolResultsTest {
       assertThat(result.ko().third().plays().get(0).team1(), equalTo(null));
     }
   }
+
+  @Test
+  public void swissDoubles() throws Exception {
+    try (InputStream testInput = getClass().getResourceAsStream("/swiss-doubles.ktool")) {
+      String json = CharStreams.toString(new InputStreamReader(testInput, Charsets.UTF_8));
+      KToolResults result = KToolResults.fromJson(json);
+      assertThat(result.players().get(0).name(), equalTo("Lih"));
+      assertThat(result.players().get(1).name(), equalTo("Jorge"));
+      assertThat(result.ko().third().plays().get(0).valid(), equalTo(false));
+      assertThat(result.ko().third().plays().get(0).team1(), equalTo(null));
+    }
+  }
 }

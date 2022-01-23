@@ -13,11 +13,11 @@ public abstract class NetfoosToFileMetadata {
   public abstract NetfoosToFileMetadata.Builder toBuilder();
 
   public static NetfoosToFileMetadata.Builder builder() {
-    return new AutoValue_NetfoosToAirtableMetadata.Builder();
+    return new AutoValue_NetfoosToFileMetadata.Builder();
   }
 
   public static TypeAdapter<NetfoosToFileMetadata> typeAdapter(Gson gson) {
-    return new AutoValue_NetfoosToAirtableMetadata.GsonTypeAdapter(gson);
+    return new AutoValue_NetfoosToFileMetadata.GsonTypeAdapter(gson);
   }
 
   @AutoValue.Builder
