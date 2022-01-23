@@ -70,8 +70,6 @@ public class MonsterResultsApp {
           Joiner.on("\n").join(missing));
       System.exit(1);
     }
-    log.warning("All player names\n" + Joiner.on('\n').join(fullNames.players()));
-    System.exit(1);
 
     summarizeResults(shortNames);
     TournamentEditor editor = new TournamentEditor(credentials, driver);

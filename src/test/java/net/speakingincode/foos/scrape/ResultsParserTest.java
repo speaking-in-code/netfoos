@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.io.InputStream;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.equalTo;
 
 public class ResultsParserTest {
@@ -137,6 +138,28 @@ public class ResultsParserTest {
                 finish(1, "Brian", null),
                 finish(2, "Mo", null),
                 finish(3, "Jorge", null)
+            ));
+        }
+    }
+
+    @Test
+    public void swissDoubles() throws Exception {
+        try (InputStream ktool = getClass().getResourceAsStream("/swiss-doubles.ktool");
+             InputStream metadata = getClass().getResourceAsStream("/location.json")) {
+            ResultsParserConfig config = ResultsParserConfig.builder()
+                .ktool(ktool)
+                .metadata(metadata)
+                .build();
+            MonsterResult result = ResultsParser.load(config);
+            assertThat(result.players(), containsInAnyOrder("dana", "adrian", "phil", "donald",
+                "rishabh", "mo", "brian", "bharath", "hoser", "bernie", "jeff", "gary", "jorge", "alex", "bing",
+            "mate"));
+            System.out.println("finishes: " + result.finishes());
+            assertThat(result.finishes(), Matchers.contains(
+                finish(0, "phil", "donald"),
+                finish(1, "dana", "adrian"),
+                finish(2, "rishabh", "mo"),
+                finish(3, "brian", "bharath")
             ));
         }
     }

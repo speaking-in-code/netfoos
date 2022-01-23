@@ -201,11 +201,30 @@ public class ResultsParser {
     }
 
     private ImmutableSet<String> makePlayers() {
+      if (!results.players().isEmpty()) {
+        return makePlayersFromPlayerList();
+      }
+      if (!results.teams().isEmpty()) {
+        return makePlayersFromTeamList();
+      }
+      throw new RuntimeException("No teams or players found in tournament file: " + results);
+    }
+
+    private ImmutableSet<String> makePlayersFromPlayerList() {
       ImmutableSet.Builder<String> players = ImmutableSet.builder();
       for (KToolPlayer player : results.players()) {
         // Player name might be a team name. Team names are / separated
         // player names, e.g. "Albert/Brian".
         List<String> names = KToolTeam.teamToPlayers(player.name());
+        players.addAll(names);
+      }
+      return players.build();
+    }
+
+    private ImmutableSet<String> makePlayersFromTeamList() {
+      ImmutableSet.Builder<String> players = ImmutableSet.builder();
+      for (KToolTeam team : results.teams()) {
+        List<String> names = KToolTeam.teamToPlayers(team.name());
         players.addAll(names);
       }
       return players.build();
