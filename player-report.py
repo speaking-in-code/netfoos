@@ -9,6 +9,7 @@ import re
 import sqlite3
 
 DB_FILE = 'players.db'
+HOME_DIR = '/Users/brianeaton/'
 
 if os.path.exists(DB_FILE):
   os.remove(DB_FILE)
@@ -18,7 +19,7 @@ con = sqlite3.connect(DB_FILE)
 def known_names():
   """Get a set of names we know are in netfoos."""
   print('Reading .netfoosnames')
-  with open('/Users/brian/.netfoosnames') as json_file:
+  with open(f'{HOME_DIR}/.netfoosnames') as json_file:
     names = json.load(json_file)
     known = set()
     for name in names.values():
@@ -48,19 +49,28 @@ def init_db():
         player = player.strip().rstrip()
         if not player:
           continue
+        if player == 'Jose Hernandez':
+          player = 'Jose Rodriguez'
+        elif player == 'Alex O':
+          player = 'Alex Orona'
+        elif player == 'Ryan Patterson':
+          player = 'Ryan Doyle'
         if not player in known:
           raise Exception(f'Unknown player "{player}"')
         record = (name, location, player, date_str)
         input_rows.append(record)
 
-  for root, _, files in os.walk('/Users/brian/Documents/foos/tournament-results'):
+  for root, _, files in os.walk(f'{HOME_DIR}/Documents/foos/tournament-results'):
     for file in files:
       if not file.endswith('.json'):
         continue
       json_file_name = os.path.join(root, file)
       print(f'Loading {json_file_name}')
       with open(json_file_name, 'r') as json_file:
-        tournament = json.load(json_file)
+        try:
+          tournament = json.load(json_file)
+        except json.decoder.JSONDecodeError as e:
+          raise RuntimeError(f'Error reading {file}') from e
         location = tournament['location']
         date_str = tournament['date']
         name = tournament['name']
@@ -236,78 +246,6 @@ def player_history():
       writer.writerow(row)
 
 
-def lost_players():
-  with open('/tmp/lost_players.tsv', 'w') as out_file:
-    writer = csv.writer(out_file, delimiter='\t')
-    headers = ['Player', 'Pre-2020', 'Post-2020']
-    writer.writerow(headers)
-    query = '''
-      WITH change AS (
-        SELECT
-          player,
-          SUM(CASE WHEN date < "2020-01-01" THEN 1 ELSE 0 END) pre2020,
-          SUM(CASE WHEN date >= "2020-01-01" THEN 1 ELSE 0 END) post2020
-        FROM events
-        GROUP BY player
-      ) SELECT
-        player, pre2020, post2020
-      FROM change
-      WHERE
-        pre2020 >= 10
-        AND post2020 <= 3
-      ORDER BY pre2020 DESC
-    '''
-    for row in con.cursor().execute(query):
-      writer.writerow(row)
-
-
-def active_players():
-  with open('/tmp/active_players.tsv', 'w') as out_file:
-    writer = csv.writer(out_file, delimiter='\t')
-    headers = ['Player', 'Pre-2020', 'Post-2020']
-    writer.writerow(headers)
-    query = '''
-      WITH change AS (
-        SELECT
-          player,
-          SUM(CASE WHEN date < "2020-01-01" THEN 1 ELSE 0 END) pre2020,
-          SUM(CASE WHEN date >= "2020-01-01" THEN 1 ELSE 0 END) post2020
-        FROM events
-        GROUP BY player
-      ) SELECT
-        player, pre2020, post2020
-      FROM change
-      WHERE
-        post2020 > 6
-      ORDER BY post2020 DESC
-    '''
-    for row in con.cursor().execute(query):
-      writer.writerow(row)
-
-
-def new_players():
-  with open('/tmp/new_players.tsv', 'w') as out_file:
-    writer = csv.writer(out_file, delimiter='\t')
-    headers = ['Player', 'Pre-2020', 'Post-2020']
-    writer.writerow(headers)
-    query = '''
-      WITH change AS (
-        SELECT
-          player,
-          SUM(CASE WHEN date < "2020-01-01" THEN 1 ELSE 0 END) pre2020,
-          SUM(CASE WHEN date >= "2020-01-01" THEN 1 ELSE 0 END) post2020
-        FROM events
-        GROUP BY player
-      ) SELECT
-        player, pre2020, post2020
-      FROM change
-      WHERE
-        pre2020 < 5 AND post2020 > 0
-      ORDER BY post2020 DESC
-    '''
-    for row in con.cursor().execute(query):
-      writer.writerow(row)
-
 def recent_changes():
   with open('/tmp/recent_changes.tsv', 'w') as out_file:
     writer = csv.writer(out_file, delimiter='\t')
@@ -345,6 +283,26 @@ def recent_changes():
     for row in con.cursor().execute(query):
       writer.writerow(row)
 
+
+def last_60():
+  with open('/tmp/last_60.tsv', 'w') as out_file:
+    writer = csv.writer(out_file, delimiter='\t')
+    headers = ['Player', 'Days']
+    writer.writerow(headers)
+    query = '''
+      SELECT
+        player,
+        COUNT(DISTINCT date) days
+      FROM events
+      WHERE
+        date > date('now','-60 day')
+      GROUP BY player
+      ORDER BY days DESC
+    '''
+    for row in con.cursor().execute(query):
+      writer.writerow(row)
+
+
 init_db()
 dump_db()
 entries_per_month()
@@ -352,7 +310,5 @@ month_comparison()
 entries_per_year()
 player_engagement()
 player_history()
-lost_players()
-active_players()
-new_players()
 recent_changes()
+last_60()
