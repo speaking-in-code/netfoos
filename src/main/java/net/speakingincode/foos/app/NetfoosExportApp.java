@@ -48,6 +48,7 @@ public class NetfoosExportApp {
     }
     copyEverything(cache);
     convertToTSV();
+    logger.info("Complete");
     System.exit(0);
   }
 
